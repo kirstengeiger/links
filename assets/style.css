@@ -1,5 +1,25 @@
 /* font-family: 'Rubik', sans-serif; */
 @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
 
+/*'Work Sans', sans-serif;*/
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,400;0,600;1,400;1,600&display=swap');
+
 /* Styling Time! */
 
+html {
+    scroll-behavior: smooth;
+}
+
+/* Mobile*/
+@media (min-width:350px) {
+    :root {
+        --typography-h1: 200px;
+        --typography-p: 50px;
+
+        --gutter: var(--typography-p);
+        --padding: 60px;
+        --padding-h1: 30px;
+    }
+
+    
+}

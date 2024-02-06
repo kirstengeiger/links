@@ -1,0 +1,45 @@
+h1 {
+    background-color: #EB5500;
+    font-family: 'Rubik', sans-serif;
+    font-size: var(--typography-h1);
+    color: #FFFADC;
+    text-align: center;
+    padding-top: var(--padding-h1);
+    padding-bottom: var(--padding-h1);
+}
+
+h2 {
+    font-family: 'Work Sans', sans-serif;
+    padding-top: calc( 1 * var(--padding-h2));
+    padding-bottom: calc( 1 * var(--padding-h2));
+    padding-left: var(--padding-h2);
+    padding-right: var(--padding-h2);
+}
+
+.continent p {
+    font-family: 'Rubik', sans-serif;
+}
+
+li:nth-child(1),
+li:nth-child(3),
+li:nth-child(5),
+li:nth-child(7) {
+     text-align: left;
+}
+
+li:nth-child(2),
+li:nth-child(4),
+li:nth-child(6) {
+    text-align: right;
+}
+
+
+/* Mobile*/
+@media (min-width:350px) {
+    :root {
+        --padding-h2: 100px;
+        --padding: 60px;
+        --padding-h1: 50px;
+    }
+
+}
