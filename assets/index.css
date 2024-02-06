@@ -18,6 +18,10 @@ h2 {
 
 .continent p {
     font-family: 'Rubik', sans-serif;
+    font-size: var(--continent-p);
+    padding-bottom: var(--continent-p-padding);
+    padding-left: var(--continent-p-padding);
+    padding-right: var(--continent-p-padding);
 }
 
 li:nth-child(1),
@@ -37,8 +41,11 @@ li:nth-child(6) {
 /* Mobile*/
 @media (min-width:350px) {
     :root {
-        --padding-h2: 100px;
+        --continent-p: 100px;
+        --continent-p-padding: calc(1 * var(--continent-p));
+        
         --padding: 60px;
+        --padding-h2: 100px;
         --padding-h1: 50px;
     }
 
