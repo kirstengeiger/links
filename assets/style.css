@@ -17,8 +17,6 @@ html {
         --typography-p: 50px;
 
         --gutter: var(--typography-p);
-        --padding: 60px;
-        --padding-h1: 30px;
     }
 
     
