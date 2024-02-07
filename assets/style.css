@@ -23,14 +23,25 @@ header {
     top: 0;
 }
 
+h1 {
+    font-family: 'Volkhov', serif;
+    font-size: var(--typography-h1);
+    color: black;
+    text-transform: uppercase;
+    padding-top: calc(2 * var(--padding-h1));
+    padding-bottom: var(--padding-h1);
+}
+
 header p {
     color: #FFFFFF;
+    font-size: var(--typography-p);
     font-family: 'Work Sans', sans-serif;
     text-transform: uppercase;
 }
 
 footer p {
     font-family: 'Work Sans', sans-serif;
+    font-size: var(--typography-p);
     color: #F8F3F0;
 }
 
@@ -44,7 +55,13 @@ footer {
 /* Mobile*/
 @media (min-width:350px) {
     :root {
+        --typography-p: 40px;
+        --typography-h1: calc(3.5 * var(--typography-p));
+
         --padding-header: 50px;
+        --padding-footer: 50px;
+        --padding: 60px;
+        --padding-h1: 100px;
 
         --gutter: var(--typography-p);
     }
