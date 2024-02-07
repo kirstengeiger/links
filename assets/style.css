@@ -13,14 +13,39 @@ html {
     scroll-behavior: smooth;
 }
 
+header {
+    background-color: #D69A00;
+    padding-top: calc(1 * var(--padding-header));
+    padding-bottom: calc(1 * var(--padding-header));
+    padding-left: var(--padding-header);
+    padding-right: var(--padding-header);
+    position: sticky;
+    top: 0;
+}
+
+header p {
+    color: #FFFFFF;
+    font-family: 'Work Sans', sans-serif;
+    text-transform: uppercase;
+}
+
+footer p {
+    font-family: 'Work Sans', sans-serif;
+    color: #F8F3F0;
+}
+
+footer {
+    background-color: black;
+    padding-top: var(--padding-footer);
+    padding-bottom: var(--padding-footer);
+    padding-left: var(--padding-footer);
+}
+
 /* Mobile*/
 @media (min-width:350px) {
     :root {
-        --typography-h1: 200px;
-        --typography-p: 50px;
+        --padding-header: 50px;
 
         --gutter: var(--typography-p);
     }
-
-    
 }

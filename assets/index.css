@@ -1,26 +1,10 @@
-header {
-    background-color: #D69A00;
-    padding-top: calc(1 * var(--padding-header));
-    padding-bottom: calc(1 * var(--padding-header));
-    padding-left: var(--padding-header);
-    padding-right: var(--padding-header);
-    position: sticky;
-    top: 0;
-}
-
-header p {
-    color: #FFFFFF;
-    font-family: 'Work Sans', sans-serif;
-    text-transform: uppercase;
-}
-
 h1 {
     font-family: 'Volkhov', serif;
     font-size: var(--typography-h1);
-    color: #EB5500;
+    color: black;
     text-transform: uppercase;
-    padding-top: var(--padding-h1);
-    padding-bottom: calc(1 * var(--padding-h1));
+    padding-top: calc(2 * var(--padding-h1));
+    padding-bottom: var(--padding-h1);
 }
 
 .intro {
@@ -49,23 +33,21 @@ h2 {
 }
 
 img {
-    aspect-ratio: 1 / 1; /* Width / height. */
+    aspect-ratio: 1/1;
 	object-fit: cover;
 	width: 40%;
+    padding-left: calc(0.5 * var(--padding-places));
+    padding-right: calc(0.5 * var(--padding-places));
 }
 
 .places p {
     font-family: 'Volkhov', serif;
     font-size: var(--places-p);
     color: white;
-    padding-top: calc(-2 * var(--padding-places));
+    padding-top: calc(-10 * var(--padding-places));
     padding-bottom: var(--padding-places);
     padding-left: var(--padding-places);
     padding-right: var(--padding-places);
-}
-
-ol li {
-    
 }
 
 li:nth-child(1),
@@ -96,14 +78,13 @@ footer {
 /* Mobile*/
 @media (min-width:350px) {
     :root {
-        --typography-p: 30px;
-        --typography-h1: calc(5 * var(--typography-p));
+        --typography-p: 40px;
+        --typography-h1: calc(3.5 * var(--typography-p));
         
         --places-p: 100px;
         
         --padding: 60px;
-        --padding-header: 50px;
-        --padding-h1: 130px;
+        --padding-h1: 100px;
         --padding-h2: 100px;
         --padding-intro: 100px;
         --padding-places: 100px;
