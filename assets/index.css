@@ -1,11 +1,21 @@
 h1 {
-    background-color: #EB5500;
-    font-family: 'Rubik', sans-serif;
+    font-family: 'Volkhov', serif;;
     font-size: var(--typography-h1);
-    color: #FFFADC;
-    text-align: center;
+    color: #EB5500;
+    text-transform: uppercase;
     padding-top: var(--padding-h1);
-    padding-bottom: var(--padding-h1);
+    padding-bottom: calc(1.5 * var(--padding-h1));
+}
+
+.intro {
+    background-color: #F8F3F0;
+    padding-left: calc(1 * var(--padding-intro));
+    padding-right: calc(1 * var(--padding-intro));
+    padding-bottom: var(--padding-intro);
+}
+
+.intro p {
+    font-family: 'Work Sans', sans-serif;
 }
 
 h2 {
@@ -41,12 +51,16 @@ li:nth-child(6) {
 /* Mobile*/
 @media (min-width:350px) {
     :root {
+        --typography-p: 30px;
+        --typography-h1: calc(5 * var(--typography-p));
+        
         --continent-p: 100px;
         --continent-p-padding: calc(1 * var(--continent-p));
         
         --padding: 60px;
+        --padding-h1: 150px;
         --padding-h2: 100px;
-        --padding-h1: 50px;
+        --padding-intro: 100px;
     }
 
 }
