@@ -1,0 +1,31 @@
+.collection {
+    background-color: #2A53EC;
+    padding-bottom: var(--collections-padding);
+    padding-top: var(--collections-padding);
+    padding-left: var(--collections-padding);
+    padding-right: var(--collections-padding);
+}
+
+.collection p {
+    color: white;
+}
+
+.collectionlink {
+    font-family: 'Volkhov', serif;
+    font-style: italic;
+    font-size: var(--collections-link);
+}
+
+div {
+    padding-bottom: var(--padding-div);
+}
+
+/* Mobile*/
+@media (min-width:350px) {
+    :root {
+        --collections-p: 50px;
+        --collections-padding: 100px;
+        --collections-link: 70px;
+        --padding-div: 100px;
+    }
+}

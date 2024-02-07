@@ -1,12 +1,12 @@
 .intro {
+    display: flex;
+    flex-direction: row;
+    top: 0;
     background-color: #F8F3F0;
-    padding-left: var(--padding-intro);
-    padding-right: var(--padding-intro);
-    padding-bottom: calc(2 * var(--padding-intro));
-}
-
-.intro p {
-    font-family: 'Rubik', sans-serif;
+    padding-top: calc(1 * var(--padding-h1));
+    padding-bottom: var(--padding-h1);
+    padding-left: calc(1 * var(--padding-h1));
+    padding-right: calc(1 * var(--padding-h1));
 }
 
 h2 {
@@ -21,14 +21,6 @@ h2 {
     background-color: #B45680;
     padding-top: calc(3 * var(--padding));
     padding-bottom: var(--padding);
-}
-
-img {
-    aspect-ratio: 1/1;
-	object-fit: cover;
-	width: 40%;
-    padding-left: calc(0.5 * var(--padding-places));
-    padding-right: calc(0.5 * var(--padding-places));
 }
 
 .places p {
@@ -54,13 +46,50 @@ li:nth-child(6) {
     text-align: right;
 }
 
+
 /* Mobile*/
 @media (min-width:350px) {
     :root {
-        --places-p: 100px;
+        --places-p: 50px;
         
         --padding-h2: 100px;
-        --padding-intro: 100px;
         --padding-places: 100px;
+    }
+
+    img {
+        aspect-ratio: 20%;
+        object-fit: cover;
+        width: 30%;
+        padding-left: calc(0.5 * var(--padding-places));
+        padding-right: calc(0.5 * var(--padding-places));
+    }
+}
+
+/* Desktop */
+@media (min-width:1200px) {
+    :root {
+        --typography-p: 22px;
+        --typography-h1: calc(5 * var(--typography-p));
+        --intro-p: 25px;
+
+        --padding: 60px;
+        --padding-h1: 70px;
+        --padding-intro: 40px;
+
+        --gutter: var(--typography-p);
+    }
+
+    h1 {
+        max-width: 50%;
+        float: left;
+        line-height: 100%;
+    }
+    
+    .intro p {
+        max-width: 50%;
+        float: right;
+        font-family: 'Rubik', sans-serif;
+        padding-top: calc(5 * var(--padding-h1));
+        padding-left: calc(1.5 * var(--padding-h1));
     }
 }

@@ -23,15 +23,6 @@ header {
     top: 0;
 }
 
-h1 {
-    font-family: 'Volkhov', serif;
-    font-size: var(--typography-h1);
-    color: black;
-    text-transform: uppercase;
-    padding-top: calc(2 * var(--padding-h1));
-    padding-bottom: var(--padding-h1);
-}
-
 header p {
     color: #FFFFFF;
     font-size: var(--typography-p);
@@ -39,9 +30,27 @@ header p {
     text-transform: uppercase;
 }
 
+.intro {
+    background-color: #F8F3F0;
+    padding-left: var(--padding-intro);
+    padding-right: var(--padding-intro);
+    padding-bottom: calc(2 * var(--padding-intro));
+}
+
+.intro p {
+    font-size: var(--intro-p);
+}
+
+h1 {
+    font-family: 'Volkhov', serif;
+    font-size: var(--typography-h1);
+    color: black;
+    text-transform: uppercase;
+}
+
 footer p {
     font-family: 'Work Sans', sans-serif;
-    font-size: var(--typography-p);
+    font-size: var(--footer-p);
     color: #F8F3F0;
 }
 
@@ -52,16 +61,18 @@ footer {
     padding-left: var(--padding-footer);
 }
 
-/* Mobile*/
+/* Mobile */
 @media (min-width:350px) {
     :root {
         --typography-p: 40px;
-        --typography-h1: calc(3.5 * var(--typography-p));
 
-        --padding-header: 50px;
-        --padding-footer: 50px;
+        --padding-header: 25px;
+        --padding-footer: 25px;
         --padding: 60px;
         --padding-h1: 100px;
+        --padding-intro: 100px;
+
+        --footer-p: 18px;
 
         --gutter: var(--typography-p);
     }
