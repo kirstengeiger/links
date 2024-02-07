@@ -25,7 +25,7 @@ header {
 
 header p {
     color: #FFFFFF;
-    font-size: var(--typography-p);
+    font-size: var(--header-p);
     font-family: 'Work Sans', sans-serif;
     text-transform: uppercase;
 }
@@ -34,7 +34,7 @@ header p {
     background-color: #F8F3F0;
     padding-left: var(--padding-intro);
     padding-right: var(--padding-intro);
-    padding-bottom: calc(2 * var(--padding-intro));
+    padding-bottom: calc(1 * var(--padding-intro));
 }
 
 .intro p {
@@ -65,6 +65,8 @@ footer {
 @media (min-width:350px) {
     :root {
         --typography-p: 40px;
+        --typography-h1: calc(3 * var(--typography-p));
+        --header-p: 30px;
 
         --padding-header: 25px;
         --padding-footer: 25px;
