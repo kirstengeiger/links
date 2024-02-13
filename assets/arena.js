@@ -50,6 +50,7 @@ let renderBlock = (block) => {
 		channelBlocks.insertAdjacentHTML('beforeend', linkItem)
 	}
 }
+/
 
 // 	// Images!
 // 	else if (block.class == 'Image') {
