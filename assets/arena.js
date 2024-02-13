@@ -7,7 +7,7 @@ document.head.appendChild(markdownIt)
 
 
 // Okay, Are.na stuff!
-let channelSlug = 'typography-and-interaction-too' // The “slug” is just the end of the URL
+let channelSlug = 'weird-animal-kingdom' // The “slug” is just the end of the URL
 
 
 
