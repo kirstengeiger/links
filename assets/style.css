@@ -52,6 +52,14 @@ p + p {
     margin-top: 1em;
 }
 
+.date {
+    font-family: 'Work Sans', sans-serif;
+}
+
+.block--link {
+    color: blue;
+}
+
 footer p {
     font-family: 'Work Sans', sans-serif;
     font-size: var(--footer-p);

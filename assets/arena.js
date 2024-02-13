@@ -42,6 +42,7 @@ let renderBlock = (block) => {
 					<img src="${ block.image.original.url }">
 				</picture>
 				<h3>${ block.title }</h3>
+                <p class="date">${block.created_at}</p>
 				${ block.description_html }
 				<p><a href="${ block.source.url }">See the original ↗</a></p>
 			</li>
@@ -132,10 +133,12 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 		console.log(data) // Always good to check your response!        
         placeChannelInfo(data) // Pass the data to the first function
 
+        console.log(data.contents)
+
 		// Loop through th e `contents` array (list), backwards. Are.na returns them in reverse!
 		data.contents.reverse().forEach((block) => {
 			console.log(block) // The data for a single block
-			// renderBlock(block) // Pass the single block data to the render function
+			renderBlock(block) // Pass the single block data to the render function
 		 })
 
 		// Also display the owner and collaborators:
