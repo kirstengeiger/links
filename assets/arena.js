@@ -49,14 +49,20 @@ let renderBlock = (block) => {
 			`
 		channelBlocks.insertAdjacentHTML('beforeend', linkItem)
 	}
+
+	// Images!
+	else if (block.class == 'Image') {
+        console.log(block)
+        let imageItem =
+        `
+            <li class="block block--image">
+                <img src="${block.image.large.url}"
+            </li>
+        `
+        channelBlocks.insertAdjacentHTML('beforeend', imageItem)
+		// …up to you!
+	}
 }
-/
-
-// 	// Images!
-// 	else if (block.class == 'Image') {
-// 		// …up to you!
-// 	}
-
 // 	// Text!
 // 	else if (block.class == 'Text') {
 // 		// …up to you!
