@@ -60,6 +60,18 @@ p + p {
     color: blue;
 }
 
+.block--text {
+    font-family: 'Work Sans', sans-serif;
+}
+
+.block--text blockquote + p {
+    color: green;
+}
+
+.blocktext .blocktitle {
+    margin-top: 1em;
+}
+
 footer p {
     font-family: 'Work Sans', sans-serif;
     font-size: var(--footer-p);

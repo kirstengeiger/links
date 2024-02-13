@@ -32,6 +32,7 @@ let renderBlock = (block) => {
 
 	// Links!
 	if (block.class == 'Link') {
+        console.log(block)
 		let linkItem =
 			`
 			<li class="block block--link">
@@ -52,45 +53,66 @@ let renderBlock = (block) => {
 
 	// Images!
 	else if (block.class == 'Image') {
-        console.log(block)
         let imageItem =
         `
             <li class="block block--image">
-                <img src="${block.image.large.url}"
+                <img src="${block.image.large.url}" alt="${block.title}" by "${block.user.fullname}">
+                <figcaption>${block.title}</fig>
             </li>
         `
         channelBlocks.insertAdjacentHTML('beforeend', imageItem)
-		// …up to you!
+	}
+
+	// Text!
+	else if (block.class == 'Text') {
+		let textItem =
+        `
+            <li class="block block--text">
+                ${block.content.html}
+                <div class="title">
+                    ${block.title}
+            </li>
+        `
+        channelBlocks.insertAdjacentHTML('beforeend', textItem)
 	}
 }
-// 	// Text!
-// 	else if (block.class == 'Text') {
-// 		// …up to you!
-// 	}
 
-// 	// Uploaded (not linked) media…
-// 	else if (block.class == 'Attachment') {
-// 		let attachment = block.attachment.content_type // Save us some repetition
 
-// 		// Uploaded videos!
-// 		if (attachment.includes('video')) {
-// 			// …still up to you, but we’ll give you the `video` element:
-// 			let videoItem =
-// 				`
-// 				<li>
-// 					<p><em>Video</em></p>
-// 					<video controls src="${ block.attachment.url }"></video>
-// 				</li>
-// 				`
-// 			channelBlocks.insertAdjacentHTML('beforeend', videoItem)
-// 			// More on video, like the `autoplay` attribute:
-// 			// https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video
-// 		}
+	// // Uploaded (not linked) media…
+	// else if (block.class == 'Attachment') {
+	// 	let attachment = block.attachment.content_type // Save us some repetition
+    // }
 
-// 		// Uploaded PDFs!
-// 		else if (attachment.includes('pdf')) {
-// 			// …up to you!
-// 		}
+	// 	// Uploaded videos!
+	// else if (attachment.includes('video')) {
+	// 		// …still up to you, but we’ll give you the `video` element:
+	// 		let videoItem =
+	// 			`
+	// 			<li>
+	// 				<p><em>Video</em></p>
+	// 				<video controls src="${ block.attachment.url }"></video>
+	// 			</li>
+	// 			`
+	// 		channelBlocks.insertAdjacentHTML('beforeend', videoItem)
+	// 		// More on video, like the `autoplay` attribute:
+	// 		// https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video
+	// 	}
+
+		// Uploaded PDFs!
+		// else if (attachment.includes('pdf')) {
+        //     console.log(block)
+        //     let pdfItem =
+        //     `
+        //         <li class="block block--pdf">
+        //             <a href="${block.attachment.url}">
+        //             <figure>
+        //                 <img src="${block.image.large.url} alt="${block.title}">
+        //             </figure>
+        //             </a>
+        //         </li>
+        //     `
+        //     channelBlocks.insertAdjacentHTML('beforeend', pdfItem)
+		// }
 
 // 		// Uploaded audio!
 // 		else if (attachment.includes('audio')) {
@@ -149,7 +171,7 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 		 })
 
 		// Also display the owner and collaborators:
-		// let channelUsers = document.getElementById('channel-users') // Show them together
-		// data.coll aborators.forEach((collaborator) => renderUser(collaborator, channelUsers))
-		// renderUser(data.user, channelUsers)
+		let channelUsers = document.getElementById('channel-users') // Show them together
+		data.collaborators.forEach((collaborator) => renderUser(collaborator, channelUsers))
+		renderUser(data.user, channelUsers)
 	})

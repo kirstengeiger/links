@@ -33,6 +33,12 @@ h2 {
     padding-right: var(--padding-places);
 }
 
+.container {
+    display: grid;
+    /* flex-direction: column; */
+    gap: 2em;
+}
+
 /* li:nth-child(1),
 li:nth-child(3),
 li:nth-child(5),
@@ -91,5 +97,9 @@ li:nth-child(6) {
         font-family: 'Rubik', sans-serif;
         padding-top: calc(5 * var(--padding-h1));
         padding-left: calc(1.5 * var(--padding-h1));
+    }
+
+    .section {
+        display: grid;
     }
 }
