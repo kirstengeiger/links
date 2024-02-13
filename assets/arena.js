@@ -6,27 +6,24 @@ document.head.appendChild(markdownIt)
 
 
 
-// Okay, Are.na stuff!
+// Are.na stuff!
 let channelSlug = 'weird-animal-kingdom' // The “slug” is just the end of the URL
-
-
 
 // First, let’s lay out some *functions*, starting with our basic metadata:
 let placeChannelInfo = (data) => {
 	// Target some elements in your HTML:
 	let channelTitle = document.getElementById('channel-title')
-	let channelDescription = document.getElementById('channel-description')
-	let channelCount = document.getElementById('channel-count')
-	let channelLink = document.getElementById('channel-link')
+	console.log (channelTitle)
+    // let channelDescription = document.getElementById('channel-description')
+	// let channelCount = document.getElementById('channel-count')
+	// let channelLink = document.getElementById('channel-link')
 
 	// Then set their content/attributes to our data:
 	channelTitle.innerHTML = data.title
-	channelDescription.innerHTML = window.markdownit().render(data.metadata.description) // Converts Markdown → HTML
-	channelCount.innerHTML = data.length
-	channelLink.href = `https://www.are.na/channel/${channelSlug}`
+	// channelDescription.innerHTML = window.markdownit().render(data.metadata.description) // Converts Markdown → HTML
+	// channelCount.innerHTML = data.length
+	// channelLink.href = `https://www.are.na/channel/${channelSlug}`
 }
-
-
 
 // Then our big function for specific-block-type rendering:
 let renderBlock = (block) => {
@@ -37,7 +34,7 @@ let renderBlock = (block) => {
 	if (block.class == 'Link') {
 		let linkItem =
 			`
-			<li>
+			<li class="block block--link">
 				<p><em>Link</em></p>
 				<picture>
 					<source media="(max-width: 428px)" srcset="${ block.image.thumb.url }">
@@ -51,113 +48,98 @@ let renderBlock = (block) => {
 			`
 		channelBlocks.insertAdjacentHTML('beforeend', linkItem)
 	}
-
-	// Images!
-	else if (block.class == 'Image') {
-		// …up to you!
-	}
-
-	// Text!
-	else if (block.class == 'Text') {
-		// …up to you!
-	}
-
-	// Uploaded (not linked) media…
-	else if (block.class == 'Attachment') {
-		let attachment = block.attachment.content_type // Save us some repetition
-
-		// Uploaded videos!
-		if (attachment.includes('video')) {
-			// …still up to you, but we’ll give you the `video` element:
-			let videoItem =
-				`
-				<li>
-					<p><em>Video</em></p>
-					<video controls src="${ block.attachment.url }"></video>
-				</li>
-				`
-			channelBlocks.insertAdjacentHTML('beforeend', videoItem)
-			// More on video, like the `autoplay` attribute:
-			// https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video
-		}
-
-		// Uploaded PDFs!
-		else if (attachment.includes('pdf')) {
-			// …up to you!
-		}
-
-		// Uploaded audio!
-		else if (attachment.includes('audio')) {
-			// …still up to you, but here’s an `audio` element:
-			let audioItem =
-				`
-				<li>
-					<p><em>Audio</em></p>
-					<audio controls src="${ block.attachment.url }"></video>
-				</li>
-				`
-			channelBlocks.insertAdjacentHTML('beforeend', audioItem)
-			// More on audio: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/audio
-		}
-	}
-
-	// Linked media…
-	else if (block.class == 'Media') {
-		let embed = block.embed.type
-
-		// Linked video!
-		if (embed.includes('video')) {
-			// …still up to you, but here’s an example `iframe` element:
-			let linkedVideoItem =
-				`
-				<li>
-					<p><em>Linked Video</em></p>
-					${ block.embed.html }
-				</li>
-				`
-			channelBlocks.insertAdjacentHTML('beforeend', linkedVideoItem)
-			// More on iframe: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe
-		}
-
-		// Linked audio!
-		else if (embed.includes('rich')) {
-			// …up to you!
-		}
-	}
 }
 
+// 	// Images!
+// 	else if (block.class == 'Image') {
+// 		// …up to you!
+// 	}
 
+// 	// Text!
+// 	else if (block.class == 'Text') {
+// 		// …up to you!
+// 	}
 
-// It‘s always good to credit your work:
-let renderUser = (user, container) => { // You can have multiple arguments for a function!
-	let userAddress =
-		`
-		<address>
-			<img src="${ user.avatar_image.display }">
-			<h3>${ user.first_name }</h3>
-			<p><a href="https://are.na/${ user.slug }">Are.na profile ↗</a></p>
-		</address>
-		`
-	container.insertAdjacentHTML('beforeend', userAddress)
-}
+// 	// Uploaded (not linked) media…
+// 	else if (block.class == 'Attachment') {
+// 		let attachment = block.attachment.content_type // Save us some repetition
 
+// 		// Uploaded videos!
+// 		if (attachment.includes('video')) {
+// 			// …still up to you, but we’ll give you the `video` element:
+// 			let videoItem =
+// 				`
+// 				<li>
+// 					<p><em>Video</em></p>
+// 					<video controls src="${ block.attachment.url }"></video>
+// 				</li>
+// 				`
+// 			channelBlocks.insertAdjacentHTML('beforeend', videoItem)
+// 			// More on video, like the `autoplay` attribute:
+// 			// https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video
+// 		}
+
+// 		// Uploaded PDFs!
+// 		else if (attachment.includes('pdf')) {
+// 			// …up to you!
+// 		}
+
+// 		// Uploaded audio!
+// 		else if (attachment.includes('audio')) {
+// 			// …still up to you, but here’s an `audio` element:
+// 			let audioItem =
+// 				`
+// 				<li>
+// 					<p><em>Audio</em></p>
+// 					<audio controls src="${ block.attachment.url }"></video>
+// 				</li>
+// 				`
+// 			channelBlocks.insertAdjacentHTML('beforeend', audioItem)
+// 			// More on audio: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/audio
+// 		}
+// 	}
+
+// 	// Linked media…
+// 	else if (block.class == 'Media') {
+// 		let embed = block.embed.type
+
+// 		// Linked video!
+// 		if (embed.includes('video')) {
+// 			// …still up to you, but here’s an example `iframe` element:
+// 			let linkedVideoItem =
+// 				`
+// 				<li>
+// 					<p><em>Linked Video</em></p>
+// 					${ block.embed.html }
+// 				</li>
+// 				`
+// 			channelBlocks.insertAdjacentHTML('beforeend', linkedVideoItem)
+// 			// More on iframe: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe
+// 		}
+
+// 		// Linked audio!
+// 		else if (embed.includes('rich')) {
+// 			// …up to you!
+// 		}
+// 	}
+// }
 
 
 // Now that we have said what we can do, go get the data:
 fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-store' })
 	.then((response) => response.json()) // Return it as JSON data
-	.then((data) => { // Do stuff with the data
-		console.log(data) // Always good to check your response!
-		placeChannelInfo(data) // Pass the data to the first function
+	.then((data) => { // Do stuff wit h the data
+		console.log(data) // Always good to check your response!        
+        placeChannelInfo(data) // Pass the data to the first function
 
-		// Loop through the `contents` array (list), backwards. Are.na returns them in reverse!
+		// Loop through th e `contents` array (list), backwards. Are.na returns them in reverse!
 		data.contents.reverse().forEach((block) => {
-			// console.log(block) // The data for a single block
-			renderBlock(block) // Pass the single block data to the render function
-		})
+			console.log(block) // The data for a single block
+			// renderBlock(block) // Pass the single block data to the render function
+		 })
 
 		// Also display the owner and collaborators:
-		let channelUsers = document.getElementById('channel-users') // Show them together
-		data.collaborators.forEach((collaborator) => renderUser(collaborator, channelUsers))
-		renderUser(data.user, channelUsers)
+		// let channelUsers = document.getElementById('channel-users') // Show them together
+		// data.coll aborators.forEach((collaborator) => renderUser(collaborator, channelUsers))
+		// renderUser(data.user, channelUsers)
 	})

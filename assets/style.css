@@ -48,6 +48,10 @@ h1 {
     text-transform: uppercase;
 }
 
+p + p {
+    margin-top: 1em;
+}
+
 footer p {
     font-family: 'Work Sans', sans-serif;
     font-size: var(--footer-p);
