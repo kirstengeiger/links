@@ -103,7 +103,4 @@ li:nth-child(6) {
         padding-left: calc(1.5 * var(--padding-h1));
     }
 
-    .block--link h3 {
-        font-size: 30px;
-    }
 }

@@ -30,6 +30,10 @@ header p {
     text-transform: uppercase;
 }
 
+header p:hover {
+    text-decoration: underline;
+}
+
 .intro {
     background-color: #F8F3F0;
     padding-left: var(--padding-intro);
@@ -61,7 +65,7 @@ h1 {
     font-size: 1em;
 }
 
-p, p + p {
+main p, p + p {
     margin-top: 1em;
 }
 
@@ -97,14 +101,17 @@ p, p + p {
     max-width: 50vw;
 }
 
-.block.source.url {
-    color: #D69A00;
-}
-
 .block.title, .block.description_html {
     max-width: 50vw;
     padding-bottom: 1em;
 }
+
+.block--link a:hover {
+    font-family: 'Volkhov', serif;
+    font-style: italic;
+    text-decoration: underline;
+}
+
 
 /* Text Styling */
 .block--text {
@@ -153,7 +160,7 @@ footer {
     :root {
         --typography-p: 40px;
         --typography-h1: calc(3 * var(--typography-p));
-        --header-p: 30px;
+        --header-p: 20px;
 
         --padding-header: 25px;
         --padding-footer: 25px;

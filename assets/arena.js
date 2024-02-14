@@ -103,6 +103,7 @@ let renderBlock = (block) => {
                         <figure>
                             <img src="${block.image.large.url}" alt="${block.title}">
                             <figcaption>${block.title}</figcaption>
+
                         </figure>
                     </a>
                 </li>
