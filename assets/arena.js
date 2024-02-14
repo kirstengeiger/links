@@ -14,9 +14,9 @@ let placeChannelInfo = (data) => {
 	// Target some elements in your HTML:
 	let channelTitle = document.getElementById('channel-title')
 	console.log (channelTitle)
-    // let channelDescription = document.getElementById('channel-description')
-	// let channelCount = document.getElementById('channel-count')
-	// let channelLink = document.getElementById('channel-link')
+    let channelDescription = document.getElementById('channel-description')
+	let channelCount = document.getElementById('channel-count')
+	let channelLink = document.getElementById('channel-link')
 
 	// Then set their content/attributes to our data:
 	channelTitle.innerHTML = data.title
@@ -32,7 +32,6 @@ let renderBlock = (block) => {
 
 	// Links!
 	if (block.class == 'Link') {
-        console.log(block)
 		let linkItem =
 			`
 			<li class="block block--link">
@@ -74,83 +73,79 @@ let renderBlock = (block) => {
         channelBlocks.insertAdjacentHTML('beforeend', textItem)
 	}
 
-    // // Uploaded (not linked) media…
-	// else if (block.class == 'Attachment') {
-	// 	let attachment = block.attachment.content_type // Save us some repetition
-    // }
+    // Uploaded (not linked) media…
+	else if (block.class == 'Attachment') {
+		let attachment = block.attachment.content_type // Save us some repetition
+    
+        // Uploaded videos!
+        if (attachment.includes('video')) {
+            let videoItem =
+                `
+                    <li>
+                        <p><em>Video</em></p>
+                        <video controls src="${ block.attachment.url }"></video>
+                    </li>
+                `
+                channelBlocks.insertAdjacentHTML('beforeend', videoItem)
+                // More on video, like the `autoplay` attribute:
+                // https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video
+        }
 
-    // Uploaded videos!
-	// else if (attachment.includes('video')) {
-	// 	let videoItem =
-	// 		`
-	// 			<li>
-	// 				<p><em>Video</em></p>
-	// 				<video controls src="${ block.attachment.url }"></video>
-	// 			</li>
-	// 		`
-	// 		channelBlocks.insertAdjacentHTML('beforeend', videoItem)
-	// 		// More on video, like the `autoplay` attribute:
-	// 		// https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video
-	// }
+        // Uploaded PDFs!
+        else if (attachment.includes('pdf')) {
+            let pdfItem =
+            `
+                <li>
+                    <a href="${block.attachment.url}">
+                        <figure>
+                            <img src="${block.image.large.url}" alt="${block.title}">
+                            <figcaption>${block.title}</figcaption>
+                        </figure>
+                    </a>
+                </li>
+            `
+        channelBlocks.insertAdjacentHTML('beforeend', pdfItem);
+        }
+
+		// Uploaded audio!
+		else if (attachment.includes('audio')) {
+			// …still up to you, but here’s an `audio` element:
+			let audioItem =
+				`
+				<li>
+					<p><em>Audio</em></p>
+					<audio controls src="${ block.attachment.url }"></video>
+				</li>
+				`
+			channelBlocks.insertAdjacentHTML('beforeend', audioItem)
+			// More on audio: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/audio
+		}
+	}
+
+	// Linked media…
+	else if (block.class == 'Media') {
+		let embed = block.embed.type
+
+		// Linked video!
+		if (embed.includes('video')) {
+			// …still up to you, but here’s an example `iframe` element:
+			let linkedVideoItem =
+				`
+				<li>
+					<p><em>Linked Video</em></p>
+					${ block.embed.html }
+				</li>
+				`
+			channelBlocks.insertAdjacentHTML('beforeend', linkedVideoItem)
+			// More on iframe: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe
+		}
+
+		// Linked audio!
+		else if (embed.includes('rich')) {
+			// …up to you!
+		}
+	}
 }
-
-
-
-		// Uploaded PDFs!
-		// else if (attachment.includes('pdf')) {
-        //     console.log(block)
-        //     let pdfItem =
-        //     `
-        //         <li class="block block--pdf">
-        //             <a href="${block.attachment.url}">
-        //             <figure>
-        //                 <img src="${block.image.large.url} alt="${block.title}">
-        //             </figure>
-        //             </a>
-        //         </li>
-        //     `
-        //     channelBlocks.insertAdjacentHTML('beforeend', pdfItem)
-		// }
-
-// 		// Uploaded audio!
-// 		else if (attachment.includes('audio')) {
-// 			// …still up to you, but here’s an `audio` element:
-// 			let audioItem =
-// 				`
-// 				<li>
-// 					<p><em>Audio</em></p>
-// 					<audio controls src="${ block.attachment.url }"></video>
-// 				</li>
-// 				`
-// 			channelBlocks.insertAdjacentHTML('beforeend', audioItem)
-// 			// More on audio: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/audio
-// 		}
-// 	}
-
-// 	// Linked media…
-// 	else if (block.class == 'Media') {
-// 		let embed = block.embed.type
-
-// 		// Linked video!
-// 		if (embed.includes('video')) {
-// 			// …still up to you, but here’s an example `iframe` element:
-// 			let linkedVideoItem =
-// 				`
-// 				<li>
-// 					<p><em>Linked Video</em></p>
-// 					${ block.embed.html }
-// 				</li>
-// 				`
-// 			channelBlocks.insertAdjacentHTML('beforeend', linkedVideoItem)
-// 			// More on iframe: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe
-// 		}
-
-// 		// Linked audio!
-// 		else if (embed.includes('rich')) {
-// 			// …up to you!
-// 		}
-// 	}
-// }
 
 
 // Now that we have said what we can do, go get the data:
