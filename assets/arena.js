@@ -112,8 +112,7 @@ let renderBlock = (block) => {
 			// …still up to you, but here’s an `audio` element:
 			let audioItem =
 				`
-				<li>
-					<p><em>Audio</em></p>
+				<li class="block block--audio">
 					<audio controls src="${ block.attachment.url }"></video>
 				</li>
 				`
@@ -131,9 +130,9 @@ let renderBlock = (block) => {
 			// …still up to you, but here’s an example `iframe` element:
 			let linkedVideoItem =
 				`
-				<li>
-					<p><em>Linked Video</em></p>
-					${ block.embed.html }
+				<li class="block block--linkedvideo">
+					${ block.embed.html}
+                    <figcaption>${block.generated_title}</figcaption>
 				</li>
 				`
 			channelBlocks.insertAdjacentHTML('beforeend', linkedVideoItem)
