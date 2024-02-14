@@ -54,13 +54,14 @@ h1 {
     background-color: #EDE8D3;
 }
 
-.container p {
+.block p {
     color: black;
     font-family: 'Rubik', sans-serif;
     max-width: 50vw;
+    font-size: 1em;
 }
 
-p + p {
+p, p + p {
     margin-top: 1em;
 }
 
@@ -69,7 +70,7 @@ p + p {
 }
 
 .block {
-    margin-top: 2em;
+    margin-top: 5em;
     align-content: center;
 }
 
@@ -77,6 +78,14 @@ p + p {
 .block--image figcaption {
     font-family: 'Volkhov', serif;
     font-size: 30px;
+    max-width: 50vw;
+}
+
+.block.descritpion p {
+    font-size: 3em;
+}
+
+.block--image .block.description {
     max-width: 50vw;
 }
 
@@ -94,6 +103,7 @@ p + p {
 
 .block.title, .block.description_html {
     max-width: 50vw;
+    padding-bottom: 1em;
 }
 
 /* Text Styling */
@@ -111,6 +121,14 @@ p + p {
 
 /* Video Styling */
 .block--linkedvideo {
+    font-family: 'Volkhov', serif;
+    font-size: 30px;
+    max-width: 50vw;
+    margin-top: 1em;
+}
+
+/* PDF Styling */
+.block--pdf {
     font-family: 'Volkhov', serif;
     font-size: 30px;
     max-width: 50vw;

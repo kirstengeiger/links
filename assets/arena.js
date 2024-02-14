@@ -20,6 +20,8 @@ let placeChannelInfo = (data) => {
 
 	// Then set their content/attributes to our data:
 	channelTitle.innerHTML = data.title
+
+    // Why does all the content disappear when the code below isn't hidden?
 	// channelDescription.innerHTML = window.markdownit().render(data.metadata.description) // Converts Markdown → HTML
 	// channelCount.innerHTML = data.length
 	// channelLink.href = `https://www.are.na/channel/${channelSlug}`
@@ -54,7 +56,8 @@ let renderBlock = (block) => {
         `
             <li class="block block--image">
                 <img src="${block.image.large.url}" alt="${block.title}" by "${block.user.fullname}">
-                <figcaption>${block.title}</fig>
+                <figcaption>${block.title}</figcaption>
+                ${block.description_html}
             </li>
         `
         channelBlocks.insertAdjacentHTML('beforeend', imageItem)
@@ -95,7 +98,7 @@ let renderBlock = (block) => {
         else if (attachment.includes('pdf')) {
             let pdfItem =
             `
-                <li>
+                <li class="block block--pdf">
                     <a href="${block.attachment.url}">
                         <figure>
                             <img src="${block.image.large.url}" alt="${block.title}">
@@ -113,7 +116,9 @@ let renderBlock = (block) => {
 			let audioItem =
 				`
 				<li class="block block--audio">
-					<audio controls src="${ block.attachment.url }"></video>
+					<audio controls src="${ block.attachment.url }">
+                    <p class="audio">${block.generated_title}</p>
+                    </audio>
 				</li>
 				`
 			channelBlocks.insertAdjacentHTML('beforeend', audioItem)
