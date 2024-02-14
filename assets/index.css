@@ -39,6 +39,10 @@ h2 {
     gap: 2em;
 }
 
+.figcaption {
+    font-family: 'Volkhov', serif;
+}
+
 /* li:nth-child(1),
 li:nth-child(3),
 li:nth-child(5),
@@ -99,7 +103,7 @@ li:nth-child(6) {
         padding-left: calc(1.5 * var(--padding-h1));
     }
 
-    .section {
-        display: grid;
+    .block--link h3 {
+        font-size: 30px;
     }
 }

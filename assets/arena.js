@@ -36,15 +36,13 @@ let renderBlock = (block) => {
 		let linkItem =
 			`
 			<li class="block block--link">
-				<p><em>Link</em></p>
 				<picture>
 					<source media="(max-width: 428px)" srcset="${ block.image.thumb.url }">
 					<source media="(max-width: 640px)" srcset="${ block.image.large.url }">
 					<img src="${ block.image.original.url }">
 				</picture>
 				<h3>${ block.title }</h3>
-                <p class="date">${block.created_at}</p>
-				${ block.description_html }
+				${ block.description_html}
 				<p><a href="${ block.source.url }">See the original ↗</a></p>
 			</li>
 			`
@@ -75,28 +73,28 @@ let renderBlock = (block) => {
         `
         channelBlocks.insertAdjacentHTML('beforeend', textItem)
 	}
-}
 
-
-	// // Uploaded (not linked) media…
+    // // Uploaded (not linked) media…
 	// else if (block.class == 'Attachment') {
 	// 	let attachment = block.attachment.content_type // Save us some repetition
     // }
 
-	// 	// Uploaded videos!
+    // Uploaded videos!
 	// else if (attachment.includes('video')) {
-	// 		// …still up to you, but we’ll give you the `video` element:
-	// 		let videoItem =
-	// 			`
+	// 	let videoItem =
+	// 		`
 	// 			<li>
 	// 				<p><em>Video</em></p>
 	// 				<video controls src="${ block.attachment.url }"></video>
 	// 			</li>
-	// 			`
+	// 		`
 	// 		channelBlocks.insertAdjacentHTML('beforeend', videoItem)
 	// 		// More on video, like the `autoplay` attribute:
 	// 		// https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video
-	// 	}
+	// }
+}
+
+
 
 		// Uploaded PDFs!
 		// else if (attachment.includes('pdf')) {
