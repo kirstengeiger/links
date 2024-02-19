@@ -13,7 +13,7 @@ html {
     scroll-behavior: smooth;
 }
 
-/* Header */
+/* Header
 header {
     background-color: #D69A00;
     padding-top: calc(1 * var(--padding-header));
@@ -33,14 +33,28 @@ header p {
 
 header p:hover {
     text-decoration: underline;
+} */
+
+.column-title {
+    padding-left: var(--column-padding);
+    padding-right: var(--column-padding);
+    padding-top: calc(1* var(--column-padding));
+}
+
+.column-title p {
+    font-family: 'Rubik', sans-serif; 
+    font-size: var(--column-title-p);
+}
+
+.column-content {
+    padding-left: var(--column-padding);
+    padding-right: var(--column-padding);
+    padding-top: calc(1* var(--column-padding));
 }
 
 /* Intro */
 .intro {
     background-color: #F8F3F0;
-    padding-left: var(--padding-intro);
-    padding-right: var(--padding-intro);
-    padding-bottom: calc(1 * var(--padding-intro));
 }
 
 .intro p {
@@ -225,21 +239,15 @@ footer {
         --padding-h1: 70px;
         --padding-intro: 40px;
 
+        --column-title-p: 20px;
+        --column-padding: 2rem;
+
         --gutter: var(--typography-p);
     }
 
     h1 {
         max-width: 50%;
-        float: left;
         line-height: 100%;
-    }
-    
-    .intro p {
-        max-width: 50%;
-        float: right;
-        font-family: 'Rubik', sans-serif;
-        padding-top: calc(5 * var(--padding-h1));
-        padding-left: calc(1.5 * var(--padding-h1));
     }
 
     main {
@@ -248,9 +256,16 @@ footer {
 
     .column-title {
         position: sticky;
+        z-index: 1;
+        top: 0px;
+    }
+
+    .column-title p {
+        max-width: 30vw;
     }
 
     .column-content {
         position: relative;
+        background-color: pink;
     }
 }
