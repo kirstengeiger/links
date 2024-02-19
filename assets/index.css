@@ -1,12 +1,58 @@
-.intro {
-    display: flex;
-    flex-direction: row;
+/* font-family: 'Rubik', sans-serif; */
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+/* font-family: 'Volkhov', serif; */
+@import url('https://fonts.googleapis.com/css2?family=Volkhov:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+/*'Work Sans', sans-serif;*/
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,400;0,600;1,400;1,600&display=swap');
+
+
+/* Styling Time! */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Header */
+header {
+    background-color: #D69A00;
+    padding-top: calc(1 * var(--padding-header));
+    padding-bottom: calc(1 * var(--padding-header));
+    padding-left: var(--padding-header);
+    padding-right: var(--padding-header);
+    position: sticky;
     top: 0;
+}
+
+header p {
+    color: #FFFFFF;
+    font-size: var(--header-p);
+    font-family: 'Work Sans', sans-serif;
+    text-transform: uppercase;
+}
+
+header p:hover {
+    text-decoration: underline;
+}
+
+/* Intro */
+.intro {
     background-color: #F8F3F0;
-    padding-top: calc(1 * var(--padding-h1));
-    padding-bottom: var(--padding-h1);
-    padding-left: calc(1 * var(--padding-h1));
-    padding-right: calc(1 * var(--padding-h1));
+    padding-left: var(--padding-intro);
+    padding-right: var(--padding-intro);
+    padding-bottom: calc(1 * var(--padding-intro));
+}
+
+.intro p {
+    font-size: var(--intro-p);
+}
+
+/* Site Title */
+h1 {
+    font-family: 'Volkhov', serif;
+    font-size: var(--typography-h1);
+    color: black;
+    text-transform: uppercase;
 }
 
 h2 {
@@ -17,10 +63,24 @@ h2 {
     padding-right: var(--padding-h2);
 }
 
-.glossary {
-    background-color: #B45680;
-    padding-top: calc(3 * var(--padding));
-    padding-bottom: var(--padding);
+.block p {
+    color: black;
+    font-family: 'Rubik', sans-serif;
+    max-width: 50vw;
+    font-size: 1em;
+}
+
+main p, p + p {
+    margin-top: 1em;
+}
+
+.date {
+    font-family: 'Work Sans', sans-serif;
+}
+
+.block {
+    margin-top: 5em;
+    align-content: center;
 }
 
 .places p {
@@ -43,23 +103,102 @@ h2 {
     font-family: 'Volkhov', serif;
 }
 
-/* li:nth-child(1),
-li:nth-child(3),
-li:nth-child(5),
-li:nth-child(7) {
-     text-align: left;
+
+
+/* Images Styling */
+.block--image figcaption {
+    font-family: 'Volkhov', serif;
+    font-size: 30px;
+    max-width: 50vw;
 }
 
-li:nth-child(2),
-li:nth-child(4),
-li:nth-child(6) {
-    text-align: right;
-} */
+.block.descritpion p {
+    font-size: 3em;
+}
+
+.block--image .block.description {
+    max-width: 50vw;
+}
+
+/* Links Styling */
+.block--link h3 {
+    font-family: 'Volkhov', serif;
+    font-size: 30px;
+    padding-bottom: 0.5em;
+    max-width: 50vw;
+}
+
+.block.title, .block.description_html {
+    max-width: 50vw;
+    padding-bottom: 1em;
+}
+
+.block--link a:hover {
+    font-family: 'Volkhov', serif;
+    font-style: italic;
+    text-decoration: underline;
+}
+
+
+/* Text Styling */
+.block--text {
+    font-family: 'Work Sans', sans-serif;
+}
+
+.block--text blockquote + p {
+    color: green;
+}
+
+.blocktext .blocktitle {
+    margin-top: 1em;
+}
+
+/* Video Styling */
+.block--linkedvideo {
+    font-family: 'Volkhov', serif;
+    font-size: 30px;
+    max-width: 50vw;
+    margin-top: 1em;
+}
+
+/* PDF Styling */
+.block--pdf {
+    font-family: 'Volkhov', serif;
+    font-size: 30px;
+    max-width: 50vw;
+    margin-top: 1em;
+}
+
+footer p {
+    font-family: 'Work Sans', sans-serif;
+    font-size: var(--footer-p);
+    color: #F8F3F0;
+}
+
+footer {
+    background-color: black;
+    padding-top: var(--padding-footer);
+    padding-bottom: var(--padding-footer);
+    padding-left: var(--padding-footer);
+}
 
 
 /* Mobile*/
 @media (min-width:350px) {
     :root {
+        --typography-p: 40px;
+        --typography-h1: calc(3 * var(--typography-p));
+        --header-p: 20px;
+
+        --padding-header: 25px;
+        --padding-footer: 25px;
+        --padding: 60px;
+        --padding-h1: 100px;
+        --padding-intro: 100px;
+
+        --footer-p: 18px;
+
+        --gutter: var(--typography-p);
         --places-p: 50px;
         
         --padding-h2: 100px;
@@ -103,4 +242,15 @@ li:nth-child(6) {
         padding-left: calc(1.5 * var(--padding-h1));
     }
 
+    main {
+        display: flex;
+    }
+
+    .column-title {
+        position: sticky;
+    }
+
+    .column-content {
+        position: relative;
+    }
 }
