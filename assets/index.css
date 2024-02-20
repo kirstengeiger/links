@@ -116,7 +116,7 @@ h1 {
     right: 0;
 }
 
-.block--image:active .block--image__description, .block--text:active .block--text__description, .block--link:active .block--link__description, .block--linkedvideo:active .block--linkedvideo__description {
+.block--image.active .block--image__description, .block--text.active .block--text__description, .block--link.active .block--link__description, .block--linkedvideo.active .block--linkedvideo__description {
     display: flex;
 }
 
@@ -124,41 +124,53 @@ h1 {
     background-color: #EB5500;
 }
 
-.description-wrapper {
+/* .description-wrapper {
     display: flex;
     position: relative;
-}
+} */
 
 .description-onclick {
     max-width: 30vw;
     padding-left: 1.8rem;
 } 
 
-.class-onclick {
-    font-family: 'Volkhov', serif;
-    font-style: italic;
-    margin-bottom: 1rem;
+.description-header {
+    display: flex;
+    align-items: center; /* Align items vertically in the center */
+    justify-content: space-between;
+    margin-bottom: 3rem;
 }
 
-/* 
-.class-onclick::before {
-    content: "●";
-    color: #EB5500;
-    display: inline-block; /* Ensure the pseudo-element behaves like an inline block */
-    /* width: 1em; /* Set the width of the pseudo-element */
-    /* height: 1em; Set the height of the pseudo-element */
-    /* border: 2px solid white; Add a border around the content */
-    /* border-radius: 50%; Make the border circular */
-    /* margin-right: 10px; Adjust spacing between the bullet point and the border */
-    /* align-items: center; */
-/* } */
+.class-onclick, .quote-class-onclick {
+    font-family: 'Worksans', sans-serif;
+    font-size: var(--class-onclick-p);
+    text-transform: uppercase;
+    color: white;
+    font-weight: 100;
+}
 
-.title-onclick {
+.close-button {
+    font-family: 'Worksans', sans-serif;
+    font-size: calc(0.8 * var(--class-onclick-p));
+    color: white;
+    /* Referenced code from Stack Overflow */
+    border-radius: 50%;
+    display: block;
+    text-align: center;
+    align-content: center;
+    font-weight: 100;
+    border: 1px white;
+    border-style: solid;
+    width: 25px;
+    height: 25px;
+}
+
+.title-onclick, .quote-title-onclick {
     font-family: 'Volkhov', serif;
     font-size: var(--description-title-p);
 }
 
-.blurb-onclick {
+.blurb-onclick, .quote-blurb-onclick {
     font-family: 'Rubik', sans-serif;
     font-size: var(--description-blurb-p);
     padding-top: 3rem;
@@ -188,20 +200,25 @@ h1 {
     background-color: #2A53EC;
 }
 
+.quote-onclick {
+    background-color: white;
+    padding: 10px;
+    /* Need to figure out how to make it relative */
+}
+
 .quote-onclick h1 {
     font-family: 'Work Sans', sans-serif;
     font-size: var(--quote-onclick-h1);
     text-transform: none;
     font-style: normal;
-    color: white;
+    color: black;
 }
 
 .quote-onclick p {
     font-family: 'Volkhov', serif;
     text-transform: none;
-    font-style: italic;
     margin-top: 2rem;
-    color: white;
+    color: black;
 }
 
 .quote-class-onclick, .quote-title-onclick, .quote-blurb-onclick{
@@ -209,22 +226,6 @@ h1 {
     font-style: normal;
 }
 
-.quote-class-onclick {
-    font-family: 'Volkhov', serif;
-    font-style: italic;
-    margin-bottom: 1rem;
-}
-
-.quote-title-onclick {
-    font-family: 'Volkhov', serif;
-    font-size: var(--description-title-p);
-}
-
-.quote-blurb-onclick{
-    font-family: 'Rubik', sans-serif;
-    font-size: var(--description-blurb-p);
-    padding-top: 3rem;
-}
 
 /* Link Description Styles */
 .block--link__description {
@@ -311,8 +312,10 @@ footer {
 
         --figcaption-p: 20px;
 
+        --class-onclick-p: 18px;
+
         /* Quote Styles */
-        --quote-onclick-h1: 50px;
+        --quote-onclick-h1: 45px;
 
         --description-title-p: 40px;
         --description-blurb-p: 20px;
@@ -330,12 +333,10 @@ footer {
     }
 
     .column-title {
+        position: sticky;
         width: 35%;
-    }
-
-    .channel-title {
-        position: fixed;
         top: 0;
+        z-index: 100; 
     }
 
     .column-content {

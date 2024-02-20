@@ -67,7 +67,10 @@ let renderBlock = (block) => {
 							<img src="${block.image.large.url}" alt="${block.title}" by "${block.user.fullname}" width="300" height="300">
 						</section>
 						<section class="description-onclick">
-							<div class="class-onclick">${block.class}</div>
+							<section class="description-header">
+								<div class="class-onclick">${block.class}</div>
+								<button class="close-button">X</button>
+							</section>
 							<div class="title-onclick">${block.title}</div>
 							<div class="blurb-onclick">${block.description_html}</div>
 							<a class="source-onclick" href="${block.source}">See the original</a>
@@ -95,10 +98,13 @@ let renderBlock = (block) => {
 						${block.content_html}
 					</section>
 					<section class="description-onclick">
+						<section class="description-header">
 							<div class="quote-class-onclick">${block.class}</div>
-							<div class="quote-title-onclick">${block.title}</div>
-							<div class="quote-blurb-onclick">${block.description_html}</div>
-							<a class="source-onclick" href="${block.source}">See the original</a>
+							<button class="close-button">X</button>
+						</section>
+						<div class="quote-title-onclick">${block.title}</div>
+						<div class="quote-blurb-onclick">${block.description_html}</div>
+						<a class="source-onclick" href="${block.source}">See the original</a>
 					</section>
 				</div>
             </li>
@@ -106,22 +112,18 @@ let renderBlock = (block) => {
         channelBlocks.insertAdjacentHTML('beforeend', textItem)
 	}
 
-	// <li class="block block--image">
-    //             <figcaption>${block.title}</figcaption>
-				
-	// 			<div class="block--image__description">
-	// 					<section class="images-onclick">
-	// 						<source media="(max-width: 640px)" srcset="${ block.image.large.url }">
-	// 						<img src="${block.image.large.url}" alt="${block.title}" by "${block.user.fullname}" width="300" height="300">
-	// 					</section>
-	// 					<section class="description-onclick">
-	// 						<div class="class-onclick">${block.class}</div>
-	// 						<div class="title-onclick">${block.title}</div>
-	// 						<div class="blurb-onclick">${block.description_html}</div>
-	// 						<a class="source-onclick" href="${block.source}">See the original</a>
-	// 					<section>
-	// 			</div>
-    //         </li>
+				// <div class="block--text__description">
+				// 	<section class="quote-onclick">
+				// 		${block.content_html}
+				// 	</section>
+				// 	<section class="description-onclick">
+				// 			<div class="quote-class-onclick">${block.class}</div>
+				// 			<div class="quote-title-onclick">${block.title}</div>
+				// 			<div class="quote-blurb-onclick">${block.description_html}</div>
+				// 			<a class="source-onclick" href="${block.source}">See the original</a>
+				// 	</section>
+				// </div>
+
 
     // Uploaded (not linked) media…
 	else if (block.class == 'Attachment') {
@@ -218,18 +220,26 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 			renderBlock(block) // Pass the single block data to the render function
 		 })
 
+		// Styling figcaption for onClick
+		let openButtons = document.querySelectorAll('.block figcaption')
+		openButtons.forEach((openButton) => {
+			openButton.onclick = () => {
+				let parentBlock = openButton.parentElement
+				parentBlock.classList.toggle('active')
+			}
+		})
+
+		// Styling close button
+		let closeButtons = document.querySelectorAll('.block .close-button')
+		closeButtons.forEach((closeButton) => {
+			closeButton.onclick = () => {
+				let parentBlock = closeButton.parentElement.parentElement.parentElement
+				parentBlock.classList.toggle('active')
+			}
+		})
+
 		// Also display the owner and collaborators:
 		let channelUsers = document.getElementById('channel-users') // Show them together
 		data.collaborators.forEach((collaborator) => renderUser(collaborator, channelUsers))
 		renderUser(data.user, channelUsers)
-
-		// Styling figcaption for onClick
-		let switchButtons = document.querySelectorAll('.block figcaption')
-		switchButtons.forEach((switchButton) => {
-			switchButton.onclick = () => {
-				let parentBlock = switchButton.parentElement;
-				parentBlock.classList.toggle('active');
-				// switchButton.parentElement.classList.toggle('active')
-			}
-		})
 	})
