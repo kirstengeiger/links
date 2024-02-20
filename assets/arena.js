@@ -295,22 +295,10 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 		let closeButtons = document.querySelectorAll('.block .close-button')
 		closeButtons.forEach((closeButton) => {
 			closeButton.onclick = () => {
-				let parentBlock = closeButton.parentElement.parentElement
+				let parentBlock = closeButton.closest('.block')
 				parentBlock.classList.toggle('active')
 			}
 		})
-
-		console.log(closeButton)
-
-		// // Styling close button V.2 but it's not working either
-		// let closeButtons = document.querySelectorAll('.block .description-header .close-button')
-		// closeButtons.forEach((closeButton) => {
-    	// 	closeButton.onclick = () => {
-        // 		let parentBlock = closeButton.closest('.block')
-        // 		parentBlock.classList.toggle('active')
-   		// 	 }
-		// })
-
 
 		// // Also display the owner and collaborators:
 		// let channelUsers = document.getElementById('channel-users') // Show them together
