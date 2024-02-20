@@ -84,6 +84,17 @@ h1 {
     cursor: pointer;
 }
 
+/* onClick Background Styling */
+.block--image__description, .block--link__description, .block--linkedvideo__description, .block--text__description, .block--audio__description, .block--pdf__description {
+    display: none;
+    position: fixed;
+    padding: 1em;
+    top: 0;
+    left: 41vw;
+    bottom: 0;
+    right: 0;
+}
+
 .block--image figcaption::before, .block--link::before, .block--linkedvideo::before, .block--text .title::before, .block--audio::before, .block--pdf::before {
     margin-right: 1rem;
 }
@@ -125,18 +136,16 @@ h1 {
 }
 
 .block--image__description {
-    display: none;
-    position: fixed;
     background-color: #EB5500;
-    padding: 1em;
-    top: 0;
-    left: 41vw;
-    bottom: 0;
-    right: 0;
 }
 
 .block--image:active .block--image__description {
     display: block;
+}
+
+.block--image img {
+    background-color: black;
+    height: 80vh;
 }
 
 /* Images Styling */

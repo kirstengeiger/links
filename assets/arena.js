@@ -62,7 +62,10 @@ let renderBlock = (block) => {
             <li class="block block--image">
                 <figcaption>${block.title}</figcaption>
 				<div class="block--image__description">
-					<img src="${block.image.large.url}" alt="${block.title}" by "${block.user.fullname}">
+				<source media="(max-width: 640px)" srcset="${ block.image.large.url }">
+					<section="images-onclick">
+						<img src="${block.image.large.url}" alt="${block.title}" by "${block.user.fullname}" width="300" height="300">
+					</section>
 					${block.title}
 					${block.description_html}
 				</div>
@@ -189,10 +192,13 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 		data.collaborators.forEach((collaborator) => renderUser(collaborator, channelUsers))
 		renderUser(data.user, channelUsers)
 
+		// Styling for Image onClick
 		let switchButtons = document.querySelectorAll('.block--image figcaption')
 		switchButtons.forEach((switchButton) => {
 			switchButton.onclick = () => {
-				switchButton.parentElement.classList.toggle(active)
+				let parentBlock = switchButton.parentElement;
+				parentBlock.classList.toggle('active');
+				// switchButton.parentElement.classList.toggle('active')
 			}
 		})
 	})
