@@ -128,7 +128,7 @@ h1 {
     display: none;
 }
 
-.block--image.active .block--image__description {
+.block--image:active .block--image__description {
     display: block;
 }
 

@@ -190,4 +190,11 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 		let channelUsers = document.getElementById('channel-users') // Show them together
 		data.collaborators.forEach((collaborator) => renderUser(collaborator, channelUsers))
 		renderUser(data.user, channelUsers)
+
+		let switchButtons = document.querySelectorAll('.block--image figcaption')
+		switchButtons.forEach((switchButton) => {
+			switchButton.onclick = () => {
+				textBlock.classList.toggle(hihglightClass_)
+			};
+		})
 	})
