@@ -276,7 +276,7 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 		console.log(data) // Always good to check your response!        
         placeChannelInfo(data) // Pass the data to the first function
 
-		// Loop through th e `contents` array (list), backwards. Are.na returns them in reverse!
+		// Loop through the `contents` array (list), backwards. Are.na returns them in reverse!
 		data.contents.reverse().forEach((block) => {
 			console.log(block) // The data for a single block
 			renderBlock(block) // Pass the single block data to the render function
@@ -295,10 +295,22 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 		let closeButtons = document.querySelectorAll('.block .close-button')
 		closeButtons.forEach((closeButton) => {
 			closeButton.onclick = () => {
-				let parentBlock = closeButton.parentElement.parentElement.parentElement
+				let parentBlock = closeButton.parentElement.parentElement
 				parentBlock.classList.toggle('active')
 			}
 		})
+
+		console.log(closeButton)
+
+		// // Styling close button V.2 but it's not working either
+		// let closeButtons = document.querySelectorAll('.block .description-header .close-button')
+		// closeButtons.forEach((closeButton) => {
+    	// 	closeButton.onclick = () => {
+        // 		let parentBlock = closeButton.closest('.block')
+        // 		parentBlock.classList.toggle('active')
+   		// 	 }
+		// })
+
 
 		// // Also display the owner and collaborators:
 		// let channelUsers = document.getElementById('channel-users') // Show them together
