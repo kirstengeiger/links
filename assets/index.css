@@ -36,6 +36,7 @@ header p:hover {
 } */
 
 .column-title {
+    background-color: #EDE8D3;
     padding-left: var(--column-padding);
     padding-right: var(--column-padding);
     padding-top: calc(1* var(--column-padding));
@@ -250,22 +251,25 @@ footer {
         line-height: 100%;
     }
 
-    main {
+    .wrapper {
         display: flex;
     }
 
     .column-title {
+        width: 40%;
+    }
+
+    .column-title p + h1 {
+        max-width: 30vw;
         position: sticky;
         z-index: 1;
         top: 0;
-    }
-
-    .column-title p {
-        max-width: 30vw;
+        float: left;
+        display: inline-flex;
     }
 
     .column-content {
         position: relative;
-        background-color: pink;
+        background-color: white;
     }
 }

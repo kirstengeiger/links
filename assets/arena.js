@@ -38,19 +38,21 @@ let renderBlock = (block) => {
 			`
 			<li class="block block--link">
 				<h3>${ block.title }</h3>
-				${ block.description_html}
-				<p><a href="${ block.source.url }">See the original ↗</a></p>
 			</li>
 			`
 		channelBlocks.insertAdjacentHTML('beforeend', linkItem)
 	}
 
-	// Styling for pitcures
+	// Styling for pictures
 	// <picture>
 	// <source media="(max-width: 428px)" srcset="${ block.image.thumb.url }">
 	// <source media="(max-width: 640px)" srcset="${ block.image.large.url }">
 	// <img src="${ block.image.original.url }">
 	// </picture>
+	
+	// Description
+	// ${ block.description_html}
+	// <p><a href="${ block.source.url }">See the original ↗</a></p>
 
 	// Images!
 	else if (block.class == 'Image') {
