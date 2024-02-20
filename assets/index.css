@@ -68,19 +68,55 @@ h1 {
     padding-top: calc(1* var(--column-padding));
 }
 
-.block {
+.block:not(:first-child) {
     margin-top: var(--block-margin);
 }
 
-/* Styling for appendix */
+/* Content Titles Styling*/
 .block--image figcaption, .block--link, .block--linkedvideo, .block--text .title, .block--audio, .block--pdf {
     font-family: 'Volkhov', serif;
+    font-size: var(--figcaption-p);
 }
 
 .block--image figcaption:hover, .block--link:hover, .block--linkedvideo:hover, .block--text .title:hover, .block--audio:hover, .block--pdf:hover {
     font-style: italic;
 }
 
+/* Image Dot Styling */
+.block--image figcaption::before {
+    content: "●";
+    color: #EB5500;
+}
+
+/* Link Dot Styling */
+.block--link::before {
+    content: "●";
+    color: #B45982;
+}
+
+/* Video Dot Styling */
+.block--linkedvideo::before {
+    content: "●";
+    color: #606F08;
+}
+
+/* Quote Styling */
+.block--text .title::before {
+    content: "●";
+    color: #2A53EC;
+}
+
+/* Audio Styling */
+.block--audio::before {
+    content: "●";
+    color: #D69A00;
+}
+
+/* PDF Styling */
+.block--pdf::before {
+    content: "●";
+    color: #FFB9DA;
+}
 
 /* Images Styling */
 /* .block--image figcaption {
@@ -205,6 +241,8 @@ footer {
         --column-padding: 4rem;
 
         --intro-padding: 4rem;
+
+        --figcaption-p: 20px;
 
         --gutter: var(--typography-p);
     }
