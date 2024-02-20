@@ -56,10 +56,16 @@ let renderBlock = (block) => {
 
 	// Images!
 	else if (block.class == 'Image') {
+		console.log(block.description_html)
         let imageItem =
         `
             <li class="block block--image">
                 <figcaption>${block.title}</figcaption>
+				<div class="block--image__description">
+					<img src="${block.image.large.url}" alt="${block.title}" by "${block.user.fullname}">
+					${block.title}
+					${block.description_html}
+				</div>
             </li>
         `
         channelBlocks.insertAdjacentHTML('beforeend', imageItem)

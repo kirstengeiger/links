@@ -124,6 +124,14 @@ h1 {
     color: #FFB9DA;
 }
 
+.block--image__description {
+    display: none;
+}
+
+.block--image.active .block--image__description {
+    display: block;
+}
+
 /* Images Styling */
 /* .block--image figcaption {
     font-family: 'Volkhov', serif;
