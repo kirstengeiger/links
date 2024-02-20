@@ -13,28 +13,6 @@ html {
     scroll-behavior: smooth;
 }
 
-/* Header
-header {
-    background-color: #D69A00;
-    padding-top: calc(1 * var(--padding-header));
-    padding-bottom: calc(1 * var(--padding-header));
-    padding-left: var(--padding-header);
-    padding-right: var(--padding-header);
-    position: sticky;
-    top: 0;
-}
-
-header p {
-    color: #FFFFFF;
-    font-size: var(--header-p);
-    font-family: 'Work Sans', sans-serif;
-    text-transform: uppercase;
-}
-
-header p:hover {
-    text-decoration: underline;
-} */
-
 /* Intro Column */ 
 .column-title {
     background-color: #EDE8D3;
@@ -151,7 +129,7 @@ h1 {
 
 .description-onclick {
     max-width: 30vw;
-    padding-left: 3rem;
+    padding-left: 1.5rem;
 } 
 
 /* .block--image .block.class::before {
@@ -219,6 +197,7 @@ h1 {
 .block--image img {
     background-color: black;
     height: 80vh;
+    width: 40vw;
 }
 
 /* Images Styling */
@@ -335,7 +314,7 @@ footer {
 /* Desktop */
 @media (min-width:1200px) {
     :root {
-        --typography-p: 22px;
+        --typography-p: 20px;
         --typography-h1: 30px;
 
         --block-margin: 2em;
@@ -363,7 +342,7 @@ footer {
     }
 
     .column-title {
-        width: 45%;
+        width: 35%;
     }
 
     .channel-title {
