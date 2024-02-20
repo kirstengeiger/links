@@ -37,7 +37,23 @@ let renderBlock = (block) => {
 		let linkItem =
 			`
 			<li class="block block--link">
-				<figcaption>${ block.title}</figcaption>
+				<figcaption>${block.title}</figcaption>
+
+				<div class="block--link__description">
+					<section class="link-onclick">
+						<source media="(max-width: 640px)" srcset="${block.image.display}">
+						<img src="${block.image.display} alt="${block.title}" by "${block.user.fullname}" width="300" height="300">
+					</section>
+					<section class="description-onclick">
+						<section class="description-header">
+							<div class="class-onclick">${block.class}</div>
+							<button class="close-button">X</button>
+						</section>
+						<div class="title-onclick">${block.title}</div>
+						<div class="blurb-onclick">${block.description_html}</div>
+						<a class="source-onclick" href="${block.source}">See the original</a>
+					<section>
+				</div>
 			</li>
 			`
 		channelBlocks.insertAdjacentHTML('beforeend', linkItem)
@@ -274,8 +290,8 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 			}
 		})
 
-		// Also display the owner and collaborators:
-		let channelUsers = document.getElementById('channel-users') // Show them together
-		data.collaborators.forEach((collaborator) => renderUser(collaborator, channelUsers))
-		renderUser(data.user, channelUsers)
+		// // Also display the owner and collaborators:
+		// let channelUsers = document.getElementById('channel-users') // Show them together
+		// data.collaborators.forEach((collaborator) => renderUser(collaborator, channelUsers))
+		// renderUser(data.user, channelUsers)
 	})
