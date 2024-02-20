@@ -178,8 +178,6 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 		console.log(data) // Always good to check your response!        
         placeChannelInfo(data) // Pass the data to the first function
 
-        console.log(data.contents)
-
 		// Loop through th e `contents` array (list), backwards. Are.na returns them in reverse!
 		data.contents.reverse().forEach((block) => {
 			console.log(block) // The data for a single block
@@ -194,7 +192,7 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 		let switchButtons = document.querySelectorAll('.block--image figcaption')
 		switchButtons.forEach((switchButton) => {
 			switchButton.onclick = () => {
-				textBlock.classList.toggle(hihglightClass_)
-			};
+				switchButton.parentElement.classList.toggle(active)
+			}
 		})
 	})

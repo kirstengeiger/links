@@ -126,6 +126,13 @@ h1 {
 
 .block--image__description {
     display: none;
+    position: fixed;
+    background-color: #EB5500;
+    padding: 1em;
+    top: 0;
+    left: 41vw;
+    bottom: 0;
+    right: 0;
 }
 
 .block--image:active .block--image__description {
