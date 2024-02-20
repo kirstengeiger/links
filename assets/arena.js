@@ -57,13 +57,16 @@ let renderBlock = (block) => {
         let imageItem =
         `
             <li class="block block--image">
-                <img src="${block.image.large.url}" alt="${block.title}" by "${block.user.fullname}">
                 <figcaption>${block.title}</figcaption>
-                ${block.description_html}
             </li>
         `
         channelBlocks.insertAdjacentHTML('beforeend', imageItem)
 	}
+
+	// Styling for pictures
+	// <img src="${block.image.large.url}" alt="${block.title}" by "${block.user.fullname}">
+	// Description
+	// ${block.description_html} 
 
 	// Text!
 	else if (block.class == 'Text') {
@@ -103,15 +106,16 @@ let renderBlock = (block) => {
                 <li class="block block--pdf">
                     <a href="${block.attachment.url}">
                         <figure>
-                            <img src="${block.image.large.url}" alt="${block.title}">
                             <figcaption>${block.title}</figcaption>
-
                         </figure>
                     </a>
                 </li>
             `
         channelBlocks.insertAdjacentHTML('beforeend', pdfItem);
         }
+
+		// Styling for pictures
+		// <img src="${block.image.large.url}" alt="${block.title}"></img>
 
 		// Uploaded audio!
 		else if (attachment.includes('audio')) {
