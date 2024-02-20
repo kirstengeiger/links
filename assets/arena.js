@@ -37,11 +37,6 @@ let renderBlock = (block) => {
 		let linkItem =
 			`
 			<li class="block block--link">
-				<picture>
-					<source media="(max-width: 428px)" srcset="${ block.image.thumb.url }">
-					<source media="(max-width: 640px)" srcset="${ block.image.large.url }">
-					<img src="${ block.image.original.url }">
-				</picture>
 				<h3>${ block.title }</h3>
 				${ block.description_html}
 				<p><a href="${ block.source.url }">See the original ↗</a></p>
@@ -49,6 +44,13 @@ let renderBlock = (block) => {
 			`
 		channelBlocks.insertAdjacentHTML('beforeend', linkItem)
 	}
+
+	// Styling for pitcures
+	// <picture>
+	// <source media="(max-width: 428px)" srcset="${ block.image.thumb.url }">
+	// <source media="(max-width: 640px)" srcset="${ block.image.large.url }">
+	// <img src="${ block.image.original.url }">
+	// </picture>
 
 	// Images!
 	else if (block.class == 'Image') {
@@ -137,13 +139,14 @@ let renderBlock = (block) => {
 			let linkedVideoItem =
 				`
 				<li class="block block--linkedvideo">
-					${ block.embed.html}
                     <figcaption>${block.generated_title}</figcaption>
 				</li>
 				`
 			channelBlocks.insertAdjacentHTML('beforeend', linkedVideoItem)
 			// More on iframe: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe
 		}
+
+		// ${ block.embed.html} insert before figcaption element in order to see video image
 
 		// Linked audio!
 		else if (embed.includes('rich')) {

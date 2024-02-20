@@ -118,7 +118,6 @@ main p, p + p {
 }
 
 
-
 /* Images Styling */
 .block--image figcaption {
     font-family: 'Volkhov', serif;
@@ -183,6 +182,8 @@ main p, p + p {
     margin-top: 1em;
 }
 
+/* Footer  */
+
 footer p {
     font-family: 'Work Sans', sans-serif;
     font-size: var(--footer-p);
@@ -232,8 +233,7 @@ footer {
 @media (min-width:1200px) {
     :root {
         --typography-p: 22px;
-        --typography-h1: calc(5 * var(--typography-p));
-        --intro-p: 25px;
+        --typography-h1: 80px;
 
         --padding: 60px;
         --padding-h1: 70px;
@@ -257,7 +257,7 @@ footer {
     .column-title {
         position: sticky;
         z-index: 1;
-        top: 0px;
+        top: 0;
     }
 
     .column-title p {
