@@ -56,7 +56,6 @@ let renderBlock = (block) => {
 
 	// Images!
 	else if (block.class == 'Image') {
-		console.log(block.description_html)
         let imageItem =
         `
             <li class="block block--image">
@@ -89,13 +88,40 @@ let renderBlock = (block) => {
 		let textItem =
         `
             <li class="block block--text">
-                ${block.content.html}
-                <div class="title">
-                    ${block.title}
+				<figcaption>${block.title}</figcaption>
+
+				<div class="block--text__description">
+					<section class="quote-onclick">
+						${block.content_html}
+					</section>
+					<section class="description-onclick">
+							<div class="class-onclick">${block.class}</div>
+							<div class="title-onclick">${block.title}</div>
+							<div class="blurb-onclick">${block.description_html}</div>
+							<a class="source-onclick" href="${block.source}">See the original</a>
+					</section>
+				</div>
             </li>
         `
         channelBlocks.insertAdjacentHTML('beforeend', textItem)
 	}
+
+	// <li class="block block--image">
+    //             <figcaption>${block.title}</figcaption>
+				
+	// 			<div class="block--image__description">
+	// 					<section class="images-onclick">
+	// 						<source media="(max-width: 640px)" srcset="${ block.image.large.url }">
+	// 						<img src="${block.image.large.url}" alt="${block.title}" by "${block.user.fullname}" width="300" height="300">
+	// 					</section>
+	// 					<section class="description-onclick">
+	// 						<div class="class-onclick">${block.class}</div>
+	// 						<div class="title-onclick">${block.title}</div>
+	// 						<div class="blurb-onclick">${block.description_html}</div>
+	// 						<a class="source-onclick" href="${block.source}">See the original</a>
+	// 					<section>
+	// 			</div>
+    //         </li>
 
     // Uploaded (not linked) media…
 	else if (block.class == 'Attachment') {
@@ -107,7 +133,7 @@ let renderBlock = (block) => {
                 `
                     <li>
                         <p><em>Video</em></p>
-                        <video controls src="${ block.attachment.url }"></video>
+                        <video controls src="${block.attachment.url}"></video>
                     </li>
                 `
                 channelBlocks.insertAdjacentHTML('beforeend', videoItem)
@@ -198,7 +224,7 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 		renderUser(data.user, channelUsers)
 
 		// Styling for Image onClick
-		let switchButtons = document.querySelectorAll('.block--image figcaption')
+		let switchButtons = document.querySelectorAll('.block figcaption')
 		switchButtons.forEach((switchButton) => {
 			switchButton.onclick = () => {
 				let parentBlock = switchButton.parentElement;
