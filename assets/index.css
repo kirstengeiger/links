@@ -52,18 +52,18 @@ h1 {
 }
 
 /* Content Titles Styling*/
-.block--image figcaption, .block--link, .block--linkedvideo, .block--text, .block--audio, .block--pdf {
+.block--image figcaption, .block--link, .block--linkedvideo, .block--text, .block--uploadedaudio, .block--pdf {
     font-family: 'Volkhov', serif;
     font-size: var(--figcaption-p);
 }
 
 /* Content Titles Styling on Hover*/
-.block--image figcaption:hover, .block--link figcaption:hover, .block--linkedvideo figcaption:hover, .block--text figcaption:hover, .block--audio figcaption:hover, .block--pdf figcaption:hover {
+.block--image figcaption:hover, .block--link figcaption:hover, .block--linkedvideo figcaption:hover, .block--text figcaption:hover, .block--uploadedaudio figcaption:hover, .block--pdf figcaption:hover {
     font-style: italic;
     cursor: pointer;
 }
 
-.block--image figcaption::before, .block--link::before, .block--linkedvideo::before, .block--text::before, .block--audio::before, .block--pdf::before {
+.block--image figcaption::before, .block--link::before, .block--linkedvideo::before, .block--text::before, .block--uploadedaudio::before, .block--pdf::before {
     margin-right: 1rem;
 }
 
@@ -92,7 +92,7 @@ h1 {
 }
 
 /* Audio Styling */
-.block--audio::before {
+.block--uploadedaudio::before {
     content: "●";
     color: #D69A00;
 }
@@ -104,7 +104,7 @@ h1 {
 }
 
 /* onClick Background Styling */
-.block--image__description, .block--link__description, .block--linkedvideo__description, .block--text__description, .block--audio__description, .block--pdf__description {
+.block--image__description, .block--link__description, .block--linkedvideo__description, .block--text__description, .block--uploadedaudio__description, .block--pdf__description {
     display: none;
     position: fixed;
     padding-top: 2rem;
@@ -237,7 +237,7 @@ h1 {
     background-color: #606F08;
 }
 
-.block--audio__description {
+.block--uploadedaudio__description {
     background-color: #D69A00;
 }
 

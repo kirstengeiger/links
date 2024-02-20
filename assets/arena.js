@@ -153,8 +153,23 @@ let renderBlock = (block) => {
 			// …still up to you, but here’s an `audio` element:
 			let audioItem =
 				`
-				<li class="block block--audio">
+				<li class="block block--uploadedaudio">
 					<figcaption>${block.generated_title}</figcaption>
+
+					<div class="block--uploadedaudio__description">
+						<section class="uploadedaudio-onclick">
+							<audio controls src="${ block.attachment.url }"></audio> 
+						</section>
+						<section class="description-onclick">
+							<section class="description-header">
+								<div class="uploadedaudio-class-onclick">${block.class}</div>
+								<button class="close-button">X</button>
+							</section>
+							<div class="uploadedaudio-title-onclick">${block.title}</div>
+							<div class="uploadedaudio-blurb-onclick">${block.description}</div>
+							<a class="source-onclick" href="${block.source}">See the original</a>
+						</section>
+					</div>
 				</li>
 				`
 			channelBlocks.insertAdjacentHTML('beforeend', audioItem)
@@ -187,8 +202,8 @@ let renderBlock = (block) => {
 							<div class="linkedvideo-class-onclick">${block.class}</div>
 							<button class="close-button">X</button>
 						</section>
-						<div class="quote-title-onclick">${block.title}</div>
-						<div class="quote-blurb-onclick">${block.description_html}</div>
+						<div class="linkedvideo-title-onclick">${block.title}</div>
+						<div class="linkedvideo-blurb-onclick">${block.description}</div>
 						<a class="source-onclick" href="${block.source}">See the original</a>
 					</section>
 				</div>
@@ -202,8 +217,26 @@ let renderBlock = (block) => {
 
 		// Linked audio!
 		else if (embed.includes('rich')) {
-			
-			// …up to you!
+			`
+				<li class="block block--linkedaudio">
+                    <figcaption>${block.generated_title}</figcaption>
+
+					<div class="block--linkedaudio__description">
+					<section class="linkedaudio-onclick">
+						${block.embed.html}
+					</section>
+					<section class="description-onclick">
+						<section class="description-header">
+							<div class="linkedaudio-class-onclick">${block.class}</div>
+							<button class="close-button">X</button>
+						</section>
+						<div class="linkedaudio-title-onclick">${block.title}</div>
+						<div class="linkedaudio-blurb-onclick">${block.description}</div>
+						<a class="source-onclick" href="${block.source}">See the original</a>
+					</section>
+				</div>
+				</li>
+				`
 		}
 	}
 }
