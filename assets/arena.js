@@ -125,14 +125,16 @@ let renderBlock = (block) => {
 			let audioItem =
 				`
 				<li class="block block--audio">
-					<audio controls src="${ block.attachment.url }">
-                    <p class="audio">${block.generated_title}</p>
-                    </audio>
+					<figcaption>${block.generated_title}</figcaption>
 				</li>
 				`
 			channelBlocks.insertAdjacentHTML('beforeend', audioItem)
 			// More on audio: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/audio
 		}
+
+		// Audio image
+		// <audio controls src="${ block.attachment.url }">
+		// </audio> 
 	}
 
 	// Linked media…
@@ -156,6 +158,7 @@ let renderBlock = (block) => {
 
 		// Linked audio!
 		else if (embed.includes('rich')) {
+			
 			// …up to you!
 		}
 	}
