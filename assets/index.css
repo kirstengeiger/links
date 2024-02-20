@@ -104,7 +104,12 @@ h1 {
 }
 
 /* onClick Background Styling */
-.block--image__description, .block--link__description, .block--linkedvideo__description, .block--text__description, .block--uploadedaudio__description, .block--pdf__description {
+.block--image__description, 
+.block--link__description, 
+.block--linkedvideo__description, 
+.block--text__description, 
+.block--uploadedaudio__description, 
+.block--pdf__description {
     display: none;
     position: fixed;
     padding-top: 2rem;
@@ -116,7 +121,12 @@ h1 {
     right: 0;
 }
 
-.block--image.active .block--image__description, .block--text.active .block--text__description, .block--uploadedaudio.active .block--uploadedaudio__description, .block--link.active .block--link__description, .block--linkedvideo.active .block--linkedvideo__description {
+.block--image.active .block--image__description, 
+.block--text.active .block--text__description, 
+.block--uploadedaudio.active .block--uploadedaudio__description, 
+.block--link.active .block--link__description, 
+.block--linkedvideo.active .block--linkedvideo__description,
+.block--pdf.active .block--pdf__description {
     display: flex;
 }
 
@@ -136,7 +146,8 @@ h1 {
     margin-bottom: 3rem;
 }
 
-.class-onclick, .quote-class-onclick {
+.class-onclick, 
+.quote-class-onclick {
     font-family: 'Worksans', sans-serif;
     font-size: var(--class-onclick-p);
     text-transform: uppercase;
@@ -160,12 +171,14 @@ h1 {
     height: 25px;
 }
 
-.title-onclick, .quote-title-onclick {
+.title-onclick, 
+.quote-title-onclick {
     font-family: 'Volkhov', serif;
     font-size: var(--description-title-p);
 }
 
-.blurb-onclick, .quote-blurb-onclick {
+.blurb-onclick, 
+.quote-blurb-onclick {
     font-family: 'Rubik', sans-serif;
     font-size: var(--description-blurb-p);
     padding-top: 3rem;
