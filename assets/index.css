@@ -116,18 +116,13 @@ h1 {
     right: 0;
 }
 
-.block--image.active .block--image__description, .block--text.active .block--text__description, .block--link.active .block--link__description, .block--linkedvideo.active .block--linkedvideo__description {
+.block--image.active .block--image__description, .block--text.active .block--text__description, .block--uploadedaudio.active .block--uploadedaudio__description, .block--link.active .block--link__description, .block--linkedvideo.active .block--linkedvideo__description {
     display: flex;
 }
 
 .block--image__description {
     background-color: #EB5500;
 }
-
-/* .description-wrapper {
-    display: flex;
-    position: relative;
-} */
 
 .description-onclick {
     max-width: 30vw;

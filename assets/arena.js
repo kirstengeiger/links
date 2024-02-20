@@ -158,15 +158,15 @@ let renderBlock = (block) => {
 
 					<div class="block--uploadedaudio__description">
 						<section class="uploadedaudio-onclick">
-							<audio controls src="${ block.attachment.url }"></audio> 
+							<audio controls src="${block.attachment.url}"></audio> 
 						</section>
 						<section class="description-onclick">
 							<section class="description-header">
-								<div class="uploadedaudio-class-onclick">${block.class}</div>
+								<div class="class-onclick">${block.class}</div>
 								<button class="close-button">X</button>
 							</section>
-							<div class="uploadedaudio-title-onclick">${block.title}</div>
-							<div class="uploadedaudio-blurb-onclick">${block.description}</div>
+							<div class="title-onclick">${block.title}</div>
+							<div class="blurb-onclick">${block.description}</div>
 							<a class="source-onclick" href="${block.source}">See the original</a>
 						</section>
 					</div>
@@ -217,6 +217,7 @@ let renderBlock = (block) => {
 
 		// Linked audio!
 		else if (embed.includes('rich')) {
+			let linkedAudioItem =
 			`
 				<li class="block block--linkedaudio">
                     <figcaption>${block.generated_title}</figcaption>
