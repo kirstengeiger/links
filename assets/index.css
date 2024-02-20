@@ -72,8 +72,13 @@ h1 {
     margin-top: var(--block-margin);
 }
 
+/* Styling for appendix */
 .block--image figcaption, .block--link, .block--linkedvideo, .block--text .title, .block--audio, .block--pdf {
     font-family: 'Volkhov', serif;
+}
+
+.block--image figcaption:hover, .block--link:hover, .block--linkedvideo:hover, .block--text .title:hover, .block--audio:hover, .block--pdf:hover {
+    font-style: italic;
 }
 
 
