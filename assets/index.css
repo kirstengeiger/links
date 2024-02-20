@@ -35,6 +35,7 @@ header p:hover {
     text-decoration: underline;
 } */
 
+/* Intro Column */ 
 .column-title {
     background-color: #EDE8D3;
     padding-left: var(--column-padding);
@@ -47,21 +48,6 @@ header p:hover {
     font-size: var(--column-title-p);
 }
 
-.column-content {
-    padding-left: var(--column-padding);
-    padding-right: var(--column-padding);
-    padding-top: calc(1* var(--column-padding));
-}
-
-/* Intro */
-.intro {
-    background-color: #F8F3F0;
-}
-
-.intro p {
-    font-size: var(--intro-p);
-}
-
 /* Site Title */
 h1 {
     font-family: 'Volkhov', serif;
@@ -70,32 +56,23 @@ h1 {
     text-transform: uppercase;
 }
 
-h2 {
-    font-family: 'Work Sans', sans-serif;
-    padding-top: calc(1 * var(--padding-h2));
-    padding-bottom: calc(1 * var(--padding-h2));
-    padding-left: var(--padding-h2);
-    padding-right: var(--padding-h2);
+/* Site Description */
+.channel-description {
+    padding-top: var(--intro-padding);
 }
 
-/* .block p {
-    color: black;
-    font-family: 'Rubik', sans-serif;
-    max-width: 50vw;
-    font-size: 1em;
-} */
+/* Content Column */
+.column-content {
+    padding-left: var(--column-padding);
+    padding-right: var(--column-padding);
+    padding-top: calc(1* var(--column-padding));
+}
 
 .block {
     margin-top: var(--block-margin);
-    align-content: center;
 }
 
-.container {
-    display: grid;
-    gap: 2em;
-}
-
-.figcaption {
+.block--image figcaption, .block--link, .block--linkedvideo {
     font-family: 'Volkhov', serif;
 }
 
@@ -182,7 +159,7 @@ footer {
 
 /* Mobile*/
 @media (min-width:350px) {
-    :root {
+    /* :root {
         --typography-p: 40px;
         --typography-h1: calc(3 * var(--typography-p));
         --header-p: 20px;
@@ -208,29 +185,27 @@ footer {
         width: 30%;
         padding-left: calc(0.5 * var(--padding-places));
         padding-right: calc(0.5 * var(--padding-places));
-    }
+    } */
 }
 
 /* Desktop */
 @media (min-width:1200px) {
     :root {
         --typography-p: 22px;
-        --typography-h1: 80px;
-
-        --padding: 60px;
-        --padding-h1: 70px;
-        --padding-intro: 40px;
+        --typography-h1: 30px;
 
         --block-margin: 2em;
 
-        --column-title-p: 20px;
-        --column-padding: 2rem;
+        --column-title-p: 25px;
+        --column-padding: 4rem;
+
+        --intro-padding: 4rem;
 
         --gutter: var(--typography-p);
     }
 
     h1 {
-        max-width: 50%;
+        /* max-width: 50%; */
         line-height: 100%;
     }
 
@@ -239,16 +214,7 @@ footer {
     }
 
     .column-title {
-        width: 40%;
-    }
-
-    .column-title p + h1 {
-        max-width: 30vw;
-        position: sticky;
-        z-index: 1;
-        top: 0;
-        float: left;
-        display: inline-flex;
+        width: 45%;
     }
 
     .column-content {
