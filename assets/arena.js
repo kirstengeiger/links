@@ -37,7 +37,7 @@ let renderBlock = (block) => {
 		let linkItem =
 			`
 			<li class="block block--link">
-				<h3>${ block.title }</h3>
+				<figcaption>${ block.title}</figcaption>
 			</li>
 			`
 		channelBlocks.insertAdjacentHTML('beforeend', linkItem)

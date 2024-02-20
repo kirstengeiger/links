@@ -78,39 +78,20 @@ h2 {
     padding-right: var(--padding-h2);
 }
 
-.block p {
+/* .block p {
     color: black;
     font-family: 'Rubik', sans-serif;
     max-width: 50vw;
     font-size: 1em;
-}
-
-main p, p + p {
-    margin-top: 1em;
-}
-
-.date {
-    font-family: 'Work Sans', sans-serif;
-}
+} */
 
 .block {
-    margin-top: 5em;
+    margin-top: var(--block-margin);
     align-content: center;
-}
-
-.places p {
-    font-family: 'Volkhov', serif;
-    font-size: var(--places-p);
-    color: white;
-    padding-top: calc(-10 * var(--padding-places));
-    padding-bottom: var(--padding-places);
-    padding-left: var(--padding-places);
-    padding-right: var(--padding-places);
 }
 
 .container {
     display: grid;
-    /* flex-direction: column; */
     gap: 2em;
 }
 
@@ -120,7 +101,7 @@ main p, p + p {
 
 
 /* Images Styling */
-.block--image figcaption {
+/* .block--image figcaption {
     font-family: 'Volkhov', serif;
     font-size: 30px;
     max-width: 50vw;
@@ -132,10 +113,10 @@ main p, p + p {
 
 .block--image .block.description {
     max-width: 50vw;
-}
+} */
 
-/* Links Styling */
-.block--link h3 {
+/* Links Styling
+.block--link {
     font-family: 'Volkhov', serif;
     font-size: 30px;
     padding-bottom: 0.5em;
@@ -155,7 +136,7 @@ main p, p + p {
 
 
 /* Text Styling */
-.block--text {
+/* .block--text {
     font-family: 'Work Sans', sans-serif;
 }
 
@@ -165,23 +146,23 @@ main p, p + p {
 
 .blocktext .blocktitle {
     margin-top: 1em;
-}
+} */
 
 /* Video Styling */
-.block--linkedvideo {
+/* .block--linkedvideo {
     font-family: 'Volkhov', serif;
     font-size: 30px;
     max-width: 50vw;
     margin-top: 1em;
-}
+} */
 
 /* PDF Styling */
-.block--pdf {
+/* .block--pdf {
     font-family: 'Volkhov', serif;
     font-size: 30px;
     max-width: 50vw;
     margin-top: 1em;
-}
+} */
 
 /* Footer  */
 
@@ -239,6 +220,8 @@ footer {
         --padding: 60px;
         --padding-h1: 70px;
         --padding-intro: 40px;
+
+        --block-margin: 2em;
 
         --column-title-p: 20px;
         --column-padding: 2rem;
