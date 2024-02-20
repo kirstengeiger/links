@@ -61,13 +61,16 @@ let renderBlock = (block) => {
         `
             <li class="block block--image">
                 <figcaption>${block.title}</figcaption>
+				
 				<div class="block--image__description">
-				<source media="(max-width: 640px)" srcset="${ block.image.large.url }">
-					<section="images-onclick">
-						<img src="${block.image.large.url}" alt="${block.title}" by "${block.user.fullname}" width="300" height="300">
-					</section>
-					${block.title}
-					${block.description_html}
+						<section class="images-onclick">
+							<source media="(max-width: 640px)" srcset="${ block.image.large.url }">
+							<img src="${block.image.large.url}" alt="${block.title}" by "${block.user.fullname}" width="300" height="300">
+						</section>
+						<section class="description-onclick">
+							<div class="title-onclick">${block.title}</div>
+							<div class="description-onclick">${block.description_html}</div>
+						<section>
 				</div>
             </li>
         `

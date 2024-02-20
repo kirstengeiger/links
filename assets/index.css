@@ -84,17 +84,6 @@ h1 {
     cursor: pointer;
 }
 
-/* onClick Background Styling */
-.block--image__description, .block--link__description, .block--linkedvideo__description, .block--text__description, .block--audio__description, .block--pdf__description {
-    display: none;
-    position: fixed;
-    padding: 1em;
-    top: 0;
-    left: 41vw;
-    bottom: 0;
-    right: 0;
-}
-
 .block--image figcaption::before, .block--link::before, .block--linkedvideo::before, .block--text .title::before, .block--audio::before, .block--pdf::before {
     margin-right: 1rem;
 }
@@ -135,12 +124,62 @@ h1 {
     color: #FFB9DA;
 }
 
-.block--image__description {
-    background-color: #EB5500;
+/* onClick Background Styling */
+.block--image__description, .block--link__description, .block--linkedvideo__description, .block--text__description, .block--audio__description, .block--pdf__description {
+    display: none;
+    position: fixed;
+    padding: 1em;
+    top: 0;
+    left: 41vw;
+    bottom: 0;
+    right: 0;
 }
 
-.block--image:active .block--image__description {
-    display: block;
+.block--image:active .block--image__description, .block--link:active .block--link__description, .block--linkedvideo:active .block--linkedvideo__description {
+    display: flex;
+}
+
+.block--image__description {
+    background-color: #EB5500;
+    /* font-family: 'Volkhov', serif; */
+}
+
+.block--image__description .title-onclick {
+    font-family: 'Volkhov', serif;
+    font-size: var(--description-title-p);
+}
+
+.description-wrapper {
+    display: flex;
+    position: relative;
+}
+
+.block--image__description .block.title p {
+    font-family: 'Volkhov', serif;
+}
+
+/* .block--image__description .block.description_html {
+    font-family: 'Volkhov', serif;
+} */
+
+.block--link__description {
+    background-color: #B45982;
+}
+
+.block--linkedvideo__description {
+    background-color: #606F08;
+}
+
+.block--text .title__description {
+    background-color: #2A53EC;
+}
+
+.block--audio__description {
+    background-color: #D69A00;
+}
+
+.block--pdf__description {
+    background-color: #FFB9DA;
 }
 
 .block--image img {
@@ -273,6 +312,8 @@ footer {
         --intro-padding: 4rem;
 
         --figcaption-p: 20px;
+
+        --description-title-p: 40px;
 
         --gutter: var(--typography-p);
     }
