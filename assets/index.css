@@ -78,8 +78,14 @@ h1 {
     font-size: var(--figcaption-p);
 }
 
+/* Content Titles Styling on Hover*/
 .block--image figcaption:hover, .block--link:hover, .block--linkedvideo:hover, .block--text .title:hover, .block--audio:hover, .block--pdf:hover {
     font-style: italic;
+    cursor: pointer;
+}
+
+.block--image figcaption::before, .block--link::before, .block--linkedvideo::before, .block--text .title::before, .block--audio::before, .block--pdf::before {
+    margin-right: 1rem;
 }
 
 /* Image Dot Styling */
@@ -258,6 +264,11 @@ footer {
 
     .column-title {
         width: 45%;
+    }
+
+    .channel-title {
+        position: fixed;
+        top: 0;
     }
 
     .column-content {
