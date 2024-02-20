@@ -111,7 +111,7 @@ let renderBlock = (block) => {
 					</section>
 					<section class="description-onclick">
 						<section class="description-header">
-							<div class="quote-class-onclick">${block.class}</div>
+							<div class="class-onclick">${block.class}</div>
 							<button class="close-button">X</button>
 						</section>
 						<div class="quote-title-onclick">${block.title}</div>
@@ -225,7 +225,7 @@ let renderBlock = (block) => {
 					</section>
 					<section class="description-onclick">
 						<section class="description-header">
-							<div class="linkedvideo-class-onclick">${block.class}</div>
+							<div class="class-onclick">${block.class}</div>
 							<button class="close-button">X</button>
 						</section>
 						<div class="linkedvideo-title-onclick">${block.title}</div>

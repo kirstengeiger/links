@@ -229,7 +229,9 @@ h1 {
     color: black;
 }
 
-.quote-class-onclick, .quote-title-onclick, .quote-blurb-onclick{
+.quote-class-onclick, 
+.quote-title-onclick, 
+.quote-blurb-onclick{
     text-transform: none;
     font-style: normal;
 }
