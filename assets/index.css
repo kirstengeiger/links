@@ -29,7 +29,8 @@ html {
 /* Site Title */
 h1 {
     font-family: 'Volkhov', serif;
-    font-size: var(--typography-h1);
+    font-size: var(--column-title-h1);
+    line-height: var(--column-title-lineheight);
     color: black;
     text-transform: uppercase;
 }
@@ -106,9 +107,11 @@ h1 {
 .block--image__description, .block--link__description, .block--linkedvideo__description, .block--text__description, .block--audio__description, .block--pdf__description {
     display: none;
     position: fixed;
-    padding: 1em;
+    padding-top: 2rem;
+    padding-left: 2rem;
+    padding-right: 3rem;
     top: 0;
-    left: 41vw;
+    left: 35vw;
     bottom: 0;
     right: 0;
 }
@@ -119,7 +122,6 @@ h1 {
 
 .block--image__description {
     background-color: #EB5500;
-    /* font-family: 'Volkhov', serif; */
 }
 
 .description-wrapper {
@@ -129,21 +131,26 @@ h1 {
 
 .description-onclick {
     max-width: 30vw;
-    padding-left: 1.5rem;
+    padding-left: 1.8rem;
 } 
-
-/* .block--image .block.class::before {
-    content: "●";
-    color: #EB5500;
-    border: 10px white;
-    border-radius: solid;
-} */
 
 .class-onclick {
     font-family: 'Volkhov', serif;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     margin-bottom: 1rem;
 }
+/* 
+.class-onclick::before {
+    content: "●";
+    color: #EB5500;
+    display: inline-block; /* Ensure the pseudo-element behaves like an inline block */
+    /* width: 1em; /* Set the width of the pseudo-element */
+    /* height: 1em; Set the height of the pseudo-element */
+    /* border: 2px solid white; Add a border around the content */
+    /* border-radius: 50%; Make the border circular */
+    /* margin-right: 10px; Adjust spacing between the bullet point and the border */
+    /* align-items: center; */
+/* } */
 
 .title-onclick {
     font-family: 'Volkhov', serif;
@@ -314,14 +321,13 @@ footer {
 /* Desktop */
 @media (min-width:1200px) {
     :root {
-        --typography-p: 20px;
-        --typography-h1: 30px;
-
         --block-margin: 2em;
 
-        --column-title-p: 25px;
+        /* Title Styles*/
+        --column-title-h1: 70px;
+        --column-title-lineheight: 10%;
+        --column-title-p: 20px;
         --column-padding: 4rem;
-
         --intro-padding: 4rem;
 
         --figcaption-p: 20px;
