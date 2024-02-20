@@ -58,7 +58,7 @@ h1 {
 }
 
 /* Content Titles Styling on Hover*/
-.block--image figcaption:hover, .block--link:hover, .block--linkedvideo:hover, .block--text:hover, .block--audio:hover, .block--pdf:hover {
+.block--image figcaption:hover, .block--link figcaption:hover, .block--linkedvideo figcaption:hover, .block--text figcaption:hover, .block--audio figcaption:hover, .block--pdf figcaption:hover {
     font-style: italic;
     cursor: pointer;
 }

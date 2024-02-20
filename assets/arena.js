@@ -112,19 +112,6 @@ let renderBlock = (block) => {
         channelBlocks.insertAdjacentHTML('beforeend', textItem)
 	}
 
-				// <div class="block--text__description">
-				// 	<section class="quote-onclick">
-				// 		${block.content_html}
-				// 	</section>
-				// 	<section class="description-onclick">
-				// 			<div class="quote-class-onclick">${block.class}</div>
-				// 			<div class="quote-title-onclick">${block.title}</div>
-				// 			<div class="quote-blurb-onclick">${block.description_html}</div>
-				// 			<a class="source-onclick" href="${block.source}">See the original</a>
-				// 	</section>
-				// </div>
-
-
     // Uploaded (not linked) media…
 	else if (block.class == 'Attachment') {
 		let attachment = block.attachment.content_type // Save us some repetition
@@ -190,13 +177,28 @@ let renderBlock = (block) => {
 				`
 				<li class="block block--linkedvideo">
                     <figcaption>${block.generated_title}</figcaption>
+
+					<div class="block--linkedvideo__description">
+					<section class="linkedvideo-onclick">
+						${block.embed.html}
+					</section>
+					<section class="description-onclick">
+						<section class="description-header">
+							<div class="linkedvideo-class-onclick">${block.class}</div>
+							<button class="close-button">X</button>
+						</section>
+						<div class="quote-title-onclick">${block.title}</div>
+						<div class="quote-blurb-onclick">${block.description_html}</div>
+						<a class="source-onclick" href="${block.source}">See the original</a>
+					</section>
+				</div>
 				</li>
 				`
 			channelBlocks.insertAdjacentHTML('beforeend', linkedVideoItem)
 			// More on iframe: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe
 		}
 
-		// ${ block.embed.html} insert before figcaption element in order to see video image
+		// ${block.embed.html} insert before figcaption element in order to see video image
 
 		// Linked audio!
 		else if (embed.includes('rich')) {
