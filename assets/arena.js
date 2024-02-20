@@ -95,9 +95,9 @@ let renderBlock = (block) => {
 						${block.content_html}
 					</section>
 					<section class="description-onclick">
-							<div class="class-onclick">${block.class}</div>
-							<div class="title-onclick">${block.title}</div>
-							<div class="blurb-onclick">${block.description_html}</div>
+							<div class="quote-class-onclick">${block.class}</div>
+							<div class="quote-title-onclick">${block.title}</div>
+							<div class="quote-blurb-onclick">${block.description_html}</div>
 							<a class="source-onclick" href="${block.source}">See the original</a>
 					</section>
 				</div>
@@ -223,7 +223,7 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 		data.collaborators.forEach((collaborator) => renderUser(collaborator, channelUsers))
 		renderUser(data.user, channelUsers)
 
-		// Styling for Image onClick
+		// Styling figcaption for onClick
 		let switchButtons = document.querySelectorAll('.block figcaption')
 		switchButtons.forEach((switchButton) => {
 			switchButton.onclick = () => {

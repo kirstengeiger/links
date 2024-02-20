@@ -67,19 +67,19 @@ h1 {
     margin-right: 1rem;
 }
 
-/* Image Dot Styling */
+/* Image Styling */
 .block--image figcaption::before {
     content: "●";
     color: #EB5500;
 }
 
-/* Link Dot Styling */
+/* Link Styling */
 .block--link::before {
     content: "●";
     color: #B45982;
 }
 
-/* Video Dot Styling */
+/* Video Styling */
 .block--linkedvideo::before {
     content: "●";
     color: #606F08;
@@ -116,7 +116,7 @@ h1 {
     right: 0;
 }
 
-.block--image:active .block--image__description, .block--link:active .block--link__description, .block--linkedvideo:active .block--linkedvideo__description {
+.block--image:active .block--image__description, .block--text:active .block--text__description, .block--link:active .block--link__description, .block--linkedvideo:active .block--linkedvideo__description {
     display: flex;
 }
 
@@ -136,9 +136,10 @@ h1 {
 
 .class-onclick {
     font-family: 'Volkhov', serif;
-    /* text-transform: uppercase; */
+    font-style: italic;
     margin-bottom: 1rem;
 }
+
 /* 
 .class-onclick::before {
     content: "●";
@@ -157,6 +158,13 @@ h1 {
     font-size: var(--description-title-p);
 }
 
+.blurb-onclick {
+    font-family: 'Rubik', sans-serif;
+    font-size: var(--description-blurb-p);
+    padding-top: 3rem;
+}
+
+/* Link to Original Source */
 .source-onclick {
     font-family: 'Volkhov', serif;
     font-style: italic;
@@ -175,22 +183,57 @@ h1 {
     bottom: 0;
 }
 
-.blurb-onclick {
+/* Text Quote Description Styles */
+.block--text__description {
+    background-color: #2A53EC;
+}
+
+.quote-onclick h1 {
+    font-family: 'Work Sans', sans-serif;
+    font-size: var(--quote-onclick-h1);
+    text-transform: none;
+    font-style: normal;
+    color: white;
+}
+
+.quote-onclick p {
+    font-family: 'Volkhov', serif;
+    text-transform: none;
+    font-style: italic;
+    margin-top: 2rem;
+    color: white;
+}
+
+.quote-class-onclick, .quote-title-onclick, .quote-blurb-onclick{
+    text-transform: none;
+    font-style: normal;
+}
+
+.quote-class-onclick {
+    font-family: 'Volkhov', serif;
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+
+.quote-title-onclick {
+    font-family: 'Volkhov', serif;
+    font-size: var(--description-title-p);
+}
+
+.quote-blurb-onclick{
     font-family: 'Rubik', sans-serif;
     font-size: var(--description-blurb-p);
     padding-top: 3rem;
 }
 
+/* Link Description Styles */
 .block--link__description {
     background-color: #B45982;
 }
 
+/* Linked Video Description Styles */
 .block--linkedvideo__description {
     background-color: #606F08;
-}
-
-.block--text .title__description {
-    background-color: #2A53EC;
 }
 
 .block--audio__description {
@@ -206,70 +249,6 @@ h1 {
     height: 80vh;
     width: 40vw;
 }
-
-/* Images Styling */
-/* .block--image figcaption {
-    font-family: 'Volkhov', serif;
-    font-size: 30px;
-    max-width: 50vw;
-}
-
-.block.descritpion p {
-    font-size: 3em;
-}
-
-.block--image .block.description {
-    max-width: 50vw;
-} */
-
-/* Links Styling
-.block--link {
-    font-family: 'Volkhov', serif;
-    font-size: 30px;
-    padding-bottom: 0.5em;
-    max-width: 50vw;
-}
-
-.block.title, .block.description_html {
-    max-width: 50vw;
-    padding-bottom: 1em;
-}
-
-.block--link a:hover {
-    font-family: 'Volkhov', serif;
-    font-style: italic;
-    text-decoration: underline;
-}
-
-
-/* Text Styling */
-/* .block--text {
-    font-family: 'Work Sans', sans-serif;
-}
-
-.block--text blockquote + p {
-    color: green;
-}
-
-.blocktext .blocktitle {
-    margin-top: 1em;
-} */
-
-/* Video Styling */
-/* .block--linkedvideo {
-    font-family: 'Volkhov', serif;
-    font-size: 30px;
-    max-width: 50vw;
-    margin-top: 1em;
-} */
-
-/* PDF Styling */
-/* .block--pdf {
-    font-family: 'Volkhov', serif;
-    font-size: 30px;
-    max-width: 50vw;
-    margin-top: 1em;
-} */
 
 /* Footer  */
 
@@ -332,6 +311,9 @@ footer {
 
         --figcaption-p: 20px;
 
+        /* Quote Styles */
+        --quote-onclick-h1: 50px;
+
         --description-title-p: 40px;
         --description-blurb-p: 20px;
 
@@ -359,5 +341,9 @@ footer {
     .column-content {
         position: relative;
         background-color: white;
+    }
+
+    .quote-onclick {
+        width: 50%;
     }
 }
