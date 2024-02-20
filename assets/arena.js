@@ -68,8 +68,10 @@ let renderBlock = (block) => {
 							<img src="${block.image.large.url}" alt="${block.title}" by "${block.user.fullname}" width="300" height="300">
 						</section>
 						<section class="description-onclick">
+							<div class="class-onclick">${block.class}</div>
 							<div class="title-onclick">${block.title}</div>
-							<div class="description-onclick">${block.description_html}</div>
+							<div class="blurb-onclick">${block.description_html}</div>
+							<a class="source-onclick" href="${block.source}">See the original</a>
 						<section>
 				</div>
             </li>
