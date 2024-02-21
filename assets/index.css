@@ -52,7 +52,7 @@ h1 {
 }
 
 /* Content Titles Styling*/
-.block--image figcaption, 
+.block--image, 
 .block--link, 
 .block--linkedvideo, 
 .block--text, 
@@ -306,36 +306,49 @@ footer {
     padding-left: var(--padding-footer);
 }
 
+/* Mobile  */
+@media (min-width: 350px) {
+    :root {
+        --block-margin: 0.5em;
 
-/* Mobile*/
-@media (min-width:350px) {
-    /* :root {
-        --typography-p: 40px;
-        --typography-h1: calc(3 * var(--typography-p));
-        --header-p: 20px;
+        /* Title Styles*/
+        --column-title-h1: 130px;
+        --column-title-lineheight: 100%;
+        --column-title-p: 40px;
+        --column-padding: 4rem;
+        --intro-padding: 4rem;
 
-        --padding-header: 25px;
-        --padding-footer: 25px;
-        --padding: 60px;
-        --padding-h1: 100px;
-        --padding-intro: 100px;
+        --figcaption-p: 20px;
 
-        --footer-p: 18px;
+        --class-onclick-p: 18px;
+
+        /* Quote Styles */
+        --quote-onclick-h1: 45px;
+
+        --description-title-p: 40px;
+        --description-blurb-p: 20px;
 
         --gutter: var(--typography-p);
-        --places-p: 50px;
-        
-        --padding-h2: 100px;
-        --padding-places: 100px;
     }
 
-    img {
-        aspect-ratio: 20%;
-        object-fit: cover;
-        width: 30%;
-        padding-left: calc(0.5 * var(--padding-places));
-        padding-right: calc(0.5 * var(--padding-places));
-    } */
+    .wrapper {
+        display: flex;
+    }
+
+    .column-title {
+        position: fixed;
+        z-index: 5;
+        padding-bottom: 5rem;
+    }
+
+    .channel-description {
+        margin-top: 3rem;
+    }
+
+    .column-content {
+        position: relative;
+        margin-top: 45vh;
+    }
 }
 
 /* Desktop */
@@ -364,7 +377,6 @@ footer {
     }
 
     h1 {
-        /* max-width: 50%; */
         line-height: 100%;
     }
 
@@ -390,7 +402,7 @@ footer {
     .block--linkedvideo::marker,
     .block--text::marker,
     .block--uploadedaudio::marker,
-    .block--pdf::marker, {
+    .block--pdf::marker {
         font-size: 25px;
     }
 
