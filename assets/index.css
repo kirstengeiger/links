@@ -335,7 +335,7 @@ footer {
         display: flex;
     }
 
-    .column-title {
+    /* .column-title {
         position: fixed;
         z-index: 5;
         padding-bottom: 5rem;
@@ -348,7 +348,7 @@ footer {
     .column-content {
         position: relative;
         margin-top: 45vh;
-    }
+    } */
 }
 
 /* Desktop */
