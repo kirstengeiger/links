@@ -52,55 +52,77 @@ h1 {
 }
 
 /* Content Titles Styling*/
-.block--image figcaption, .block--link, .block--linkedvideo, .block--text, .block--uploadedaudio, .block--pdf {
+.block--image figcaption, 
+.block--link, 
+.block--linkedvideo, 
+.block--text, 
+.block--uploadedaudio, 
+.block--pdf {
     font-family: 'Volkhov', serif;
     font-size: var(--figcaption-p);
 }
 
 /* Content Titles Styling on Hover*/
-.block--image figcaption:hover, .block--link figcaption:hover, .block--linkedvideo figcaption:hover, .block--text figcaption:hover, .block--uploadedaudio figcaption:hover, .block--pdf figcaption:hover {
-    font-style: italic;
+.block--image figcaption:hover, 
+.block--link figcaption:hover, 
+.block--linkedvideo figcaption:hover, 
+.block--text figcaption:hover, 
+.block--uploadedaudio figcaption:hover, 
+.block--pdf figcaption:hover {
     cursor: pointer;
+    text-decoration: underline;
 }
 
-.block--image figcaption::before, .block--link::before, .block--linkedvideo::before, .block--text::before, .block--uploadedaudio::before, .block--pdf::before {
-    margin-right: 1rem;
+.block--image figcaption, 
+.block--link, 
+.block--linkedvideo, 
+.block--text, 
+.block--uploadedaudio, 
+.block--pdf {
+    list-style-type: circle;
+    padding: 10px;
 }
 
 /* Image Styling */
-.block--image figcaption::before {
-    content: "●";
+.block--image::marker {
     color: #EB5500;
+    content: '•';
+    font-size: 25px;
 }
 
 /* Link Styling */
-.block--link::before {
-    content: "●";
+.block--link::marker {
     color: #B45982;
+    content: '•';
+    font-size: 25px;
 }
 
 /* Video Styling */
-.block--linkedvideo::before {
-    content: "●";
+.block--linkedvideo::marker {
     color: #606F08;
+    content: '•';
+    font-size: 25px;
 }
 
 /* Quote Styling */
-.block--text::before {
-    content: "●";
+.block--text::marker {
     color: #2A53EC;
+    content: '•';
+    font-size: 25px;
 }
 
 /* Audio Styling */
-.block--uploadedaudio::before {
-    content: "●";
+.block--uploadedaudio::marker {
     color: #D69A00;
+    content: '•';
+    font-size: 25px;
 }
 
 /* PDF Styling */
-.block--pdf::before {
-    content: "●";
+.block--pdf::marker {
     color: #FFB9DA;
+    content: '•';
+    font-size: 25px;
 }
 
 /* onClick Background Styling */
@@ -169,6 +191,14 @@ h1 {
     border-style: solid;
     width: 25px;
     height: 25px;
+}
+
+.close-button:hover {
+    cursor: pointer;
+    color: white;
+    font-weight: 400;
+    border: 2px white;
+    border-style: solid;
 }
 
 .title-onclick, 
@@ -311,7 +341,7 @@ footer {
 /* Desktop */
 @media (min-width:1200px) {
     :root {
-        --block-margin: 2em;
+        --block-margin: 0.3em;
 
         /* Title Styles*/
         --column-title-h1: 70px;
@@ -354,7 +384,18 @@ footer {
         background-color: white;
     }
 
+    /* Bullet point size */
+    .block--image::marker,
+    .block--link::marker,
+    .block--linkedvideo::marker,
+    .block--text::marker,
+    .block--uploadedaudio::marker,
+    .block--pdf::marker, {
+        font-size: 25px;
+    }
+
     .quote-onclick {
         width: 50%;
     }
 }
+
