@@ -73,6 +73,30 @@ h1 {
     text-decoration: underline;
 }
 
+.block--image figcaption:hover {
+    color: #EB5500;
+}
+
+.block--link figcaption:hover {
+    color: #B45982;
+}
+
+.block--linkedvideo figcaption:hover {
+    color: #606F08;
+}
+
+.block--text figcaption:hover {
+    color: #2A53EC;
+}
+
+.block--uploadedaudio figcaption:hover {
+    color: #D69A00;
+}
+
+.block--pdf figcaption:hover {
+    color: #FF77B7;
+}
+
 .block--image figcaption, 
 .block--link, 
 .block--linkedvideo, 
@@ -120,7 +144,7 @@ h1 {
 
 /* PDF Styling */
 .block--pdf::marker {
-    color: #FFB9DA;
+    color: #FF77B7;
     content: '•';
     font-size: 25px;
 }
@@ -282,7 +306,7 @@ h1 {
 }
 
 .block--pdf__description {
-    background-color: #FFB9DA;
+    background-color: #FF77B7;
 }
 
 .block--image img {
@@ -357,11 +381,11 @@ footer {
         --block-margin: 0.3em;
 
         /* Title Styles*/
-        --column-title-h1: 70px;
+        --column-title-h1: 50px;
         --column-title-lineheight: 10%;
-        --column-title-p: 20px;
+        --column-title-p: 18px;
         --column-padding: 4rem;
-        --intro-padding: 4rem;
+        --intro-padding: 2rem;
 
         --figcaption-p: 20px;
 
@@ -388,8 +412,14 @@ footer {
     .column-title {
         position: sticky;
         width: 35%;
+        height: 100vh;
         top: 0;
         z-index: 100; 
+        /* padding-bottom: 50vh; */
+    }
+
+    .column-title p {
+        max-width: 80%
     }
 
     .column-content {
