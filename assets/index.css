@@ -382,6 +382,7 @@ footer {
 
     .wrapper {
         display: flex;
+        align-items: start;
     }
 
     .column-title {
