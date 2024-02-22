@@ -40,19 +40,22 @@ let renderBlock = (block) => {
 				<figcaption>${block.title}</figcaption>
 
 				<div class="block--link__description">
-					<section class="link-onclick">
-						<source media="(max-width: 640px)" srcset="${block.image.display}">
-						<img src="${block.image.display} alt="${block.title}" by "${block.user.fullname}" width="300" height="300">
+					<section class="description-header">
+						<div class="class-onclick">${block.class}</div>
+						<button class="close-button">X</button>
 					</section>
-					<section class="description-onclick">
-						<section class="description-header">
-							<div class="class-onclick">${block.class}</div>
-							<button class="close-button">X</button>
+					<hr>
+					<section class="description-body">
+						<section class="link-onclick">
+							<source media="(max-width: 640px)" srcset="${block.image.display}">
+							<img src="${block.image.display} alt="${block.title}" by "${block.user.fullname}" width="300" height="300">
 						</section>
-						<div class="title-onclick">${block.title}</div>
-						<div class="blurb-onclick">${block.description_html}</div>
-						<a class="source-onclick" href="${block.source}">See the original</a>
-					<section>
+						<section class="description-onclick">
+							<div class="title-onclick">${block.title}</div>
+							<div class="blurb-onclick">${block.description_html}</div>
+							<a class="source-onclick" href="${block.source}">See the original</a>
+						<section>
+					</section>
 				</div>
 			</li>
 			`
