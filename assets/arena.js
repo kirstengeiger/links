@@ -233,19 +233,19 @@ let renderBlock = (block) => {
                     <figcaption>${block.generated_title}</figcaption>
 
 					<div class="block--linkedvideo__description">
-					<section class="linkedvideo-onclick">
-						${block.embed.html}
-					</section>
-					<section class="description-onclick">
 						<section class="description-header">
 							<div class="class-onclick">${block.class}</div>
 							<button class="close-button">X</button>
 						</section>
-						<div class="linkedvideo-title-onclick">${block.title}</div>
-						<div class="linkedvideo-blurb-onclick">${block.description}</div>
-						<a class="source-onclick" href="${block.source}">See the original</a>
-					</section>
-				</div>
+						<section class="description-body">
+							<section class="linkedvideo-onclick">${block.embed.html}</section>
+							<section class="description-onclick">
+								<div class="linkedvideo-title-onclick">${block.title}</div>
+								<div class="linkedvideo-blurb-onclick">${block.description}</div>
+								<a class="source-onclick" href="${block.source}">See the original</a>
+							</section>
+						</section>
+					</div>
 				</li>
 				`
 			channelBlocks.insertAdjacentHTML('beforeend', linkedVideoItem)
