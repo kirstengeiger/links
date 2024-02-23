@@ -46,6 +46,7 @@ let renderBlock = (block) => {
 					</section>
 					<section class="description-body">
 						<section class="link-onclick">
+							<source media="(max-width: 428px)" srcset="${block.image.thumb.url}">
 							<source media="(max-width: 640px)" srcset="${block.image.large.url}">
 							<img src="${block.image.large.url} alt="${block.title}" by "${block.user.fullname}" width="300" height="300">
 						</section>
@@ -78,24 +79,28 @@ let renderBlock = (block) => {
                 <figcaption>${block.title}</figcaption>
 				
 				<div class="block--image__description">
+					<section class="description-header">
+						<div class="class-onclick">${block.class}</div>
+						<button class="close-button">X</button>
+					</section>	
+					<section class="description-body">
 						<section class="images-onclick">
 							<source media="(max-width: 640px)" srcset="${ block.image.large.url}">
 							<img src="${block.image.large.url}" alt="${block.title}" by "${block.user.fullname}" width="300" height="300">
 						</section>
 						<section class="description-onclick">
-							<section class="description-header">
-								<div class="class-onclick">${block.class}</div>
-								<button class="close-button">X</button>
-							</section>
 							<div class="title-onclick">${block.title}</div>
 							<div class="blurb-onclick">${block.description_html}</div>
 							<a class="source-onclick" href="${block.source}">See the original</a>
 						<section>
+					</section
 				</div>
             </li>
         `
         channelBlocks.insertAdjacentHTML('beforeend', imageItem)
 	}
+
+	
 
 	// Styling for pictures
 	// <img src="${block.image.large.url}" alt="${block.title}" by "${block.user.fullname}">
