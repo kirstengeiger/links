@@ -46,8 +46,8 @@ let renderBlock = (block) => {
 					</section>
 					<section class="description-body">
 						<section class="link-onclick">
-							<source media="(max-width: 640px)" srcset="${block.image.display}">
-							<img src="${block.image.display} alt="${block.title}" by "${block.user.fullname}" width="300" height="300">
+							<source media="(max-width: 640px)" srcset="${block.image.large.url}">
+							<img src="${block.image.large.url} alt="${block.title}" by "${block.user.fullname}" width="300" height="300">
 						</section>
 						<section class="description-onclick">
 							<div class="title-onclick">${block.title}</div>
@@ -79,7 +79,7 @@ let renderBlock = (block) => {
 				
 				<div class="block--image__description">
 						<section class="images-onclick">
-							<source media="(max-width: 640px)" srcset="${ block.image.large.url }">
+							<source media="(max-width: 640px)" srcset="${ block.image.large.url}">
 							<img src="${block.image.large.url}" alt="${block.title}" by "${block.user.fullname}" width="300" height="300">
 						</section>
 						<section class="description-onclick">
