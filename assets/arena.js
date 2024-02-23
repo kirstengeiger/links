@@ -41,10 +41,9 @@ let renderBlock = (block) => {
 
 				<div class="block--link__description">
 					<section class="description-header">
-						<div class="class-onclick">${block.class}</div>
-						<button class="close-button">X</button>
+							<div class="class-onclick">${block.class}</div>
+							<button class="close-button">X</button>
 					</section>
-					<hr>
 					<section class="description-body">
 						<section class="link-onclick">
 							<source media="(max-width: 640px)" srcset="${block.image.display}">
@@ -53,14 +52,16 @@ let renderBlock = (block) => {
 						<section class="description-onclick">
 							<div class="title-onclick">${block.title}</div>
 							<div class="blurb-onclick">${block.description_html}</div>
-							<a class="source-onclick" href="${block.source}">See the original</a>
+							<a class="source-onclick" href="${block.source.url}">See the original</a>
 						<section>
 					</section>
 				</div>
 			</li>
 			`
 		channelBlocks.insertAdjacentHTML('beforeend', linkItem)
+		console.log(block)
 	}
+
 
 	// Styling for pictures
 	// <picture>

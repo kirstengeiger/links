@@ -178,17 +178,21 @@ h1 {
 }
 
 .description-header {
-    order: 1;
     display: flex;
     align-items: center; /* Align items vertically in the center */
     justify-content: space-between;
     margin-bottom: 3rem;
     top: 0;
     width: 100%;
+    position: relative;
 }
 
 hr {
     border: 1px solid white;
+    position: absolute;
+    top: 100%; /* Or adjust this value as needed */
+    width: 100%; /* Or adjust this value as needed */
+    /* margin-top: 30px; */
 }
 
 .description-body {
@@ -242,6 +246,7 @@ hr {
 .quote-title-onclick {
     font-family: 'Volkhov', serif;
     font-size: var(--description-title-p);
+    line-height: 110%;
 }
 
 .blurb-onclick, 
