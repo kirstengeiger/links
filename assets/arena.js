@@ -245,7 +245,7 @@ let renderBlock = (block) => {
 
 		// Uploaded audio!
 		else if (attachment.includes('audio')) {
-			// …still up to you, but here’s an `audio` element:
+			if (block.description_html && block.description_html.length > 0) {
 			let audioItem =
 				`
 				<li class="block block--uploadedaudio">
@@ -270,13 +270,38 @@ let renderBlock = (block) => {
 				</li>
 				`
 			channelBlocks.insertAdjacentHTML('beforeend', audioItem)
-			// More on audio: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/audio
-		}
+			} else {
+			let audioItem =
+				`
+				<li class="block block--uploadedaudio">
+					<figcaption>${block.generated_title}</figcaption>
 
+					<div class="block--uploadedaudio__description">
+						<section class="description-header">
+							<div class="class-onclick">${block.class}</div>
+							<button class="close-button">X</button>
+						</section>
+						<section class="description-body">
+							<section class="uploadedaudio-onclick">
+								<audio controls src="${block.attachment.url}"></audio> 
+							</section>
+							<section class="description-onclick">
+								<div class="title-onclick">${block.title}</div>
+								<a class="source-onclick" href="${block.source}">See the original</a>
+							</section>
+						</section>
+					</div>
+				</li>
+				`
+			channelBlocks.insertAdjacentHTML('beforeend', audioItem)
+			}
+		}
+	}
+		// More on audio: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/audio
 		// Audio image
 		// <audio controls src="${ block.attachment.url }">
 		// </audio> 
-	}
+	
 
 	// Linked media…
 	else if (block.class == 'Media') {
