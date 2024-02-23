@@ -73,10 +73,36 @@ let renderBlock = (block) => {
 	
 	// Images!
 	else if (block.class == 'Image') {
-        let imageItem =
-        `
-            <li class="block block--image">
-                <figcaption>${block.title}</figcaption>
+		if (block.description_html.length > 0) {
+			let imageItem =
+			`
+				<li class="block block--image">
+					<figcaption>${block.title}</figcaption>
+					
+					<div class="block--image__description">
+						<section class="description-header">
+							<div class="class-onclick">${block.class}</div>
+							<button class="close-button">X</button>
+						</section>	
+						<section class="description-body">
+							<section class="images-onclick">
+								<source media="(max-width: 640px)" srcset="${ block.image.large.url}">
+								<img src="${block.image.large.url}" alt="${block.title}" by "${block.user.fullname}" width="300" height="300">
+							</section>
+							<section class="description-onclick">
+								<div class="title-onclick">${block.title}</div>
+								<div class="blurb-onclick">${block.description_html}</div>
+								<a class="source-onclick" href="${block.source}">See the original</a>
+							<section>
+						</section
+					</div>
+				</li>
+			`
+			channelBlocks.insertAdjacentHTML('beforeend', imageItem)
+		} else { 
+			`
+			<li class="block block--image">
+				<figcaption>${block.title}</figcaption>
 				
 				<div class="block--image__description">
 					<section class="description-header">
@@ -90,14 +116,14 @@ let renderBlock = (block) => {
 						</section>
 						<section class="description-onclick">
 							<div class="title-onclick">${block.title}</div>
-							<div class="blurb-onclick">${block.description_html}</div>
 							<a class="source-onclick" href="${block.source}">See the original</a>
 						<section>
 					</section
 				</div>
-            </li>
-        `
-        channelBlocks.insertAdjacentHTML('beforeend', imageItem)
+			</li>
+		`
+		channelBlocks.insertAdjacentHTML('beforeend', imageItem)
+		}
 	}
 
 	
