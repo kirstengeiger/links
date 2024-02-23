@@ -182,7 +182,6 @@ let renderBlock = (block) => {
 
         // Uploaded PDFs!
         else if (attachment.includes('pdf')) {
-			console.log('pdf')
 			if (block.description_html && block.description_html.length > 0) {
 				let pdfItem =
 				`
@@ -285,6 +284,7 @@ let renderBlock = (block) => {
 
 		// Linked video!
 		if (embed.includes('video')) {
+			if (block.description_html && block.description_html.length > 0) {
 			let linkedVideoItem =
 				`
 				<li class="block block--linkedvideo">
@@ -307,8 +307,31 @@ let renderBlock = (block) => {
 				</li>
 				`
 			channelBlocks.insertAdjacentHTML('beforeend', linkedVideoItem)
-			// More on iframe: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe
+		} else {
+			let linkedVideoItem =
+				`
+				<li class="block block--linkedvideo">
+                    <figcaption>${block.generated_title}</figcaption>
+
+					<div class="block--linkedvideo__description">
+						<section class="description-header">
+							<div class="class-onclick">${block.class}</div>
+							<button class="close-button">X</button>
+						</section>
+						<section class="description-body">
+							<section class="linkedvideo-onclick">${block.embed.html}</section>
+							<section class="description-onclick">
+								<div class="linkedvideo-title-onclick">${block.title}</div>
+								<a class="source-onclick" href="${block.source}">See the original</a>
+							</section>
+						</section>
+					</div>
+				</li>
+				`
+			channelBlocks.insertAdjacentHTML('beforeend', linkedVideoItem)
 		}
+	}
+		// More on iframe: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe
 
 		// ${block.embed.html} insert before figcaption element in order to see video image
 
