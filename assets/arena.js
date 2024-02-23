@@ -159,22 +159,24 @@ let renderBlock = (block) => {
                     <figcaption>${block.title}</figcaption>
 
 					<div class="block--pdf__description">
-						<section class="pdf-onclick">
-							<a href="${block.attachment.url}">
-								<source media="(max-width: 640px)" srcset="${ block.image.large.url }">
-								<img src="${block.image.large.url}" alt="${block.title}" by "${block.user.fullname}" width="300" height="300">
-							</a>
-						</section>
-						<section class="description-onclick">
-							<section class="description-header">
-								<div class="class-onclick">${block.class}</div>
-								<button class="close-button">X</button>
+						<section class="description-header">
+							<div class="class-onclick">${block.class}</div>
+							<button class="close-button">X</button>
+						</section>	
+						<section class="description-body">
+							<section class="pdf-onclick">
+								<a href="${block.attachment.url}">
+									<source media="(max-width: 640px)" srcset="${ block.image.large.url }">
+									<img src="${block.image.large.url}" alt="${block.title}" by "${block.user.fullname}" width="300" height="300">
+								</a>
 							</section>
-							<div class="title-onclick">${block.title}</div>
-							<div class="blurb-onclick">${block.description_html}</div>
-							<a class="source-onclick" href="${block.source}">See the original</a>
-						<section>
-				</div>
+							<section class="description-onclick">
+								<div class="title-onclick">${block.title}</div>
+								<div class="blurb-onclick">${block.description_html}</div>
+								<a class="source-onclick" href="${block.source}">See the original</a>
+							<section>
+						</section>
+					</div>
                 </li>
             `
         channelBlocks.insertAdjacentHTML('beforeend', pdfItem);
@@ -192,17 +194,19 @@ let renderBlock = (block) => {
 					<figcaption>${block.generated_title}</figcaption>
 
 					<div class="block--uploadedaudio__description">
-						<section class="uploadedaudio-onclick">
-							<audio controls src="${block.attachment.url}"></audio> 
+						<section class="description-header">
+							<div class="class-onclick">${block.class}</div>
+							<button class="close-button">X</button>
 						</section>
-						<section class="description-onclick">
-							<section class="description-header">
-								<div class="class-onclick">${block.class}</div>
-								<button class="close-button">X</button>
+						<section class="description-body">
+							<section class="uploadedaudio-onclick">
+								<audio controls src="${block.attachment.url}"></audio> 
 							</section>
-							<div class="title-onclick">${block.title}</div>
-							<div class="blurb-onclick">${block.description}</div>
-							<a class="source-onclick" href="${block.source}">See the original</a>
+							<section class="description-onclick">
+								<div class="title-onclick">${block.title}</div>
+								<div class="blurb-onclick">${block.description}</div>
+								<a class="source-onclick" href="${block.source}">See the original</a>
+							</section>
 						</section>
 					</div>
 				</li>
