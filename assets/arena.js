@@ -115,17 +115,19 @@ let renderBlock = (block) => {
 				<figcaption>${block.title}</figcaption>
 
 				<div class="block--text__description">
-					<section class="quote-onclick">
-						${block.content_html}
+					<section class="description-header">
+						<div class="class-onclick">${block.class}</div>
+						<button class="close-button">X</button>
 					</section>
-					<section class="description-onclick">
-						<section class="description-header">
-							<div class="class-onclick">${block.class}</div>
-							<button class="close-button">X</button>
+					<section class="description-body">
+						<section class="quote-onclick">
+							${block.content_html}
 						</section>
-						<div class="quote-title-onclick">${block.title}</div>
-						<div class="quote-blurb-onclick">${block.description_html}</div>
-						<a class="source-onclick" href="${block.source}">See the original</a>
+						<section class="description-onclick">
+							<div class="quote-title-onclick">${block.title}</div>
+							<div class="quote-blurb-onclick">${block.description_html}</div>
+							<a class="source-onclick" href="${block.source}">See the original</a>
+						</section>
 					</section>
 				</div>
             </li>
