@@ -52,12 +52,12 @@ h1 {
 }
 
 /* Content Titles Styling*/
-.block--image, 
-.block--link, 
-.block--linkedvideo, 
-.block--text, 
-.block--uploadedaudio, 
-.block--pdf {
+.block--image figcaption, 
+.block--link figcaption, 
+.block--linkedvideo figcaption, 
+.block--text figcaption, 
+.block--uploadedaudio figcaption, 
+.block--pdf figcaption {
     font-family: 'Volkhov', serif;
     font-size: var(--figcaption-p);
 }
@@ -195,19 +195,15 @@ hr {
     /* margin-top: 30px; */
 }
 
-.description-body {
+/* Style for having the image and text side by side!!!! Need to make it more specific */
+/* .description-body {
     order: 2;
     display: flex;
-}
+} */
 
 .block--image__description {
     background-color: #EB5500;
 }
-
-.description-onclick {
-    max-width: 30vw;
-    padding-left: 1.8rem;
-} 
 
 .class-onclick, 
 .quote-class-onclick {
@@ -453,5 +449,39 @@ footer {
     .quote-onclick {
         width: 50%;
     }
+
+    /* Video Description Style */
+    .linkedvideo-description-body {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .linkedvideo-onclick {
+        width: 200vw;
+    }
+    
+    .description-onclick {
+        order: 2;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .description-text {
+        flex: 1;
+    }
+
+    .description-text .blocktitle {
+        
+    }
+
+    .description-source {
+        margin-left: 20px;
+    }
+
+    /* .description-onclick {
+        max-width: 30vw;
+        padding-left: 1.8rem;
+    }  */
 }
 
