@@ -182,35 +182,64 @@ let renderBlock = (block) => {
 
         // Uploaded PDFs!
         else if (attachment.includes('pdf')) {
-            let pdfItem =
-            `
-                <li class="block block--pdf">
-                    <figcaption>${block.title}</figcaption>
-
-					<div class="block--pdf__description">
-						<section class="description-header">
-							<div class="class-onclick">${block.class}</div>
-							<button class="close-button">X</button>
-						</section>	
-						<section class="description-body">
-							<section class="pdf-onclick">
-								<a href="${block.attachment.url}">
-									<source media="(max-width: 640px)" srcset="${ block.image.large.url }">
-									<img src="${block.image.large.url}" alt="${block.title}" by "${block.user.fullname}" width="300" height="300">
-								</a>
+			console.log('pdf')
+			if (block.description_html && block.description_html.length > 0) {
+				let pdfItem =
+				`
+					<li class="block block--pdf">
+						<figcaption>${block.title}</figcaption>
+	
+						<div class="block--pdf__description">
+							<section class="description-header">
+								<div class="class-onclick">${block.class}</div>
+								<button class="close-button">X</button>
+							</section>	
+							<section class="description-body">
+								<section class="pdf-onclick">
+									<a href="${block.attachment.url}">
+										<source media="(max-width: 640px)" srcset="${ block.image.large.url }">
+										<img src="${block.image.large.url}" alt="${block.title}" by "${block.user.fullname}" width="300" height="300">
+									</a>
+								</section>
+								<section class="description-onclick">
+									<div class="title-onclick">${block.title}</div>
+									<div class="blurb-onclick">${block.description_html}</div>
+									<a class="source-onclick" href="${block.source}">See the original</a>
+								<section>
 							</section>
-							<section class="description-onclick">
-								<div class="title-onclick">${block.title}</div>
-								<div class="blurb-onclick">${block.description_html}</div>
-								<a class="source-onclick" href="${block.source}">See the original</a>
-							<section>
-						</section>
-					</div>
-                </li>
-            `
-        	channelBlocks.insertAdjacentHTML('beforeend', pdfItem);
-		
-    }
+						</div>
+					</li>
+				`
+				channelBlocks.insertAdjacentHTML('beforeend', pdfItem)
+			} else {
+				let pdfItem =
+				`
+					<li class="block block--pdf">
+						<figcaption>${block.title}</figcaption>
+	
+						<div class="block--pdf__description">
+							<section class="description-header">
+								<div class="class-onclick">${block.class}</div>
+								<button class="close-button">X</button>
+							</section>	
+							<section class="description-body">
+								<section class="pdf-onclick">
+									<a href="${block.attachment.url}">
+										<source media="(max-width: 640px)" srcset="${ block.image.large.url }">
+										<img src="${block.image.large.url}" alt="${block.title}" by "${block.user.fullname}" width="300" height="300">
+									</a>
+								</section>
+								<section class="description-onclick">
+									<div class="title-onclick">${block.title}</div>
+									<a class="source-onclick" href="${block.source}">See the original</a>
+								<section>
+							</section>
+						</div>
+					</li>
+				`
+				channelBlocks.insertAdjacentHTML('beforeend', pdfItem)
+			}
+   	}
 
 		// Styling for pictures
 		// <img src="${block.image.large.url}" alt="${block.title}"></img>
