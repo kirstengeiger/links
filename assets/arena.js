@@ -320,12 +320,12 @@ let renderBlock = (block) => {
 							<div class="class-onclick">${block.class}</div>
 							<button class="close-button">X</button>
 						</section>
-						<section class="linkedvideo-description-body">
+						<section class="description-body">
 							<section class="linkedvideo-onclick">${block.embed.html}</section>
 							<section class="description-onclick">
 								<section class="description-text">
-									<div class="linkedvideo-title-onclick">${block.title}</div>
-									<div class="linkedvideo-blurb-onclick">${block.description}</div>
+									<div class="title-onclick">${block.title}</div>
+									<div class="blurb-onclick">${block.description}</div>
 								</section>
 								<section class="description-source">
 									<a class="source-onclick" href="${block.source}">See the original</a>
@@ -347,10 +347,10 @@ let renderBlock = (block) => {
 							<div class="class-onclick">${block.class}</div>
 							<button class="close-button">X</button>
 						</section>
-						<section class="description-body">
+						<section class="linkedvideo-description-body">
 							<section class="linkedvideo-onclick">${block.embed.html}</section>
 							<section class="description-onclick">
-								<div class="linkedvideo-title-onclick">${block.title}</div>
+								<div class="title-onclick">${block.title}</div>
 								<a class="source-onclick" href="${block.source}">See the original</a>
 							</section>
 						</section>

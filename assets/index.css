@@ -201,6 +201,10 @@ hr {
     display: flex;
 } */
 
+.title-onclick {
+    font-family: 'Volkhov', serif;
+}
+
 .block--image__description {
     background-color: #EB5500;
 }
@@ -403,7 +407,7 @@ footer {
         /* Quote Styles */
         --quote-onclick-h1: 45px;
 
-        --description-title-p: 40px;
+        --description-title-p: 30px;
         --description-blurb-p: 20px;
 
         --gutter: var(--typography-p);
@@ -465,6 +469,7 @@ footer {
         display: flex;
         flex-direction: row;
         align-items: center;
+        top: 0;
     }
 
     .description-text {
