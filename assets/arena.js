@@ -350,8 +350,8 @@ let renderBlock = (block) => {
 						<section class="linkedvideo-description-body">
 							<section class="linkedvideo-onclick">${block.embed.html}</section>
 							<section class="description-onclick">
-								<div class="title-onclick">${block.title}</div>
-								<a class="source-onclick" href="${block.source}">See the original</a>
+								<div class="linkedvideo-title-onclick">${block.title}</div>
+								<a class="linkedvideo-source-onclick" href="${block.source}">See the original</a>
 							</section>
 						</section>
 					</div>
@@ -387,6 +387,7 @@ let renderBlock = (block) => {
 				</div>
 				</li>
 				`
+			channelBlocks.insertAdjacentHTML('beforeend', linkedAudioItem)
 		}
 	}
 }

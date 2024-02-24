@@ -201,10 +201,6 @@ hr {
     display: flex;
 } */
 
-.title-onclick {
-    font-family: 'Volkhov', serif;
-}
-
 .block--image__description {
     background-color: #EB5500;
 }
@@ -242,7 +238,8 @@ hr {
     border-style: solid;
 }
 
-.title-onclick, 
+.title-onclick,
+.linkedvideo-title-onclick, 
 .quote-title-onclick {
     font-family: 'Volkhov', serif;
     font-size: var(--description-title-p);
@@ -256,7 +253,12 @@ hr {
     padding-top: 1.5rem;
 }
 
+.description-onclick {
+    padding-top: var(--description-onclick-margin);
+}
+
 /* Link to Original Source */
+.linkedvideo-source-onclick,
 .source-onclick {
     font-family: 'Volkhov', serif;
     font-style: italic;
@@ -264,7 +266,6 @@ hr {
     background-color: white;
     border-style: solid;
     border-radius: 20px;
-    margin-top: 5rem;
     padding-top: 10px;
     padding-bottom: 10px;
     width: 200px;
@@ -272,7 +273,6 @@ hr {
     display: flex;
     justify-content: center;
     align-content: center;
-    bottom: 0;
 }
 
 /* Text Quote Description Styles */
@@ -400,6 +400,8 @@ footer {
         --column-padding: 4rem;
         --intro-padding: 2rem;
 
+        --description-onclick-margin: 2rem;
+
         --figcaption-p: 20px;
 
         --class-onclick-p: 18px;
@@ -407,7 +409,7 @@ footer {
         /* Quote Styles */
         --quote-onclick-h1: 45px;
 
-        --description-title-p: 30px;
+        --description-title-p: 40px;
         --description-blurb-p: 20px;
 
         --gutter: var(--typography-p);
@@ -456,32 +458,54 @@ footer {
 
     /* Video Description Style */
     .linkedvideo-description-body {
+        display: flex;
         flex-direction: column;
         align-items: flex-start;
     }
     
     .linkedvideo-onclick {
-        width: 200vw;
+        width: 100vw;
     }
     
     .description-onclick {
         order: 2;
         display: flex;
         flex-direction: row;
-        align-items: center;
-        top: 0;
+        align-items: flex-start;
+    }
+
+    .linkedvideo-title-onclick,
+    .linkedvideo-source-onclick {
+        align-self: flex-start;
+    }
+
+    .linkedvideo-source-onclick {
+        margin-left: 4.5rem;
     }
 
     .description-text {
         flex: 1;
     }
 
-    .description-text .blocktitle {
-        
-    }
-
     .description-source {
         margin-left: 20px;
+    }
+
+    .linkedvideo-title-onclick {
+        width: 30vw;
+    }
+
+    .source-onclick {
+        margin-left: 5rem;
+        top: 0;
+    }
+
+    .block--linkedvideo__description > .title-onclick {
+        max-width: 50vw;
+    }
+
+    .embedly-embed {
+        width: 700;
     }
 
     /* .description-onclick {
