@@ -411,6 +411,7 @@ footer {
 
         --description-title-p: 40px;
         --description-blurb-p: 20px;
+        --description-onlick-padding: 3rem;
 
         --gutter: var(--typography-p);
     }
@@ -456,29 +457,42 @@ footer {
         width: 50%;
     }
 
-    /* Video Description Style */
+    /* LINKED VIDEO STYLE */
+
+    /* Linked Video: Video, Title, Description, and OG Source */
     .linkedvideo-description-body {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
     }
     
+    /* Video Itself */
     .linkedvideo-onclick {
-        width: 100vw;
+        width: 100%;
+        height: auto;
     }
     
-    .description-onclick {
+    /* Video Description */
+    .linkedvideo-description-onclick {
         order: 2;
         display: flex;
         flex-direction: row;
         align-items: flex-start;
+        padding-top: var(--description-onlick-padding);
     }
 
+    /* Video Title and Source Aligned at Top */
     .linkedvideo-title-onclick,
     .linkedvideo-source-onclick {
         align-self: flex-start;
     }
 
+    /* Video Title */
+    .linkedvideo-title-onclick {
+        width: 30vw;
+    }
+
+    /* Video Link to Original Source */
     .linkedvideo-source-onclick {
         margin-left: 4.5rem;
     }
@@ -489,10 +503,6 @@ footer {
 
     .description-source {
         margin-left: 20px;
-    }
-
-    .linkedvideo-title-onclick {
-        width: 30vw;
     }
 
     .source-onclick {

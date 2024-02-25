@@ -320,15 +320,15 @@ let renderBlock = (block) => {
 							<div class="class-onclick">${block.class}</div>
 							<button class="close-button">X</button>
 						</section>
-						<section class="description-body">
+						<section class="linkedvideo-description-body">
 							<section class="linkedvideo-onclick">${block.embed.html}</section>
-							<section class="description-onclick">
+							<section class="linkedvideo-description-onclick">
 								<section class="description-text">
 									<div class="title-onclick">${block.title}</div>
 									<div class="blurb-onclick">${block.description}</div>
 								</section>
 								<section class="description-source">
-									<a class="source-onclick" href="${block.source}">See the original</a>
+									<a class="source-onclick" href="${block.source.url}">See the original</a>
 								</section>
 							</section>
 						</section>
@@ -349,9 +349,9 @@ let renderBlock = (block) => {
 						</section>
 						<section class="linkedvideo-description-body">
 							<section class="linkedvideo-onclick">${block.embed.html}</section>
-							<section class="description-onclick">
+							<section class="linkedvideo-description-onclick">
 								<div class="linkedvideo-title-onclick">${block.title}</div>
-								<a class="linkedvideo-source-onclick" href="${block.source}">See the original</a>
+								<a class="linkedvideo-source-onclick" href="${block.source.url}">See the original</a>
 							</section>
 						</section>
 					</div>
