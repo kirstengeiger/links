@@ -457,6 +457,11 @@ footer {
         width: 50%;
     }
 
+     /* Image Sizes */
+    .image-thumbnail {
+        display: none;
+    }
+
     /* LINKED VIDEO STYLE */
 
     /* Linked Video: Video, Title, Description, and OG Source */

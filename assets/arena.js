@@ -110,10 +110,15 @@ let renderBlock = (block) => {
 						<div class="class-onclick">${block.class}</div>
 						<button class="close-button">X</button>
 					</section>	
-					<section class="description-body">
+					<section class="image-description-body">
 						<section class="images-onclick">
-							<source media="(max-width: 640px)" srcset="${ block.image.large.url}">
-							<img src="${block.image.large.url}" alt="${block.title}" by "${block.user.fullname}" width="300" height="300">
+							<section class="image-large">
+								<source media="(max-width: 640px)" srcset="${block.image.large.url}">
+								<img src="${block.image.large.url}" alt="${block.title}" by "${block.user.fullname}" width="300" height="400">
+							</section>
+							<section class="image-thumbnail">
+								<source media="(max-width: 640px)" srcset="${block.image.thumb.url}">
+								<img src="${block.image.thumb.url}" alt="${block.title}" by "${block.user.fullname}" width="200" height="300">
 						</section>
 						<section class="description-onclick">
 							<div class="title-onclick">${block.title}</div>
@@ -126,6 +131,30 @@ let renderBlock = (block) => {
         `
         channelBlocks.insertAdjacentHTML('beforeend', imageItem)
 	}
+
+// 	<li class="block block--linkedvideo">
+// 	<figcaption>${block.generated_title}</figcaption>
+
+// 	<div class="block--linkedvideo__description">
+// 		<section class="description-header">
+// 			<div class="class-onclick">${block.class}</div>
+// 			<button class="close-button">X</button>
+// 		</section>
+// 		<section class="linkedvideo-description-body">
+// 			<section class="linkedvideo-onclick">${block.embed.html}</section>
+// 			<section class="linkedvideo-description-onclick">
+// 				<section class="description-text">
+// 					<div class="title-onclick">${block.title}</div>
+// 					<div class="blurb-onclick">${block.description}</div>
+// 				</section>
+// 				<section class="description-source">
+// 					<a class="source-onclick" href="${block.source.url}">See the original</a>
+// 				</section>
+// 			</section>
+// 		</section>
+// 	</div>
+// </li>
+// `
 
 	
 
