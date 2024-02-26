@@ -270,6 +270,15 @@ hr {
     align-content: center;
 }
 
+.linkedvideo-source-onclick:hover,
+.images-source-onclick:hover,
+.source-onclick:hover {
+    color: white;
+    border: white 5px;
+    background-color: black;
+    transition: 0.3s; /* Add transition for smooth effect */
+}
+
 /* Text Quote Description Styles */
 .block--text__description {
     background-color: #2A53EC;
@@ -466,6 +475,7 @@ footer {
 
     .images-description-onclick {
         flex-direction: column; /* Change direction to column for mobile responsiveness */
+        width: 45vw;
         margin-left: 3rem;
     }
 
