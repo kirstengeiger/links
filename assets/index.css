@@ -253,6 +253,7 @@ hr {
 
 /* Link to Original Source */
 .linkedvideo-source-onclick,
+.images-source-onclick,
 .source-onclick {
     font-family: 'Volkhov', serif;
     font-style: italic;
@@ -439,7 +440,7 @@ footer {
         width: 50%;
     }
 
-    /* IMAGES STYLE */
+    /* ------------------  IMAGES STYLE ------------------   */
 
     /* Image Sizes */
     .image-thumbnail {
@@ -458,17 +459,21 @@ footer {
     /* Image and Description: Side by side */
     .images-onclick,
     .images-description-body {
-    display: flex;
-    align-items: flex-start; /* Align items at the top */
-    flex-direction: row;
+        display: flex;
+        align-items: flex-start; /* Align items at the top */
+        flex-direction: row;
     }
 
     .images-description-onclick {
-    flex-direction: column; /* Change direction to column for mobile responsiveness */
-    margin-left: 3rem;
-    }   
+        flex-direction: column; /* Change direction to column for mobile responsiveness */
+        margin-left: 3rem;
+    }
 
-    /* LINKED VIDEO STYLE */
+    .images-source-onclick {
+        margin-top: 4rem;
+    }
+
+    /* ------------------ LINKED VIDEO STYLE ------------------ */
 
     /* Linked Video: Video, Title, Description, and OG Source */
     .linkedvideo-description-body {

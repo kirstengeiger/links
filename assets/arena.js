@@ -114,7 +114,7 @@ let renderBlock = (block) => {
 						<section class="images-onclick">
 							<section class="image-large">
 								<source media="(max-width: 640px)" srcset="${block.image.large.url}">
-								<img src="${block.image.large.url}" alt="${block.title}" by "${block.user.fullname}" width="300" height="400">
+								<img src="${block.image.large.url}" alt="${block.title}" by "${block.user.fullname}" width="350" height="500">
 							</section>
 							<section class="image-thumbnail">
 								<source media="(max-width: 640px)" srcset="${block.image.thumb.url}">
@@ -123,7 +123,7 @@ let renderBlock = (block) => {
 						<section class="images-description-onclick">
 							<div class="title-onclick">${block.title}</div>
 							<div class="blurb-onclick">${block.description_html}</div>
-							<a class="source-onclick" href="${block.source}">See the original</a>
+							<a class="images-source-onclick" href="${block.source}">See the original</a>
 						<section>
 					</section
 				</div>
