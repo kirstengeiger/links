@@ -45,16 +45,21 @@ let renderBlock = (block) => {
 							<div class="class-onclick">${block.class}</div>
 							<button class="close-button">X</button>
 					</section>
-					<section class="description-body">
+					<section class="link-description-body">
 						<section class="link-onclick">
-							<source media="(max-width: 428px)" srcset="${block.image.thumb.url}">
-							<source media="(max-width: 640px)" srcset="${block.image.large.url}">
-							<img src="${block.image.large.url} alt="${block.title}" by "${block.user.fullname}" width="300" height="300">
+							<section class="image-large">
+								<source media="(max-width: 640px)" srcset="${block.image.large.url}">
+								<img src="${block.image.large.url}" alt="${block.title}" by "${block.user.fullname}" width="640" height="550">
+							</section>
+							<section class="image-thumbnail">
+								<source media="(max-width: 640px)" srcset="${block.image.thumb.url}">
+								<img src="${block.image.thumb.url}" alt="${block.title}" by "${block.user.fullname}" width="200" height="300">
+							</section>
 						</section>
-						<section class="description-onclick">
+						<section class="link-description-onclick">
 							<div class="title-onclick">${block.title}</div>
 							<div class="blurb-onclick">${block.description_html}</div>
-							<a class="source-onclick" href="${block.source.url}">See the original</a>
+							<a class="link-source-onclick" href="${block.source.url}">See the original</a>
 						<section>
 					</section>
 				</div>
@@ -72,13 +77,18 @@ let renderBlock = (block) => {
 							<div class="class-onclick">${block.class}</div>
 							<button class="close-button">X</button>
 					</section>
-					<section class="description-body">
+					<section class="link-description-body">
 						<section class="link-onclick">
-							<source media="(max-width: 428px)" srcset="${block.image.thumb.url}">
-							<source media="(max-width: 640px)" srcset="${block.image.large.url}">
-							<img src="${block.image.large.url} alt="${block.title}" by "${block.user.fullname}" width="300" height="300">
+							<section class="image-large">
+								<source media="(max-width: 640px)" srcset="${block.image.large.url}">
+								<img src="${block.image.large.url}" alt="${block.title}" by "${block.user.fullname}" width="350" height="500">
+							</section>
+							<section class="image-thumbnail">
+								<source media="(max-width: 640px)" srcset="${block.image.thumb.url}">
+								<img src="${block.image.thumb.url}" alt="${block.title}" by "${block.user.fullname}" width="200" height="300">
+							</section>
 						</section>
-						<section class="description-onclick">
+						<section class="link-description-onclick">
 							<div class="title-onclick">${block.title}</div>
 							<a class="source-onclick" href="${block.source.url}">See the original</a>
 						<section>
@@ -131,37 +141,6 @@ let renderBlock = (block) => {
         `
         channelBlocks.insertAdjacentHTML('beforeend', imageItem)
 	}
-
-// 	<li class="block block--linkedvideo">
-// 	<figcaption>${block.generated_title}</figcaption>
-
-// 	<div class="block--linkedvideo__description">
-// 		<section class="description-header">
-// 			<div class="class-onclick">${block.class}</div>
-// 			<button class="close-button">X</button>
-// 		</section>
-// 		<section class="linkedvideo-description-body">
-// 			<section class="linkedvideo-onclick">${block.embed.html}</section>
-// 			<section class="linkedvideo-description-onclick">
-// 				<section class="description-text">
-// 					<div class="title-onclick">${block.title}</div>
-// 					<div class="blurb-onclick">${block.description}</div>
-// 				</section>
-// 				<section class="description-source">
-// 					<a class="source-onclick" href="${block.source.url}">See the original</a>
-// 				</section>
-// 			</section>
-// 		</section>
-// 	</div>
-// </li>
-// `
-
-	
-
-	// Styling for pictures
-	// <img src="${block.image.large.url}" alt="${block.title}" by "${block.user.fullname}">
-	// Description
-	// ${block.description_html} 
 
 	// Text!
 	else if (block.class == 'Text') {
