@@ -49,7 +49,7 @@ let renderBlock = (block) => {
 						<section class="link-onclick">
 							<section class="image-large">
 								<source media="(max-width: 640px)" srcset="${block.image.large.url}">
-								<img src="${block.image.large.url}" alt="${block.title}" by "${block.user.fullname}" width="640" height="550">
+								<img src="${block.image.large.url}" alt="${block.title}" by "${block.user.fullname}" width="640" height="500">
 							</section>
 							<section class="image-thumbnail">
 								<source media="(max-width: 640px)" srcset="${block.image.thumb.url}">
@@ -144,6 +144,7 @@ let renderBlock = (block) => {
 
 	// Text!
 	else if (block.class == 'Text') {
+		if (block.description_html.length > 0) {
 		let textItem =
         `
             <li class="block block--text">
@@ -154,21 +155,46 @@ let renderBlock = (block) => {
 						<div class="class-onclick">${block.class}</div>
 						<button class="close-button">X</button>
 					</section>
-					<section class="description-body">
-						<section class="quote-onclick">
+					<section class="text-description-body">
+						<section class="text-onclick">
 							${block.content_html}
 						</section>
-						<section class="description-onclick">
-							<div class="quote-title-onclick">${block.title}</div>
-							<div class="quote-blurb-onclick">${block.description_html}</div>
-							<a class="source-onclick" href="${block.source}">See the original</a>
+						<section class="text-description-onclick">
+							<div class="text-title-onclick">${block.title}</div>
+							<div class="text-blurb-onclick">${block.description_html}</div>
+							<a class="text-source-onclick" href="${block.source}">See the original</a>
 						</section>
-					
+					</section>
+				</div>
+            </li>
+        `
+        channelBlocks.insertAdjacentHTML('beforeend', textItem)
+	} else {
+		let textItem =
+        `
+            <li class="block block--text">
+				<figcaption>${block.title}</figcaption>
+
+				<div class="block--text__description">
+					<section class="description-header">
+						<div class="class-onclick">${block.class}</div>
+						<button class="close-button">X</button>
+					</section>
+					<section class="text-description-body">
+						<section class="text-onclick">
+							${block.content_html}
+						</section>
+						<section class="text-description-onclick">
+							<div class="text-title-onclick">${block.title}</div>
+							<a class="text-source-onclick" href="${block.source}">See the original</a>
+						</section>
+					</section>
 				</div>
             </li>
         `
         channelBlocks.insertAdjacentHTML('beforeend', textItem)
 	}
+}
 
     // Uploaded (not linked) media…
 	else if (block.class == 'Attachment') {

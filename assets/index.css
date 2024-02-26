@@ -128,7 +128,7 @@ h1 {
     font-size: 25px;
 }
 
-/* Quote Styling */
+/* Text Styling */
 .block--text::marker {
     color: #2A53EC;
     content: '•';
@@ -200,7 +200,7 @@ hr {
 }
 
 .class-onclick, 
-.quote-class-onclick {
+.text-class-onclick {
     font-family: 'Worksans', sans-serif;
     font-size: var(--class-onclick-p);
     text-transform: uppercase;
@@ -234,14 +234,14 @@ hr {
 
 .title-onclick,
 .linkedvideo-title-onclick, 
-.quote-title-onclick {
+.text-title-onclick {
     font-family: 'Volkhov', serif;
     font-size: var(--description-title-p);
     line-height: 110%;
 }
 
 .blurb-onclick, 
-.quote-blurb-onclick {
+.text-blurb-onclick {
     font-family: 'Rubik', sans-serif;
     font-size: var(--description-blurb-p);
     padding-top: 1.5rem;
@@ -253,6 +253,7 @@ hr {
 
 /* Link to Original Source */
 .link-source-onclick,
+.text-source-onclick,
 .linkedvideo-source-onclick,
 .images-source-onclick,
 .source-onclick {
@@ -273,6 +274,7 @@ hr {
 
 .link-source-onclick:hover,
 .linkedvideo-source-onclick:hover,
+.text-source-onclick:hover,
 .images-source-onclick:hover,
 .source-onclick:hover {
     color: white;
@@ -281,36 +283,36 @@ hr {
     transition: 0.3s; /* Add transition for smooth effect */
 }
 
-/* Text Quote Description Styles */
+/* Text Description Styles */
 .block--text__description {
     background-color: #2A53EC;
 }
 
-.quote-onclick {
+.text-onclick {
     background-color: white;
     padding: 10px;
     align-items: start;
     /* Need to figure out how to make it relative */
 }
 
-.quote-onclick h1 {
+.text-onclick h1 {
     font-family: 'Work Sans', sans-serif;
-    font-size: var(--quote-onclick-h1);
+    font-size: var(--text-onclick-h1);
     text-transform: none;
     font-style: normal;
     color: black;
 }
 
-.quote-onclick p {
+.text-onclick p {
     font-family: 'Volkhov', serif;
     text-transform: none;
     margin-top: 2rem;
     color: black;
 }
 
-.quote-class-onclick, 
-.quote-title-onclick, 
-.quote-blurb-onclick{
+.text-class-onclick, 
+.text-title-onclick, 
+.text-blurb-onclick{
     text-transform: none;
     font-style: normal;
 }
@@ -365,8 +367,8 @@ footer {
 
         --class-onclick-p: 18px;
 
-        /* Quote Styles */
-        --quote-onclick-h1: 45px;
+        /* Text Styles */
+        --text-onclick-h1: 45px;
 
         --description-title-p: 40px;
         --description-blurb-p: 20px;
@@ -405,8 +407,8 @@ footer {
 
         --class-onclick-p: 18px;
 
-        /* Quote Styles */
-        --quote-onclick-h1: 45px;
+        /* Text Styles */
+        --text-onclick-h1: 45px;
 
         --description-title-p: 40px;
         --description-blurb-p: 20px;
@@ -447,7 +449,7 @@ footer {
         font-size: 25px;
     }
 
-    .quote-onclick {
+    .text-onclick {
         width: 50%;
     }
 
@@ -466,21 +468,24 @@ footer {
     .images-onclick,
     .images-description-body,
     .link-onclick,
-    .link-description-body {
+    .link-description-body,
+    .text-description-body {
         display: flex;
         align-items: flex-start; /* Align items at the top */
         flex-direction: row;
     }
 
     .images-description-onclick,
-    .link-description-onclick {
+    .link-description-onclick,
+    .text-description-onclick {
         flex-direction: column; /* Change direction to column for mobile responsiveness */
         width: 45vw;
         margin-left: 3rem;
     }
 
     .images-source-onclick,
-    .link-source-onclick {
+    .link-source-onclick,
+    .text-source-onclick {
         margin-top: 4rem;
     }
 
