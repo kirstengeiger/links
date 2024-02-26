@@ -162,7 +162,7 @@ h1 {
     padding-left: 3rem;
     padding-right: 3rem;
     top: 0;
-    left: 35vw;
+    left: 34vw;
     bottom: 0;
     right: 0;
 }
@@ -194,12 +194,6 @@ hr {
     width: 100%; /* Or adjust this value as needed */
     /* margin-top: 30px; */
 }
-
-/* Style for having the image and text side by side!!!! Need to make it more specific */
-/* .description-body {
-    order: 2;
-    display: flex;
-} */
 
 .block--image__description {
     background-color: #EB5500;
@@ -372,20 +366,13 @@ footer {
         display: flex;
     }
 
-    /* .column-title {
-        position: fixed;
-        z-index: 5;
-        padding-bottom: 5rem;
+    .image-large {
+        display: none;
     }
 
-    .channel-description {
-        margin-top: 3rem;
+    .image-thumbnail {
+        display: contents;
     }
-
-    .column-content {
-        position: relative;
-        margin-top: 45vh;
-    } */
 }
 
 /* Desktop */
@@ -420,11 +407,6 @@ footer {
         line-height: 100%;
     }
 
-    .wrapper {
-        display: flex;
-        align-items: start;
-    }
-
     .column-title {
         position: sticky;
         width: 35%;
@@ -457,10 +439,34 @@ footer {
         width: 50%;
     }
 
-     /* Image Sizes */
+    /* IMAGES STYLE */
+
+    /* Image Sizes */
     .image-thumbnail {
         display: none;
     }
+
+    .image-large {
+        display: contents;
+    }
+
+    .image-large,
+    .image-thumbnail {
+        margin-right: 1rem;
+    }
+
+    /* Image and Description: Side by side */
+    .images-onclick,
+    .images-description-body {
+    display: flex;
+    align-items: flex-start; /* Align items at the top */
+    flex-direction: row;
+    }
+
+    .images-description-onclick {
+    flex-direction: column; /* Change direction to column for mobile responsiveness */
+    margin-left: 3rem;
+    }   
 
     /* LINKED VIDEO STYLE */
 
@@ -510,7 +516,7 @@ footer {
         margin-left: 20px;
     }
 
-    .source-onclick {
+    .linkedvideo-source-onclick {
         margin-left: 5rem;
         top: 0;
     }
