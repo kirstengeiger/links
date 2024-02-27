@@ -499,6 +499,7 @@ footer {
         background-color: var(--colour-image);
     }
 
+    /* ------------------ VIDEO STYLE ------------------ */
     /* Video Itself */
     .linkedvideo-onclick iframe {
         width: 400%;
@@ -507,6 +508,13 @@ footer {
         display: flex;
         justify-content: center; /* Center horizontally 
         align-items: center; */
+    }
+
+    /* ------------------ AUDIO STYLE ------------------ */
+    /* Actual Audio Visual */
+    .uploadedaudio-onclick audio {
+        width: 100%; /* Adjust the width as needed */
+        height: 100px; /* Adjust the height as needed */
     }
 }
 
