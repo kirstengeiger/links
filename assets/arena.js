@@ -501,8 +501,53 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 			}
 		})
 
+		// Select the "Audio" button by the id defined in HTML
+		const audioButton = document.getElementById('audio-button');
+
+		// Add click event listener to the "Audio" button
+		audioButton.addEventListener('click', () => {
+			// Select all blocks
+			const blocks = document.querySelectorAll('.block');
+
+		// Loop through each block
+		blocks.forEach(block => {
+			// Check if the block contains an audio attachment
+			const isAudioBlock = block.classList.contains('block--uploadedaudio');
+
+			// If the block is an audio block, display it; otherwise, hide it
+			block.style.display = isAudioBlock ? 'block' : 'none';
+			});
+		});
+
+		// Track the state of the audio filter
+		let audioFilterActive = false;
+
+		// Add click event listener to the "Audio" button
+		audioButton.addEventListener('click', () => {
+			// Select all blocks
+			const blocks = document.querySelectorAll('.block');
+
+		// If the audio filter is active, display all blocks and reset the state
+		if (audioFilterActive) {
+			blocks.forEach(block => {
+				block.style.display = 'block';
+			});
+			audioFilterActive = false;
+		} else {
+			// Loop through each block
+			blocks.forEach(block => {
+				// Check if the block contains an audio attachment
+				const isAudioBlock = block.classList.contains('block--uploadedaudio');
+
+				// If the block is an audio block, display it; otherwise, hide it
+				block.style.display = isAudioBlock ? 'block' : 'none';
+			});
+			audioFilterActive = true;
+		}
+});
+
 		// // Also display the owner and collaborators:
 		// let channelUsers = document.getElementById('channel-users') // Show them together
 		// data.collaborators.forEach((collaborator) => renderUser(collaborator, channelUsers))
 		// renderUser(data.user, channelUsers)
-	})
+})
