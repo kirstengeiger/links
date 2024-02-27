@@ -72,6 +72,8 @@ h1 {
     justify-content: center;
     align-content: center;
     border-style: solid;
+    border-width: var(--nav-bar-button-border);
+    box-shadow: var(--nav-bar-button-boxshadow);
 }
 
 .nav-bar button:hover {
@@ -80,16 +82,73 @@ h1 {
 
 /* Audio Button */
 #audio-button {
-    color: black;
-    background-color: var(--colour-audio);
+    color: var(--colour-audio);
+    /* background-color: white; */
     border-color: var(--colour-audio);
 }
 
 #audio-button:hover { 
     /*Use '#'' to select elements by their ID, while '.' is for their class*/
-    color: black;
-    border-color: black;
+    color: var(--colour-background);
+    background-color: var(--colour-audio);
 }
+
+/* PDF Button */
+#pdf-button {
+    /* background-color: var(--colour-pdf); */
+    color: var(--colour-pdf);
+    border-color: var(--colour-pdf);
+}
+
+#pdf-button:hover {
+    color: var(--colour-background);
+    background-color: var(--colour-pdf);
+}
+
+/* Image Button */
+#image-button {
+    color: var(--colour-image);
+    border-color: var(--colour-image);
+}
+
+#image-button:hover {
+    color: var(--colour-background);
+    background-color: var(--colour-image);
+}
+
+/* Link Button */
+#link-button {
+    color: var(--colour-link);
+    border-color: var(--colour-link);
+}
+
+#link-button:hover {
+    color: var(--colour-background);
+    background-color: var(--colour-link);
+}
+
+/* Video Button */
+#video-button {
+    color: var(--colour-video);
+    border-color: var(--colour-video);
+}
+
+#video-button:hover {
+    color: var(--colour-background);
+    background-color: var(--colour-video);
+}
+
+/* Text Button */
+#text-button {
+    color: var(--colour-text);
+    border-color: var(--colour-text);
+}
+
+#text-button:hover {
+    color: var(--colour-background);
+    background-color: var(--colour-text);
+}
+
 
 /* Content Column */
 .column-content {
@@ -204,14 +263,6 @@ h1 {
     top: 0;
     width: 100%;
     position: relative;
-}
-
-hr {
-    border: 1px solid white;
-    position: absolute;
-    top: 100%; /* Or adjust this value as needed */
-    width: 100%; /* Or adjust this value as needed */
-    /* margin-top: 30px; */
 }
 
 .hidden {
@@ -379,6 +430,18 @@ footer {
         --column-title-p: 15px;
         --column-padding: 4rem;
         --intro-padding: 4rem;
+
+        /* Whole Nav Bar */
+        --nav-bar-margin-top: 2rem;
+
+        /* Nav Bar Buttons Styling */
+        --nav-bar-button-p: 40px;
+        --nav-bar-button-width: 80%;
+        --nav-bar-button-radius: 50px;
+        --nav-bar-button-padding: 5px;
+        --nav-bar-button-margin: 40px;
+        --nav-bar-button-border: 2px;
+        --nav-bar-button-boxshadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 
         /* Block Titles in Column Content */
         --figcaption-p: 35px;
