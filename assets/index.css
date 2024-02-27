@@ -41,8 +41,24 @@ h1 {
 }
 
 /* Nav Bar Buttons */
-.nav-bar > button {
+.nav-bar {
+    display: flex;
+    flex-direction: column;
+    margin-top: var(--nav-bar-margin-top);
+}
+
+.nav-bar button {
+    margin-bottom: var(--nav-bar-button-margin);
     font-family: 'Rubik', sans-serif;
+    font-size: var(--nav-bar-button-p);
+    width: var(--nav-bar-button-width); 
+    border-radius: var(--nav-bar-button-radius);
+    padding-top: var(--nav-bar-button-padding);
+    padding-bottom: var(--nav-bar-button-padding);
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    border-style: solid;
 }
 
 /* Content Column */
@@ -453,6 +469,16 @@ footer {
 
         --figcaption-padding: 10px;
 
+        /* Whole Nav Bar */
+        --nav-bar-margin-top: 2rem;
+
+        /* Nav Bar Buttons Styling */
+        --nav-bar-button-p: 18px;
+        --nav-bar-button-width: 100%;
+        --nav-bar-button-radius: 20px;
+        --nav-bar-button-padding: 5px;
+        --nav-bar-button-margin: 20px;
+
         /* Title Styles*/
         --column-title-h1: 50px;
         --column-title-lineheight: 10%;
@@ -469,12 +495,14 @@ footer {
         /* Text Styles */
         --text-onclick-h1: 45px;
 
+        /* Description: On Click Styles */
         --description-title-p: 40px;
         --description-blurb-p: 20px;
         --description-onlick-padding: 3rem;
 
         --blurb-onclick-padding: 1.5rem;
 
+        /* Source Button Styling */
         --source-onclick-p: 18px;
         --source-onclick-width: 200px;
         --source-onclick-padding: 10px;
@@ -486,6 +514,10 @@ footer {
 
     .wrapper {
         display: flex;
+    }
+
+    .audio-button {
+        background-color: #D69A00;
     }
 
     /* onClick Background Styling */
