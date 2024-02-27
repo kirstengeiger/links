@@ -228,14 +228,14 @@ hr {
 .source-onclick {
     font-family: 'Volkhov', serif;
     font-style: italic;
+    font-size: var(--source-onclick-p);
     border: black 1px;
     background-color: white;
     border-style: solid;
-    border-radius: 20px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    width: 200px;
-    height: 40px;
+    width: var(--source-onclick-width); 
+    border-radius: var(--source-onclick-radius);
+    padding-top: var(--source-onclick-padding);
+    padding-bottom: var(--source-onclick-padding);
     display: flex;
     justify-content: center;
     align-content: center;
@@ -329,19 +329,25 @@ footer {
         /* Title Styles*/
         --column-title-h1: 100px;
         --column-title-lineheight: 100%;
-        --column-title-p: 20px;
+        --column-title-p: 15px;
         --column-padding: 4rem;
         --intro-padding: 4rem;
 
-        --figcaption-p: 20px;
+        --figcaption-p: 40px;
 
-        --class-onclick-p: 30px;
+        --class-onclick-p: 35px;
 
         /* Text Styles */
         --text-onclick-h1: 45px;
 
-        --description-title-p: 40px;
-        --description-blurb-p: 20px;
+        --description-title-p: 80px;
+        --description-blurb-p: 40px;
+
+        --source-onclick-p: 40px;
+        --source-onclick-width: 400px;
+        --source-onclick-padding: 30px;
+        --source-onclick-radius: 70px;
+        --source-onclick-margin: 6rem;
 
         --gutter: var(--typography-p);
     }
@@ -371,7 +377,8 @@ footer {
     .block--pdf__description {
         display: none;
         position: fixed;
-        top: 36%;
+        top: 0;
+        /* top: 32%; */
         right: 0;
         left: 0;
         bottom: 0;
@@ -388,7 +395,15 @@ footer {
     .block--pdf.active .block--pdf__description {
         display: flex;
         flex-direction: column;
-    }    
+    }
+    
+    .close-button {
+        font-weight: 100;
+        border: 2px white;
+        border-style: solid;
+        width: 50px;
+        height: 50px;
+    }
 
     .image-large {
         display: none;
@@ -396,6 +411,13 @@ footer {
 
     .image-thumbnail {
         display: contents;
+    }
+
+    .images-source-onclick,
+    .link-source-onclick,
+    .text-source-onclick,
+    .pdf-source-onclick {
+        margin-top: var(--source-onclick-margin);
     }
 }
 
@@ -425,6 +447,12 @@ footer {
         --description-title-p: 40px;
         --description-blurb-p: 20px;
         --description-onlick-padding: 3rem;
+
+        --source-onclick-p: 18px;
+        --source-onclick-width: 200px;
+        --source-onclick-padding: 10px;
+        --source-onclick-radius: 30px;
+        --source-onclick-margin: 4rem;
 
         --gutter: var(--typography-p);
     }
@@ -545,7 +573,7 @@ footer {
     .link-source-onclick,
     .text-source-onclick,
     .pdf-source-onclick {
-        margin-top: 4rem;
+        margin-top: var(--source-onclick-margin);
     }
 
     /* ------------------ LINKED VIDEO STYLE ------------------ */

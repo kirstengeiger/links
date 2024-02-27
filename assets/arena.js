@@ -121,13 +121,13 @@ let renderBlock = (block) => {
 							</section>
 							<section class="image-thumbnail">
 								<source media="(max-width: 640px)" srcset="${block.image.thumb.url}">
-								<img src="${block.image.thumb.url}" alt="${block.title}" by "${block.user.fullname}" width="200" height="300">
+								<img src="${block.image.thumb.url}" alt="${block.title}" by "${block.user.fullname}" width="600" height="700">
 							</section>
 						</section>
 						<section class="images-description-onclick">
 							<div class="title-onclick">${block.title}</div>
 							<div class="blurb-onclick">${block.description_html}</div>
-							<a class="images-source-onclick" href="${block.source_url}">See the original</a>
+							<a class="images-source-onclick" href="${block.source}">See the original</a>
 						</section>
 					</section
 				</div>
@@ -153,12 +153,12 @@ let renderBlock = (block) => {
 							</section>
 							<section class="image-thumbnail">
 								<source media="(max-width: 640px)" srcset="${block.image.thumb.url}">
-								<img src="${block.image.thumb.url}" alt="${block.title}" by "${block.user.fullname}" width="200" height="300">
+								<img src="${block.image.thumb.url}" alt="${block.title}" by "${block.user.fullname}" width="600" height="700">
 							</section>
 						</section>
 						<section class="images-description-onclick">
 							<div class="title-onclick">${block.title}</div>
-							<a class="images-source-onclick" href="${block.source_url}">See the original</a>
+							<a class="images-source-onclick" href="${block.source}">See the original</a>
 						</section>
 					</section
 				</div>
