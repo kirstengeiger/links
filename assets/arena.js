@@ -53,7 +53,7 @@ let renderBlock = (block) => {
 							</section>
 							<section class="image-thumbnail">
 								<source media="(max-width: 640px)" srcset="${block.image.thumb.url}">
-								<img src="${block.image.thumb.url}" alt="${block.title}" by "${block.user.fullname}" width="200" height="300">
+								<img src="${block.image.thumb.url}" alt="${block.title}" by "${block.user.fullname}" width="100%" height="900px">
 							</section>
 						</section>
 						<section class="link-description-onclick">

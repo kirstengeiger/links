@@ -472,6 +472,7 @@ footer {
         display: contents;
     }
 
+    .link-description-body,
     .images-description-body {
         overflow: auto; /* Add a scrollbar when content overflows */
     }
