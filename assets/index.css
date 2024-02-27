@@ -331,9 +331,9 @@ footer {
         --block-margin: 0.5em;
 
         /* Title Styles*/
-        --column-title-h1: 130px;
+        --column-title-h1: 100px;
         --column-title-lineheight: 100%;
-        --column-title-p: 40px;
+        --column-title-p: 20px;
         --column-padding: 4rem;
         --intro-padding: 4rem;
 
@@ -352,6 +352,18 @@ footer {
 
     .wrapper {
         display: grid;
+    }
+
+    .column-title {
+        position: sticky;
+        top: 0;
+        padding-bottom: 4rem;
+    }
+
+    .column-content {
+        flex: 1; /* Allow column to grow and shrink */
+        overflow-y: auto; /* Enable vertical scrolling */
+        padding-bottom: 4rem;
     }
 
     .image-large {
