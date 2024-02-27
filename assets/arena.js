@@ -501,21 +501,18 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 			}
 		})
 
-		// Select the "Audio" button by the id defined in HTML
+		// AUDIO FILTER 
+		// Select the "Audio" button by the button ID defined in HTML
 		const audioButton = document.getElementById('audio-button');
 
-		// Add click event listener to the "Audio" button
+		// Click event listener (checks to see if the button is clicked) to the "Audio" button
 		audioButton.addEventListener('click', () => {
-			// Select all blocks
-			const blocks = document.querySelectorAll('.block');
+			// Toggle display of audio blocks
+			const blocks = document.querySelectorAll('block');
 
-		// Loop through each block
-		blocks.forEach(block => {
-			// Check if the block contains an audio attachment
-			const isAudioBlock = block.classList.contains('block--uploadedaudio');
-
-			// If the block is an audio block, display it; otherwise, hide it
-			block.style.display = isAudioBlock ? 'block' : 'none';
+			blocks.forEach(block => {
+				// Toggle the display of the block
+				block.classList.toggle('hidden');
 			});
 		});
 
@@ -527,23 +524,23 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 			// Select all blocks
 			const blocks = document.querySelectorAll('.block');
 
-		// If the audio filter is active, display all blocks and reset the state
-		if (audioFilterActive) {
-			blocks.forEach(block => {
-				block.style.display = 'block';
-			});
-			audioFilterActive = false;
-		} else {
-			// Loop through each block
-			blocks.forEach(block => {
-				// Check if the block contains an audio attachment
-				const isAudioBlock = block.classList.contains('block--uploadedaudio');
+    // If the audio filter is active, display all blocks and reset the state
+    if (audioFilterActive) {
+        blocks.forEach(block => {
+            block.style.display = 'block';
+        });
+        audioFilterActive = false;
+    } else {
+        // Loop through each block
+        blocks.forEach(block => {
+            // Check if the block contains an audio attachment
+            const isAudioBlock = block.classList.contains('block--uploadedaudio');
 
-				// If the block is an audio block, display it; otherwise, hide it
-				block.style.display = isAudioBlock ? 'block' : 'none';
-			});
-			audioFilterActive = true;
-		}
+            // If the block is an audio block, display it; otherwise, hide it
+            block.style.display = isAudioBlock ? '.block--uploadedaudio::marker' : 'none';
+        });
+        audioFilterActive = true;
+    }
 });
 
 		// // Also display the owner and collaborators:
