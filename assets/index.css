@@ -104,7 +104,7 @@ h1 {
 .block--uploadedaudio, 
 .block--pdf {
     list-style-type: circle;
-    padding: 10px;
+    padding: var(--figcaption-padding)
 }
 
 /* Image Styling */
@@ -147,34 +147,6 @@ h1 {
     color: #FF77B7;
     content: '•';
     font-size: 25px;
-}
-
-/* onClick Background Styling */
-.block--image__description, 
-.block--link__description, 
-.block--linkedvideo__description, 
-.block--text__description, 
-.block--uploadedaudio__description, 
-.block--pdf__description {
-    display: none;
-    position: fixed;
-    padding-top: 2rem;
-    padding-left: 3rem;
-    padding-right: 3rem;
-    top: 0;
-    left: 34vw;
-    bottom: 0;
-    right: 0;
-}
-
-.block--image.active .block--image__description, 
-.block--text.active .block--text__description, 
-.block--uploadedaudio.active .block--uploadedaudio__description, 
-.block--link.active .block--link__description, 
-.block--linkedvideo.active .block--linkedvideo__description,
-.block--pdf.active .block--pdf__description {
-    display: flex;
-    flex-direction: column;
 }
 
 .description-header {
@@ -379,7 +351,7 @@ footer {
     }
 
     .wrapper {
-        display: flex;
+        display: grid;
     }
 
     .image-large {
@@ -395,6 +367,8 @@ footer {
 @media (min-width:1200px) {
     :root {
         --block-margin: 0.3em;
+
+        --figcaption-padding: 10px;
 
         /* Title Styles*/
         --column-title-h1: 50px;
@@ -418,6 +392,36 @@ footer {
 
         --gutter: var(--typography-p);
     }
+
+
+    /* onClick Background Styling */
+    .block--image__description, 
+    .block--link__description, 
+    .block--linkedvideo__description, 
+    .block--text__description, 
+    .block--uploadedaudio__description, 
+    .block--pdf__description {
+        display: none;
+        position: fixed;
+        padding-top: 2rem;
+        padding-left: 3rem;
+        padding-right: 3rem;
+        top: 0;
+        left: 34vw;
+        bottom: 0;
+        right: 0;
+    }
+
+    .block--image.active .block--image__description, 
+    .block--text.active .block--text__description, 
+    .block--uploadedaudio.active .block--uploadedaudio__description, 
+    .block--link.active .block--link__description, 
+    .block--linkedvideo.active .block--linkedvideo__description,
+    .block--pdf.active .block--pdf__description {
+        display: flex;
+        flex-direction: column;
+    }
+
 
     h1 {
         line-height: 100%;
