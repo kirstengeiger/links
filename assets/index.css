@@ -497,13 +497,18 @@ footer {
     }
     
     /* Video Itself */
-    .linkedvideo-onclick {
+    /* .linkedvideo-onclick {
         width: 100%;
         height: auto;
-    }
+    } */
+
+    /* iframe .embedly-embed {
+        width: 100%;
+    } */
     
     /* Video Description */
     .linkedvideo-description-onclick {
+        width: 100%;
         order: 2;
         display: flex;
         flex-direction: row;

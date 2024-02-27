@@ -414,7 +414,9 @@ let renderBlock = (block) => {
 							<button class="close-button">X</button>
 						</section>
 						<section class="linkedvideo-description-body">
-							<section class="linkedvideo-onclick">${block.embed.html}</section>
+							<section class="linkedvideo-onclick">
+								${block.embed.html}
+							</section>
 							<section class="linkedvideo-description-onclick">
 								<div class="linkedvideo-title-onclick">${block.title}</div>
 								<a class="linkedvideo-source-onclick" href="${block.source.url}">See the original</a>
