@@ -82,8 +82,7 @@ h1 {
 
 /* Audio Button */
 #audio-button {
-    color: var(--colour-audio);
-    /* background-color: white; */
+    color: black;
     border-color: var(--colour-audio);
 }
 
@@ -95,20 +94,21 @@ h1 {
 
 /* PDF Button */
 #pdf-button {
+    color: black;
     /* background-color: var(--colour-pdf); */
-    color: var(--colour-pdf);
     border-color: var(--colour-pdf);
 }
 
 #pdf-button:hover {
-    color: var(--colour-background);
+    color: white;
     background-color: var(--colour-pdf);
 }
 
 /* Image Button */
 #image-button {
-    color: var(--colour-image);
+    color: black;
     border-color: var(--colour-image);
+    /* background-color: var(--colour-image); */
 }
 
 #image-button:hover {
@@ -118,18 +118,20 @@ h1 {
 
 /* Link Button */
 #link-button {
-    color: var(--colour-link);
+    color: black;
     border-color: var(--colour-link);
+    /* background-color: var(--colour-link); */
 }
 
 #link-button:hover {
-    color: var(--colour-background);
+    color: white;
     background-color: var(--colour-link);
 }
 
 /* Video Button */
 #video-button {
-    color: var(--colour-video);
+    color: black;
+    /* background-color: var(--colour-video); */
     border-color: var(--colour-video);
 }
 
@@ -140,15 +142,17 @@ h1 {
 
 /* Text Button */
 #text-button {
-    color: var(--colour-text);
+    /* color: var(--colour-text);
+    border-color: var(--colour-text); */
+    color: black;
+    /* background-color: var(--colour-text); */
     border-color: var(--colour-text);
 }
 
 #text-button:hover {
     color: var(--colour-background);
-    background-color: var(--colour-text);
+    background-color: var(--colour-text); 
 }
-
 
 /* Content Column */
 .column-content {
@@ -593,7 +597,7 @@ footer {
 
         /* Nav Bar Buttons Styling */
         --nav-bar-button-p: 18px;
-        --nav-bar-button-width: 100%;
+        --nav-bar-button-width: 80%;
         --nav-bar-button-radius: 20px;
         --nav-bar-button-padding: 5px;
         --nav-bar-button-margin: 20px;
