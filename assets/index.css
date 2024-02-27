@@ -310,7 +310,7 @@ hr {
 
 .text-onclick {
     background-color: white;
-    padding: 10px;
+    padding: var(--text-onclick-padding);
     align-items: start;
     /* Need to figure out how to make it relative */
 }
@@ -324,10 +324,7 @@ hr {
 }
 
 .text-onclick p {
-    font-family: 'Volkhov', serif;
-    text-transform: none;
-    margin-top: 2rem;
-    color: black;
+    display: none;
 }
 
 .text-class-onclick, 
@@ -390,8 +387,9 @@ footer {
         /* Class in Description */
         --class-onclick-p: 50px;
 
-        /* Text Styles */
-        --text-onclick-h1: 45px;
+        /* Text 'Quote' Styles */
+        --text-onclick-h1: 60px;
+        --text-onclick-padding: 50px;
 
         /* Description: Title */
         --description-title-p: 75px;
