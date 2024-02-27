@@ -383,19 +383,24 @@ footer {
         --column-padding: 4rem;
         --intro-padding: 4rem;
 
+        /* Block Titles in Column Content */
         --figcaption-p: 35px;
-
         --figcaption-padding: 17px;
 
-        --class-onclick-p: 35px;
+        /* Class in Description */
+        --class-onclick-p: 50px;
 
         /* Text Styles */
         --text-onclick-h1: 45px;
 
+        /* Description: Title */
         --description-title-p: 75px;
+
+        /* Description: Blurb */
         --description-blurb-p: 45px;
         --blurb-onclick-padding: 2rem;
 
+        /* Source Button */
         --source-onclick-p: 40px;
         --source-onclick-width: 100%;
         --source-onclick-padding: 30px;
@@ -451,11 +456,11 @@ footer {
     }
     
     .close-button {
-        font-weight: 100;
+        font-weight: 200;
         border: 2px white;
         border-style: solid;
-        width: 50px;
-        height: 50px;
+        width: 75px;
+        height: 75px;
     }
 
     .image-large {
