@@ -256,6 +256,7 @@ hr {
 .text-source-onclick,
 .linkedvideo-source-onclick,
 .images-source-onclick,
+.pdf-source-onclick,
 .source-onclick {
     font-family: 'Volkhov', serif;
     font-style: italic;
@@ -276,6 +277,7 @@ hr {
 .linkedvideo-source-onclick:hover,
 .text-source-onclick:hover,
 .images-source-onclick:hover,
+.pdf-source-onclick:hover,
 .source-onclick:hover {
     color: white;
     border: white 5px;
@@ -468,7 +470,9 @@ footer {
     .images-description-body,
     .link-onclick,
     .link-description-body,
-    .text-description-body {
+    .text-description-body,
+    .pdf-onclick,
+    .pdf-description-body {
         display: flex;
         align-items: flex-start; /* Align items at the top */
         flex-direction: row;
@@ -482,9 +486,16 @@ footer {
         margin-left: 3rem;
     }
 
+    .pdf-description-onclick {
+        flex-direction: column; /* Change direction to column for mobile responsiveness */
+        width: 30vw;
+        margin-left: 3rem;
+    }
+
     .images-source-onclick,
     .link-source-onclick,
-    .text-source-onclick {
+    .text-source-onclick,
+    .pdf-source-onclick {
         margin-top: 4rem;
     }
 

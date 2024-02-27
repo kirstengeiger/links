@@ -255,21 +255,26 @@ let renderBlock = (block) => {
 							</section>	
 							<section class="pdf-description-body">
 								<section class="pdf-onclick">
-									<a href="${block.attachment.url}">
-										<source media="(max-width: 640px)" srcset="${ block.image.large.url }">
-										<img src="${block.image.large.url}" alt="${block.title}" by "${block.user.fullname}" width="300" height="300">
-									</a>
+									<section class="image-large">
+										<source media="(max-width: 640px)" srcset="${block.image.large.url}">
+										<img src="${block.image.large.url}" alt="${block.title}" by "${block.user.fullname}" width="450" height="500">
+									</section>
+									<section class="image-thumbnail">
+										<source media="(max-width: 640px)" srcset="${block.image.thumb.url}">
+										<img src="${block.image.thumb.url}" alt="${block.title}" by "${block.user.fullname}" width="200" height="300">
+									</section>
 								</section>
-								<section class="description-onclick">
+								<section class="pdf-description-onclick">
 									<div class="title-onclick">${block.title}</div>
 									<div class="blurb-onclick">${block.description_html}</div>
-									<a class="source-onclick" href="${block.source}">See the original</a>
+									<a class="pdf-source-onclick" href="${block.attachment.url}">See the original</a>
 								<section>
 							</section>
 						</div>
 					</li>
 				`
 				channelBlocks.insertAdjacentHTML('beforeend', pdfItem)
+				console.log(pdf)
 			} else {
 				let pdfItem =
 				`
@@ -281,16 +286,20 @@ let renderBlock = (block) => {
 								<div class="class-onclick">${block.class}</div>
 								<button class="close-button">X</button>
 							</section>	
-							<section class="description-body">
+							<section class="pdf-description-body">
 								<section class="pdf-onclick">
-									<a href="${block.attachment.url}">
-										<source media="(max-width: 640px)" srcset="${ block.image.large.url }">
-										<img src="${block.image.large.url}" alt="${block.title}" by "${block.user.fullname}" width="300" height="300">
-									</a>
+									<section class="image-large">
+										<source media="(max-width: 640px)" srcset="${block.image.large.url}">
+										<img src="${block.image.large.url}" alt="${block.title}" by "${block.user.fullname}" width="450" height="500">
+									</section>
+									<section class="image-thumbnail">
+										<source media="(max-width: 640px)" srcset="${block.image.thumb.url}">
+										<img src="${block.image.thumb.url}" alt="${block.title}" by "${block.user.fullname}" width="200" height="300">
+									</section>
 								</section>
-								<section class="description-onclick">
+								<section class="pdf-description-onclick">
 									<div class="title-onclick">${block.title}</div>
-									<a class="source-onclick" href="${block.source}">See the original</a>
+									<a class="pdf-source-onclick" href="${block.attachment.url}">See the original</a>
 								<section>
 							</section>
 						</div>
