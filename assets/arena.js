@@ -60,7 +60,7 @@ let renderBlock = (block) => {
 							<div class="title-onclick">${block.title}</div>
 							<div class="blurb-onclick">${block.description_html}</div>
 							<a class="link-source-onclick" href="${block.source.url}">See the original</a>
-						<section>
+						</section>
 					</section>
 				</div>
 			</li>
@@ -91,7 +91,7 @@ let renderBlock = (block) => {
 						<section class="link-description-onclick">
 							<div class="title-onclick">${block.title}</div>
 							<a class="source-onclick" href="${block.source.url}">See the original</a>
-						<section>
+						</section>
 					</section>
 				</div>
 			</li>
@@ -99,17 +99,10 @@ let renderBlock = (block) => {
 		channelBlocks.insertAdjacentHTML('beforeend', linkItem)
 		}	
 	}
-
-
-	// Styling for pictures
-	// <picture>
-	// <source media="(max-width: 428px)" srcset="${ block.image.thumb.url }">
-	// <source media="(max-width: 640px)" srcset="${ block.image.large.url }">
-	// <img src="${ block.image.original.url }">
-	// </picture>
 	
 	// Images!
 	else if (block.class == 'Image') {
+		if (block.description_html.length > 0) {
         let imageItem =
         `
             <li class="block block--image">
@@ -120,7 +113,7 @@ let renderBlock = (block) => {
 						<div class="class-onclick">${block.class}</div>
 						<button class="close-button">X</button>
 					</section>	
-					<section class="image-description-body">
+					<section class="images-description-body">
 						<section class="images-onclick">
 							<section class="image-large">
 								<source media="(max-width: 640px)" srcset="${block.image.large.url}">
@@ -129,18 +122,51 @@ let renderBlock = (block) => {
 							<section class="image-thumbnail">
 								<source media="(max-width: 640px)" srcset="${block.image.thumb.url}">
 								<img src="${block.image.thumb.url}" alt="${block.title}" by "${block.user.fullname}" width="200" height="300">
+							</section>
 						</section>
 						<section class="images-description-onclick">
 							<div class="title-onclick">${block.title}</div>
 							<div class="blurb-onclick">${block.description_html}</div>
 							<a class="images-source-onclick" href="${block.source}">See the original</a>
-						<section>
+						</section>
+					</section
+				</div>
+            </li>
+        `
+        channelBlocks.insertAdjacentHTML('beforeend', imageItem)
+	} else {
+		let imageItem =
+		`
+            <li class="block block--image">
+                <figcaption>${block.title}</figcaption>
+				
+				<div class="block--image__description">
+					<section class="description-header">
+						<div class="class-onclick">${block.class}</div>
+						<button class="close-button">X</button>
+					</section>	
+					<section class="images-description-body">
+						<section class="images-onclick">
+							<section class="image-large">
+								<source media="(max-width: 640px)" srcset="${block.image.large.url}">
+								<img src="${block.image.large.url}" alt="${block.title}" by "${block.user.fullname}" width="350" height="500">
+							</section>
+							<section class="image-thumbnail">
+								<source media="(max-width: 640px)" srcset="${block.image.thumb.url}">
+								<img src="${block.image.thumb.url}" alt="${block.title}" by "${block.user.fullname}" width="200" height="300">
+							</section>
+						</section>
+						<section class="images-description-onclick">
+							<div class="title-onclick">${block.title}</div>
+							<a class="images-source-onclick" href="${block.source}">See the original</a>
+						</section>
 					</section
 				</div>
             </li>
         `
         channelBlocks.insertAdjacentHTML('beforeend', imageItem)
 	}
+}
 
 	// Text!
 	else if (block.class == 'Text') {
@@ -227,7 +253,7 @@ let renderBlock = (block) => {
 								<div class="class-onclick">${block.class}</div>
 								<button class="close-button">X</button>
 							</section>	
-							<section class="description-body">
+							<section class="pdf-description-body">
 								<section class="pdf-onclick">
 									<a href="${block.attachment.url}">
 										<source media="(max-width: 640px)" srcset="${ block.image.large.url }">
