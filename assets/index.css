@@ -40,6 +40,11 @@ h1 {
     padding-top: var(--intro-padding);
 }
 
+/* Nav Bar Buttons */
+.nav-bar > button {
+    font-family: 'Rubik', sans-serif;
+}
+
 /* Content Column */
 .column-content {
     padding-left: var(--column-padding);
@@ -333,7 +338,7 @@ footer {
         --column-padding: 4rem;
         --intro-padding: 4rem;
 
-        --figcaption-p: 40px;
+        --figcaption-p: 35px;
 
         --figcaption-padding: 17px;
 
