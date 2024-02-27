@@ -212,7 +212,7 @@ hr {
 .text-blurb-onclick {
     font-family: 'Rubik', sans-serif;
     font-size: var(--description-blurb-p);
-    padding-top: 1.5rem;
+    padding-top: var(--blurb-onclick-padding);
 }
 
 .description-onclick {
@@ -340,11 +340,12 @@ footer {
         /* Text Styles */
         --text-onclick-h1: 45px;
 
-        --description-title-p: 80px;
-        --description-blurb-p: 40px;
+        --description-title-p: 75px;
+        --description-blurb-p: 45px;
+        --blurb-onclick-padding: 2rem;
 
         --source-onclick-p: 40px;
-        --source-onclick-width: 400px;
+        --source-onclick-width: 100%;
         --source-onclick-padding: 30px;
         --source-onclick-radius: 70px;
         --source-onclick-margin: 6rem;
@@ -413,11 +414,29 @@ footer {
         display: contents;
     }
 
+    .title-onclick,
+    .linkedvideo-title-onclick, 
+    .text-title-onclick {
+        margin-top: 4rem;
+    }
+
     .images-source-onclick,
     .link-source-onclick,
     .text-source-onclick,
     .pdf-source-onclick {
-        margin-top: var(--source-onclick-margin);
+        /* margin-top: var(--source-onclick-margin); */
+        bottom: 0vh;
+        position: sticky;
+        margin-bottom: 1.5rem;
+    }
+
+    .images-description-body {
+        height: 100%; /* Adjust the height as needed */
+        overflow-y: scroll;
+    }
+
+    .blurb-onclick {
+        padding-bottom: 50px;
     }
 }
 
@@ -447,6 +466,8 @@ footer {
         --description-title-p: 40px;
         --description-blurb-p: 20px;
         --description-onlick-padding: 3rem;
+
+        --blurb-onclick-padding: 1.5rem;
 
         --source-onclick-p: 18px;
         --source-onclick-width: 200px;
@@ -530,6 +551,12 @@ footer {
         border-style: solid;
         width: 25px;
         height: 25px;
+    }
+
+    .title-onclick,
+    .linkedvideo-title-onclick, 
+    .text-title-onclick {
+        margin-top: 0;
     }
 
     /* ------------------  IMAGES STYLE ------------------   */
