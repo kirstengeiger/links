@@ -235,7 +235,6 @@ hr {
     font-family: 'Worksans', sans-serif;
     font-size: calc(0.8 * var(--class-onclick-p));
     color: white;
-    /* Referenced code from Stack Overflow */
     border-radius: 50%;
     display: block;
     text-align: center;
@@ -404,7 +403,7 @@ footer {
 
         /* Source Button */
         --source-onclick-p: 40px;
-        --source-onclick-width: 100%;
+        --source-onclick-width: 80%;
         --source-onclick-padding: 30px;
         --source-onclick-radius: 70px;
         --source-onclick-margin: 6rem;
@@ -471,6 +470,10 @@ footer {
 
     .image-thumbnail {
         display: contents;
+    }
+
+    .images-description-body {
+        overflow: auto; /* Add a scrollbar when content overflows */
     }
 
     .title-onclick,
