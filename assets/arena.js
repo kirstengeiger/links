@@ -186,8 +186,8 @@ let renderBlock = (block) => {
 							${block.content_html}
 						</section>
 						<section class="text-description-onclick">
-							<div class="text-title-onclick">${block.title}</div>
-							<div class="text-blurb-onclick">${block.description_html}</div>
+							<div class="title-onclick">${block.title}</div>
+							<div class="blurb-onclick">${block.description_html}</div>
 							<a class="text-source-onclick" href="${block.source}">See the original</a>
 						</section>
 					</section>
@@ -211,7 +211,7 @@ let renderBlock = (block) => {
 							${block.content_html}
 						</section>
 						<section class="text-description-onclick">
-							<div class="text-title-onclick">${block.title}</div>
+							<div class="title-onclick">${block.title}</div>
 							<a class="text-source-onclick" href="${block.source}">See the original</a>
 						</section>
 					</section>
@@ -306,61 +306,67 @@ let renderBlock = (block) => {
 		// Uploaded audio!
 		else if (attachment.includes('audio')) {
 			if (block.description_html && block.description_html.length > 0) {
-			let audioItem =
-				`
-				<li class="block block--uploadedaudio">
-					<figcaption>${block.generated_title}</figcaption>
-
-					<div class="block--uploadedaudio__description">
-						<section class="description-header">
-							<div class="class-onclick">${block.class}</div>
-							<button class="close-button">X</button>
-						</section>
-						<section class="description-body">
-							<section class="uploadedaudio-onclick">
-								<audio controls src="${block.attachment.url}"></audio> 
+				let audioItem =
+					`
+					<li class="block block--uploadedaudio">
+						<figcaption>${block.generated_title}</figcaption>
+		
+						<div class="block--uploadedaudio__description">
+							<section class="description-header">
+								<div class="class-onclick">${block.class}</div>
+								<button class="close-button">X</button>
 							</section>
-							<section class="description-onclick">
-								<div class="title-onclick">${block.title}</div>
-								<div class="blurb-onclick">${block.description}</div>
-								<a class="source-onclick" href="${block.source}">See the original</a>
+							<section class="audio-description-body">
+								<section class="uploadedaudio-onclick">
+									<audio controls src="${block.attachment.url}"></audio> 
+								</section>
+								<section class="audio-description-onclick">
+									<div class="title-onclick">${block.title}</div>
+									<div class="blurb-onclick">${block.description}</div>
+									${block.source ? `<a class="audio-source-onclick" href="${block.source}">See the original</a>` : ''}
+								</section>
 							</section>
-						</section>
-					</div>
-				</li>
-				`
-			channelBlocks.insertAdjacentHTML('beforeend', audioItem)
+						</div>
+					</li>
+					`
+				channelBlocks.insertAdjacentHTML('beforeend', audioItem)
 			} else {
-			let audioItem =
-				`
-				<li class="block block--uploadedaudio">
-					<figcaption>${block.generated_title}</figcaption>
-
-					<div class="block--uploadedaudio__description">
-						<section class="description-header">
-							<div class="class-onclick">${block.class}</div>
-							<button class="close-button">X</button>
-						</section>
-						<section class="description-body">
-							<section class="uploadedaudio-onclick">
-								<audio controls src="${block.attachment.url}"></audio> 
+				let audioItem =
+					`
+					<li class="block block--uploadedaudio">
+						<figcaption>${block.generated_title}</figcaption>
+		
+						<div class="block--uploadedaudio__description">
+							<section class="description-header">
+								<div class="class-onclick">${block.class}</div>
+								<button class="close-button">X</button>
 							</section>
-							<section class="description-onclick">
-								<div class="title-onclick">${block.title}</div>
-								<a class="source-onclick" href="${block.source}">See the original</a>
+							<section class="audio-description-body">
+								<section class="uploadedaudio-onclick">
+									<audio controls src="${block.attachment.url}"></audio> 
+								</section>
+								<section class="audio-description-onclick">
+									<div class="title-onclick">${block.title}</div>
+									${block.source ? `<a class="audio-source-onclick" href="${block.source}">See the original</a>` : ''}
+								</section>
 							</section>
-						</section>
-					</div>
-				</li>
-				`
-			channelBlocks.insertAdjacentHTML('beforeend', audioItem)
+						</div>
+					</li>
+					`
+				channelBlocks.insertAdjacentHTML('beforeend', audioItem)
 			}
 		}
 	}
-		// More on audio: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/audio
-		// Audio image
-		// <audio controls src="${ block.attachment.url }">
-		// </audio> 
+
+	// ? ... : '': This is the ternary operator syntax. It consists of three parts:
+		// The condition (block.source ? ... : ''): This is the part before the ?. If the condition evaluates to true, the expression before the : is executed; otherwise, the expression after the : is executed.
+		// ...: This is the expression to execute if the condition is true. In this case, it's the anchor tag for the original source: <a class="source-onclick" href="${block.source}">See the original</a>.
+		// '': This is the expression to execute if the condition is false. In this case, it's an empty string ''.
+			
+	// More on audio: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/audio
+	// Audio image
+	// <audio controls src="${ block.attachment.url }">
+	// </audio> 
 	
 
 	// Linked media…

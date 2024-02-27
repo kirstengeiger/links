@@ -454,7 +454,6 @@ footer {
     }
 
     /* ------------------  IMAGES STYLE ------------------   */
-
     /* Image Sizes */
     .image-thumbnail {
         display: none;
@@ -490,7 +489,6 @@ footer {
     }
 
     /* ------------------ LINKED VIDEO STYLE ------------------ */
-
     /* Linked Video: Video, Title, Description, and OG Source */
     .linkedvideo-description-body {
         display: flex;
@@ -546,13 +544,20 @@ footer {
         max-width: 50vw;
     }
 
-    .embedly-embed {
+    /* .embedly-embed {
         width: 700;
+    } */
+
+    /* ------------------ AUDIO STYLE ------------------ */
+    /* Actual Audio Visual */
+    .uploadedaudio-onclick audio {
+        width: 100%; /* Adjust the width as needed */
+        height: 50px; /* Adjust the height as needed */
     }
 
-    /* .description-onclick {
-        max-width: 30vw;
-        padding-left: 1.8rem;
-    }  */
+    .audio-description-onclick {
+        margin-top: 3rem;
+        width: 30vw;
+    }
 }
 
