@@ -482,7 +482,7 @@ footer {
     .link-description-onclick,
     .text-description-onclick {
         flex-direction: column; /* Change direction to column for mobile responsiveness */
-        width: 45vw;
+        width: 30vw;
         margin-left: 3rem;
     }
 
