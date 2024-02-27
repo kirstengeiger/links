@@ -263,6 +263,7 @@ hr {
     font-family: 'Rubik', sans-serif;
     font-size: var(--description-blurb-p);
     padding-top: var(--blurb-onclick-padding);
+    padding-bottom:  var(--blurb-onclick-padding-bottom);
 }
 
 .description-onclick {
@@ -399,6 +400,7 @@ footer {
         /* Description: Blurb */
         --description-blurb-p: 45px;
         --blurb-onclick-padding: 2rem;
+        --blurb-onclick-padding-bottom: 13rem;
 
         /* Source Button */
         --source-onclick-p: 40px;
@@ -489,7 +491,6 @@ footer {
         margin-left: auto;
         margin-right: auto;
         margin-bottom: 3rem;
-        width: 80%;
     }
 
     .source-onclick {
@@ -504,18 +505,6 @@ footer {
         display: flex;
         justify-content: center; /* Center horizontally 
         align-items: center; */
-    }
-
-    /* iframe .embedly-embed {
-        width: 100%;
-    }
-    .images-description-body {
-        height: 100%; /* Adjust the height as needed */
-        /* overflow-y: scroll;
-    } */
-
-    .blurb-onclick {
-        padding-bottom: 13rem;
     }
 }
 
@@ -556,15 +545,15 @@ footer {
         --description-title-p: 40px;
         --description-blurb-p: 20px;
         --description-onlick-padding: 3rem;
-
         --blurb-onclick-padding: 1.5rem;
+        --blurb-onclick-padding-bottom: 1.5rem;
 
         /* Source Button Styling */
         --source-onclick-p: 18px;
         --source-onclick-width: 200px;
         --source-onclick-padding: 10px;
         --source-onclick-radius: 30px;
-        --source-onclick-margin: 4rem;
+        --source-onclick-margin: 2rem;
 
         --gutter: var(--typography-p);
     }
@@ -696,6 +685,9 @@ footer {
     .text-source-onclick,
     .pdf-source-onclick {
         margin-top: var(--source-onclick-margin);
+        position: relative;
+        margin-left: 0;
+        margin-right: 0;
     }
 
     /* ------------------ LINKED VIDEO STYLE ------------------ */
@@ -748,10 +740,6 @@ footer {
     .block--linkedvideo__description > .title-onclick {
         max-width: 50vw;
     }
-
-    /* .embedly-embed {
-        width: 700;
-    } */
 
     /* ------------------ AUDIO STYLE ------------------ */
     /* Actual Audio Visual */
