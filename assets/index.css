@@ -83,13 +83,14 @@ h1 {
 /* Audio Button */
 #audio-button {
     color: black;
-    border-color: var(--colour-audio);
+    border-color: black;
 }
 
 #audio-button:hover { 
     /*Use '#'' to select elements by their ID, while '.' is for their class*/
     color: var(--colour-background);
     background-color: var(--colour-audio);
+    border-color: var(--colour-audio);
 }
 
 /* PDF Button */
@@ -596,8 +597,8 @@ footer {
         --nav-bar-margin-top: 2rem;
 
         /* Nav Bar Buttons Styling */
-        --nav-bar-button-p: 18px;
-        --nav-bar-button-width: 80%;
+        --nav-bar-button-p: 15px;
+        --nav-bar-button-width: 50%;
         --nav-bar-button-radius: 20px;
         --nav-bar-button-padding: 5px;
         --nav-bar-button-margin: 20px;
