@@ -11,22 +11,22 @@
     --colour-background: #EDE8D3;
     
     --colour-image: #EB5500;
-    --colour-image-dark: #b24505;
+    --colour-image-dark: #c38967;
 
     --colour-audio: #D69A00;
-    --colour-audio-dark: #ac7b00;
+    --colour-audio-dark: #d2b56c;
     
     --colour-video: #95a43f; 
-    --colour-video-dark: #424b0c; 
+    --colour-video-dark: #6c7346; 
 
     --colour-link: #b96eba;
-    --colour-link-dark: #824a83;
+    --colour-link-dark: #946995;
 
     --colour-pdf: #FF77B7;
-    --colour-pdf-dark: #cc4483;
+    --colour-pdf-dark: #e096b8;
 
-    --colour-text: #325fff;
-    --colour-text-dark: #2849c0;
+    --colour-text: #4e74ff;
+    --colour-text-dark: #7282b9;
 }
 
 /* Styling Time! */
@@ -101,8 +101,8 @@ h1 {
 #audio-button,
 #audio-button-small {
     color: var(--colour-background);
-    border-color: #ac7b00;
-    background-color: #ac7b00;
+    border-color: var(--colour-audio-dark);
+    background-color: var(--colour-audio-dark);
 }
 
 /*Use '#'' to select elements by their ID, while '.' is for their class*/
