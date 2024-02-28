@@ -296,7 +296,7 @@ h1 {
 .block--text, 
 .block--uploadedaudio, 
 .block--pdf {
-    list-style-type: circle;
+    list-style-type: none;
     padding: var(--figcaption-padding);
     align-items: center;
 }
