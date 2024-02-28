@@ -522,7 +522,6 @@ footer {
 
 
 /* ------------------ MOBILE ------------------ */
-
 @media (min-width: 300px) {
     :root {
         --block-margin: 0.5em;
@@ -583,6 +582,7 @@ footer {
     }
 
     /* ------------------ COLUMN TITLE STYLE ------------------ */
+    
     .column-title {
         position: sticky;
         top: 0;
@@ -732,7 +732,7 @@ footer {
         --nav-bar-button-margin: 10px;
 
         /* Title Styles*/
-        --column-title-h1: 80px;
+        --column-title-h1: 70px;
         --column-title-lineheight: 110%;
         --column-title-p: 25px;
         --column-padding: 3rem;
@@ -767,7 +767,7 @@ footer {
         --source-onclick-margin: 2rem;     
     }
 
-    .nav-bar-small {
+    /* .nav-bar-small {
         display: none;
     }
 
@@ -778,7 +778,7 @@ footer {
         flex-wrap: nowrap;
         flex-direction: row;
         margin-top: 4rem;
-    }
+    } */
 
     .column-content {
         padding-left: 4rem;
@@ -787,6 +787,145 @@ footer {
     .column-title p {
         width: 75vw;
         line-height: 35px;
+    }
+
+     /* Image Sizes */
+     .image-thumbnail {
+        display: none;
+    }
+
+    .image-large {
+        display: contents;
+    }   
+
+    .block--image.active .block--image__description, 
+    .block--text.active .block--text__description, 
+    .block--uploadedaudio.active .block--uploadedaudio__description, 
+    .block--link.active .block--link__description, 
+    .block--linkedvideo.active .block--linkedvideo__description,
+    .block--pdf.active .block--pdf__description {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .text-onclick {
+        width: 50%;
+    }
+
+    .close-button {
+        font-weight: 100;
+        border: 1px white;
+        border-style: solid;
+        width: 25px;
+        height: 25px;
+    }
+
+    .title-onclick,
+    .linkedvideo-title-onclick, 
+    .text-title-onclick {
+        margin-top: 0;
+    }
+
+    /* ------------------ SIDE BY SIDE STYLE ------------------ */
+    /* Image and Description: Side by side */
+    .images-onclick,
+    .images-description-body,
+    .link-onclick,
+    .link-description-body,
+    .text-description-body,
+    .pdf-onclick,
+    .pdf-description-body {
+        display: flex;
+        align-items: flex-start; /* Align items at the top */
+        flex-direction: row;
+    }
+
+    .images-description-onclick,
+    .link-description-onclick,
+    .text-description-onclick {
+        flex-direction: column; /* Change direction to column for mobile responsiveness */
+        width: 50vw;
+        margin-left: 3rem;
+    }
+
+    .pdf-description-onclick {
+        flex-direction: column; /* Change direction to column for mobile responsiveness */
+        width: 30vw;
+        margin-left: 3rem;
+    }
+
+    .images-source-onclick,
+    .link-source-onclick,
+    .text-source-onclick,
+    .pdf-source-onclick {
+        margin-top: var(--source-onclick-margin);
+        position: relative;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    /* ------------------ LINKED VIDEO STYLE ------------------ */
+    /* Linked Video: Video, Title, Description, and OG Source */
+    .linkedvideo-description-body {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    /* Video Description */
+    .linkedvideo-description-onclick {
+        width: 100%;
+        order: 2;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        padding-top: var(--description-onlick-padding);
+    }
+
+    /* Video Title and Source Aligned at Top */
+    .linkedvideo-title-onclick,
+    .linkedvideo-source-onclick {
+        align-self: flex-start;
+    }
+
+    .description-text {
+        flex: 1;
+    }
+
+    .description-source {
+        margin-left: 20px;
+    }
+
+    /* Video Title */
+     .linkedvideo-title-onclick {
+        width: 30vw;
+    }
+    
+    .linkedvideo-source-onclick {
+        margin-left: 3rem;
+        align-content: center;
+    }
+
+    .block--linkedvideo__description > .title-onclick {
+        max-width: 50vw;
+    }
+
+    /* Video Size */
+    .linkedvideo-onclick iframe {
+        width: 100vw;
+        height: 420;
+    }
+
+    /* ------------------ AUDIO STYLE ------------------ */
+    /* Actual Audio Visual */
+    .uploadedaudio-onclick audio {
+        width: 100%; /* Adjust the width as needed */
+        height: 50px; /* Adjust the height as needed */
+    }
+
+    .audio-description-onclick {
+        margin-top: 3rem;
+        width: 30vw;
     }
 }
 
@@ -863,8 +1002,9 @@ footer {
         line-height: 100%;
     }
 
-    .column-title > p {
-        max-width: 80%
+    .column-title p {
+        width: 100%;
+        line-height: 120%;
     }
 
     /* ------------------ CONTENT COLUMN STYLE ------------------ */
