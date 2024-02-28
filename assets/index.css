@@ -515,7 +515,7 @@ h1 {
         /* Title Styles*/
         --column-title-h1: 100px;
         --column-title-lineheight: 100%;
-        --column-title-p: 35px;
+        --column-title-p: 30px;
         --column-padding: 4rem;
         --intro-padding: 4rem;
 
@@ -699,83 +699,6 @@ h1 {
         height: 100px; /* Adjust the height as needed */
     }
 }
-
-/* ------------------ TABLET ------------------ */
-    @media (min-width:650px) {
-        :root {
-            --block-margin: 0.3em;
-
-            --figcaption-padding: 10px;
-
-            /* Whole Nav Bar */
-            --nav-bar-margin-top: 2rem;
-
-            /* Nav Bar Buttons Styling */
-            --nav-bar-button-p: 20px;
-            --nav-bar-button-width: 15%;
-            /* --nav-bar-button-radius: 20px; */
-            --nav-bar-button-padding: 10px;
-            --nav-bar-button-margin: 10px;
-
-            /* Title Styles*/
-            --column-title-h1: 70px;
-            --column-title-lineheight: 110%;
-            --column-title-p: 32px;
-            --column-padding: 3rem;
-            --intro-padding: 1.5rem;
-
-            --description-onclick-margin: 2rem;
-
-            /* Content Title List Style */
-            --figcaption-p: 30px;
-
-            /* Bullet Point Size */
-            --block-marker-size: 25px;
-
-            /* Header: Media Class */
-            --class-onclick-p: 18px;
-
-            /* Text Styles */
-            --text-onclick-h1: 45px;
-
-            /* Description: On Click Styles */
-            --description-title-p: 40px;
-            --description-blurb-p: 20px;
-            --description-onlick-padding: 2rem;
-            --blurb-onclick-padding: 1.5rem;
-            --blurb-onclick-padding-bottom: 1.5rem;
-
-            /* Source Button Styling */
-            --source-onclick-p: 18px;
-            --source-onclick-width: 200px;
-            --source-onclick-padding: 10px;
-            --source-onclick-radius: 30px;
-            --source-onclick-margin: 2rem;     
-        }
-
-        /* .nav-bar-small {
-            display: none;
-        }
-
-        .nav-bar {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            flex-wrap: nowrap;
-            flex-direction: row;
-            margin-top: 4rem;
-        }*/
-
-        .column-title p {
-            width: 80%;
-        }
-
-        .column-content {
-            padding-left: 5rem;
-            padding-bottom: 3rem;
-        }
-
-    }
     
 
 /* ------------------ DESKTOP ------------------ */
