@@ -16,7 +16,7 @@
     --colour-audio: #D69A00;
     --colour-audio-dark: #ac7b00;
     
-    --colour-video: #606F08; 
+    --colour-video: #95a43f; 
     --colour-video-dark: #424b0c; 
 
     --colour-link: #b96eba;
@@ -218,9 +218,9 @@ h1 {
     background-color: white;
 }
 
-/* .block:not(:first-child) {
+.block:not(:first-child) {
     margin-top: var(--block-margin);
-} */
+}
 
 .block {
     margin-top: var(--block-margin);
@@ -323,7 +323,7 @@ h1 {
     display: flex;
     align-items: center; /* Align items vertically in the center */
     justify-content: space-between;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
     top: 0;
     width: 100%;
     position: relative;
@@ -658,7 +658,7 @@ footer {
         --nav-bar-button-width: 50%;
         --nav-bar-button-radius: 20px;
         --nav-bar-button-padding: 5px;
-        --nav-bar-button-margin: 20px;
+        --nav-bar-button-margin: 10px;
 
         /* Title Styles*/
         --column-title-h1: 50px;
@@ -711,11 +711,8 @@ footer {
     .block--pdf__description {
         display: none;
         position: fixed;
-        padding-top: 2rem;
-        padding-left: 3rem;
-        padding-right: 3rem;
         top: 0;
-        left: 34vw;
+        left: 30vw;
         bottom: 0;
         right: 0;
     }
@@ -736,7 +733,7 @@ footer {
 
     .column-title {
         position: sticky;
-        width: 35%;
+        width: 30%;
         height: 100vh;
         top: 0;
         z-index: 100; 
@@ -749,6 +746,7 @@ footer {
 
     .column-content {
         position: relative;
+        width: 70%;
     }
 
     /* Bullet point size */
