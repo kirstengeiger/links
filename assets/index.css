@@ -134,7 +134,8 @@ h1 {
     border-color: var(--colour-pdf);
 }
 
-#pdf-button.active {
+#pdf-button.active,
+#pdf-button-small.active{
     color: white;
     background-color: var(--colour-pdf);
     border-color: white;
