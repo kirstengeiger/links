@@ -510,7 +510,7 @@ footer {
 
 /* ------------------ MOBILE ------------------ */
 
-@media (min-width: 350px) {
+@media (min-width: 300px) {
     :root {
         --block-margin: 0.5em;
 
