@@ -235,6 +235,7 @@ h1 {
     /* padding-left: var(--column-padding); */
     padding-right: var(--column-padding);
     padding-top: calc(1* var(--column-padding));
+    padding-bottom: calc(1* var(--column-padding));
     background-color: white;
 }
 
