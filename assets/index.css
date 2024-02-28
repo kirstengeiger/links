@@ -311,11 +311,11 @@ h1 {
     content: '•';
     font-size: var(--block-marker-size);
     display: inline-block;
-    width: var(--block-marker-size);
+    /* width: var(--block-marker-size);
     height: var(--block-marker-size);
     border-radius: 100%;
     border-style: solid;
-    border: 2px;
+    border: 2px; */
 }
 
 /* .block::marker {
