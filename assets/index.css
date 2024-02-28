@@ -11,11 +11,18 @@
     --colour-background: #EDE8D3;
     
     --colour-image: #EB5500;
+    --colour-image-dark: #b24505;
+
     --colour-audio: #D69A00;
+    --colour-audio-dark: #ac7b00;
+    
     --colour-video: #606F08; 
+
     --colour-link: #B45982;
+
     --colour-pdf: #FF77B7;
     --colour-pdf-dark: #cf6395;
+
     --colour-text: #2A53EC;
 }
 
@@ -126,14 +133,21 @@ h1 {
 
 /* Image Button */
 #image-button {
-    color: black;
-    border-color: var(--colour-image);
-    /* background-color: var(--colour-image); */
+    color: white;
+    background-color: var(--colour-image-dark);
+    border-color: var(--colour-image-dark);
 }
 
 #image-button:hover {
     color: var(--colour-background);
     background-color: var(--colour-image);
+    border-color: var(--colour-image);
+}
+
+#image-button.active {
+    color: white;
+    background-color: var(--colour-image);
+    border-color: white;
 }
 
 /* Link Button */

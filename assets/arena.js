@@ -583,6 +583,45 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 			togglePdfButtonStyle(pdfFilterActive);
 		});
 
+		// ------------------ IMAGE FILTER ------------------
+		// Select the "PDF" button by the button ID defined in HTML
+		const imageButton = document.getElementById('image-button');
+
+		// Track the state of the PDF filter
+		let imageFilterActive = false;
+
+		// Function to toggle the style of the PDF button
+		function toggleImageButtonStyle(active) {
+			if (active) {
+				imageButton.classList.add('active'); // Add the 'active' class
+			} else {
+				imageButton.classList.remove('active'); // Remove the 'active' class
+			}
+		}
+
+		// Click event listener for the PDF button
+		imageButton.addEventListener('click', () => {
+			// Toggle display of PDF blocks and track filter state
+			const blocks = document.querySelectorAll('.block');
+
+			blocks.forEach(block => {
+				// Toggle the hidden class of the block
+				block.classList.toggle('hidden');
+
+				// Check if the block contains a PDF attachment
+				const isImageBlock = block.classList.contains('block--image');
+
+				// If the block is a PDF block, display it; otherwise, hide it
+				block.style.display = imageFilterActive ? 'list-item' : (isImageBlock ? 'list-item' : 'none');
+			});
+
+			// Toggle the filter state
+			imageFilterActive = !imageFilterActive;
+
+			// Update the style of the PDF button
+			toggleImageButtonStyle(imageFilterActive);
+		});
+
 		// // Also display the owner and collaborators:
 		// let channelUsers = document.getElementById('channel-users') // Show them together
 		// data.collaborators.forEach((collaborator) => renderUser(collaborator, channelUsers))
