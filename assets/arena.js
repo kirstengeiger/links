@@ -700,6 +700,45 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 			toggleVideoButtonStyle(videoFilterActive);
 		});
 
+		// ------------------ TEXT FILTER ------------------
+		// Select the "Text" button by the button ID defined in HTML
+		const textButton = document.getElementById('text-button');
+
+		// Track the state of the Text filter
+		let textFilterActive = false;
+
+		// Function to toggle the style of the Text button
+		function toggleTextButtonStyle(active) {
+			if (active) {
+				textButton.classList.add('active'); // Add the 'active' class
+			} else {
+				textButton.classList.remove('active'); // Remove the 'active' class
+			}
+		}
+
+		// Click event listener for the Text button
+		textButton.addEventListener('click', () => {
+			// Toggle display of Text blocks and track filter state
+			const blocks = document.querySelectorAll('.block');
+
+			blocks.forEach(block => {
+				// Toggle the hidden class of the block
+				block.classList.toggle('hidden');
+
+				// Check if the block contains a Text attachment
+				const isTextBlock = block.classList.contains('block--text');
+
+				// If the block is a Text block, display it; otherwise, hide it
+				block.style.display = textFilterActive ? 'list-item' : (isTextBlock ? 'list-item' : 'none');
+			});
+
+			// Toggle the filter state
+			textFilterActive = !textFilterActive;
+
+			// Update the style of the Text button
+			toggleTextButtonStyle(textFilterActive);
+		});
+
 		// // Also display the owner and collaborators:
 		// let channelUsers = document.getElementById('channel-users') // Show them together
 		// data.collaborators.forEach((collaborator) => renderUser(collaborator, channelUsers))

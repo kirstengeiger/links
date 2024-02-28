@@ -19,13 +19,14 @@
     --colour-video: #606F08; 
     --colour-video-dark: #424b0c; 
 
-    --colour-link: #B45982;
-    --colour-link-dark: #6d344e;
+    --colour-link: #b96eba;
+    --colour-link-dark: #824a83;
 
     --colour-pdf: #FF77B7;
     --colour-pdf-dark: #cc4483;
 
-    --colour-text: #2A53EC;
+    --colour-text: #325fff;
+    --colour-text-dark: #2849c0;
 }
 
 /* Styling Time! */
@@ -179,7 +180,7 @@ h1 {
 }
 
 #video-button:hover {
-    color: var(--colour-background);
+    color: white;
     background-color: var(--colour-video);
     border-color: var(--colour-video);
 }
@@ -192,16 +193,21 @@ h1 {
 
 /* Text Button */
 #text-button {
-    /* color: var(--colour-text);
-    border-color: var(--colour-text); */
-    color: black;
-    /* background-color: var(--colour-text); */
-    border-color: var(--colour-text);
+    color: white;
+    background-color: var(--colour-text-dark);
+    border-color: var(--colour-text-dark);
 }
 
 #text-button:hover {
-    color: var(--colour-background);
+    color: white;
     background-color: var(--colour-text); 
+    border-color: var(--colour-text); 
+}
+
+#text-button.active {
+    color: white;
+    background-color: var(--colour-text);
+    border-color: white;
 }
 
 /* Content Column */
@@ -298,7 +304,7 @@ h1 {
 
 /* Text Styling */
 .block--text::marker {
-    color: #2A53EC;
+    color: var(--colour-text);
 }
 
 /* Audio Styling */
@@ -414,7 +420,7 @@ h1 {
 
 /* Text Description Styles */
 .block--text__description {
-    background-color: #2A53EC;
+    background-color: var(--colour-text);
 }
 
 .text-onclick {
@@ -443,27 +449,25 @@ h1 {
     font-style: normal;
 }
 
-
 /* Link Description Styles */
 .block--link__description {
-    background-color: #B45982;
+    background-color: var(--colour-link);
 }
 
 /* Linked Video Description Styles */
 .block--linkedvideo__description {
-    background-color: #606F08;
+    background-color: var(--colour-video);
 }
 
 .block--uploadedaudio__description {
-    background-color: #D69A00;
+    background-color: var(--colour-audio);
 }
 
 .block--pdf__description {
-    background-color: #FF77B7;
+    background-color: var(--colour-pdf);
 }
 
 /* Footer  */
-
 footer p {
     font-family: 'Work Sans', sans-serif;
     font-size: var(--footer-p);
