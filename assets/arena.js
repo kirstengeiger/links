@@ -158,7 +158,7 @@ let renderBlock = (block) => {
 						</section>
 						<section class="images-description-onclick">
 							<div class="title-onclick">${block.title}</div>
-							<a class="images-source-onclick" href=${block.source}>See the original</a>
+							<a class="images-source-onclick" href=${block.source_url}>See the original</a>
 						</section>
 					</section
 				</div>

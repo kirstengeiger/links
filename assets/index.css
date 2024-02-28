@@ -309,6 +309,12 @@ h1 {
 .block--pdf::marker {
     content: '•';
     font-size: var(--block-marker-size);
+    display: inline-block;
+    width: var(--block-marker-size);
+    height: var(--block-marker-size);
+    border-radius: 100%;
+    border-style: solid;
+    border: 2px;
 }
 
 /* .block::marker {
@@ -333,7 +339,7 @@ h1 {
 
 /* Text Styling */
 .block--text::marker {
-    color: var(--colour-text);
+   color: var(--colour-text);
 }
 
 /* Audio Styling */
@@ -343,7 +349,7 @@ h1 {
 
 /* PDF Styling */
 .block--pdf::marker {
-    color: var(--colour-pdf);
+   color: var(--colour-pdf);
 }
 
 /* Hiding the style on toggle */
