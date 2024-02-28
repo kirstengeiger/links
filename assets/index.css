@@ -17,6 +17,7 @@
     --colour-audio-dark: #ac7b00;
     
     --colour-video: #606F08; 
+    --colour-video-dark: #424b0c; 
 
     --colour-link: #B45982;
     --colour-link-dark: #6d344e;
@@ -172,14 +173,21 @@ h1 {
 
 /* Video Button */
 #video-button {
-    color: black;
-    /* background-color: var(--colour-video); */
-    border-color: var(--colour-video);
+    color: white;
+    background-color: var(--colour-video-dark);
+    border-color: var(--colour-video-dark);
 }
 
 #video-button:hover {
     color: var(--colour-background);
     background-color: var(--colour-video);
+    border-color: var(--colour-video);
+}
+
+#video-button.active {
+    color: white;
+    background-color: var(--colour-video);
+    border-color: white;
 }
 
 /* Text Button */

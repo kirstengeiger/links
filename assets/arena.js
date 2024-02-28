@@ -650,7 +650,7 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 				// Check if the block contains a PDF attachment
 				const isLinkBlock = block.classList.contains('block--link');
 
-				// If the block is a PDF block, display it; otherwise, hide it
+				// If the block is a Link block, display it; otherwise, hide it
 				block.style.display = linkFilterActive ? 'list-item' : (isLinkBlock ? 'list-item' : 'none');
 			});
 
@@ -659,6 +659,45 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 
 			// Update the style of the PDF button
 			toggleLinkButtonStyle(linkFilterActive);
+		});
+
+		// ------------------ VIDEO FILTER ------------------
+		// Select the "Video" button by the button ID defined in HTML
+		const videoButton = document.getElementById('video-button');
+
+		// Track the state of the Video filter
+		let videoFilterActive = false;
+
+		// Function to toggle the style of the Video button
+		function toggleVideoButtonStyle(active) {
+			if (active) {
+				videoButton.classList.add('active'); // Add the 'active' class
+			} else {
+				videoButton.classList.remove('active'); // Remove the 'active' class
+			}
+		}
+
+		// Click event listener for the Video button
+		videoButton.addEventListener('click', () => {
+			// Toggle display of Video blocks and track filter state
+			const blocks = document.querySelectorAll('.block');
+
+			blocks.forEach(block => {
+				// Toggle the hidden class of the block
+				block.classList.toggle('hidden');
+
+				// Check if the block contains a Video attachment
+				const isVideoBlock = block.classList.contains('block--linkedvideo');
+
+				// If the block is a Video block, display it; otherwise, hide it
+				block.style.display = videoFilterActive ? 'list-item' : (isVideoBlock ? 'list-item' : 'none');
+			});
+
+			// Toggle the filter state
+			videoFilterActive = !videoFilterActive;
+
+			// Update the style of the PDF button
+			toggleVideoButtonStyle(videoFilterActive);
 		});
 
 		// // Also display the owner and collaborators:
