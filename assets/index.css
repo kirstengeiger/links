@@ -90,6 +90,7 @@ h1 {
 .nav-bar button:hover {
     border-radius: var(--nav-bar-button-radius);
     box-shadow: var(--nav-bar-button-boxshadow);
+    cursor: pointer;
 }
 
 .nav-bar button.active {
@@ -572,12 +573,14 @@ footer {
         display: grid;
     }
 
+    /* ------------------ COLUMN TITLE STYLE ------------------ */
     .column-title {
         position: sticky;
         top: 0;
         padding-bottom: 4rem;
     }
 
+    /* ------------------ COLUMN CONTENT STYLE ------------------ */
     .column-content {
         flex: 1; /* Allow column to grow and shrink */
         overflow-y: auto; /* Enable vertical scrolling */
@@ -621,6 +624,7 @@ footer {
         height: 75px;
     }
 
+    /* ------------------ WHICH IMAGE IS SHOWN IN DESCRIPTION: ON CLICK ------------------ */
     .image-large {
         display: none;
     }
@@ -640,6 +644,7 @@ footer {
         margin-top: 4rem;
     }
 
+    /* ------------------ LINK TO ORIGINAL SOURCE ------------------ */
     .images-source-onclick,
     .link-source-onclick,
     .text-source-onclick,
@@ -659,7 +664,6 @@ footer {
     }
 
     /* ------------------ VIDEO STYLE ------------------ */
-
     /* Video Itself */
     .linkedvideo-onclick iframe {
         width: 400%;
@@ -671,7 +675,6 @@ footer {
     }
 
     /* ------------------ AUDIO STYLE ------------------ */
-
     /* Actual Audio Visual */
     .uploadedaudio-onclick audio {
         width: 100%; /* Adjust the width as needed */
@@ -744,7 +747,6 @@ footer {
     } */
 
     /* ------------------ COLUMN TITLE: STYLE ------------------ */
-
     .column-title {
         position: sticky;
         width: 30%;
@@ -766,6 +768,10 @@ footer {
     .column-content {
         position: relative;
         width: 70%;
+    }
+
+    .nav-bar-small {
+        display: none;
     }
 
     /* ------------------ POP-UP CONTENT STYLE: BACKGROUND SPACE ------------------ */
