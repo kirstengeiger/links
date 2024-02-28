@@ -98,20 +98,23 @@ h1 {
 }
 
 /* Audio Button */
-#audio-button {
+#audio-button,
+#audio-button-small {
     color: var(--colour-background);
     border-color: #ac7b00;
     background-color: #ac7b00;
 }
 
 /*Use '#'' to select elements by their ID, while '.' is for their class*/
-#audio-button:hover { 
+#audio-button:hover, 
+#audio-button-small:hover { 
     color: white;
     background-color: var(--colour-audio);
     border-color: var(--colour-audio);
 }
 
-#audio-button.active {
+#audio-button.active, 
+#audio-button-small.active {
     color: white;
     background-color: var(--colour-audio);
     border-color: white;
@@ -580,6 +583,20 @@ footer {
     .nav-bar-small {
         display: flex;
         flex-direction: column;
+        margin-top: 3rem;
+    }
+
+    .nav-bar-small button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 120px;
+        border-radius: 20px;
+    }
+
+    .nav-bar-small img {
+        width: 100px;
+        padding: 20px;
     }
 
     /* ------------------ COLUMN CONTENT STYLE ------------------ */
@@ -626,7 +643,7 @@ footer {
         height: 75px;
     }
 
-    /* ------------------ WHICH IMAGE IS SHOWN IN DESCRIPTION: ON CLICK ------------------ */
+    /* ------------------ IMAGE SHOWN IN DESCRIPTION ------------------ */
     .image-large {
         display: none;
     }
@@ -742,11 +759,6 @@ footer {
     .wrapper {
         display: flex;
     }
-
-/* 
-    .nav-bar img {
-        width: 20px;
-    } */
 
     /* ------------------ COLUMN TITLE: STYLE ------------------ */
     .column-title {

@@ -507,6 +507,7 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 
 		// Select the "Audio" button by the button ID defined in HTML
 		const audioButton = document.getElementById('audio-button');
+		const audioButtonSmall = document.getElementById('audio-button-small');
 
 		// Track the state of the audio filter
 		let audioFilterActive = false;
@@ -515,8 +516,10 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 		function toggleAudioButtonStyle(active) {
 			if (active) {
 				audioButton.classList.add('active'); // Add the 'active' class
+				audioButtonSmall.classList.add('active'); // Add the 'active' class
 			} else {
 				audioButton.classList.remove('active'); // Remove the 'active' class
+				audioButtonSmall.classList.remove('active'); // Remove the 'active' class
 			}
 		}
 
@@ -540,6 +543,29 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 			audioFilterActive = !audioFilterActive;
 
 			// Update the style of the audio button
+			toggleAudioButtonStyle(audioFilterActive);
+		});
+
+		// Click event listener for the small audio button
+		audioButtonSmall.addEventListener('click', () => {
+			// Toggle display of audio blocks and track filter state
+			const blocks = document.querySelectorAll('.block');
+
+			blocks.forEach(block => {
+				// Toggle the hidden class of the block
+				block.classList.toggle('hidden');
+
+				// Check if the block contains an audio attachment
+				const isAudioBlock = block.classList.contains('block--uploadedaudio');
+
+				// If the block is an audio block, display it; otherwise, hide it
+				block.style.display = audioFilterActive ? 'list-item' : (isAudioBlock ? 'list-item' : 'none');
+			});
+
+			// Toggle the active state of the small audio button
+			audioFilterActive = !audioFilterActive;
+
+			// Update the style of the small audio button
 			toggleAudioButtonStyle(audioFilterActive);
 		});
 
