@@ -289,14 +289,15 @@ h1 {
     color: var(--colour-pdf);
 }
 
-.block--image figcaption, 
+.block--image, 
 .block--link, 
 .block--linkedvideo, 
 .block--text, 
 .block--uploadedaudio, 
 .block--pdf {
     list-style-type: circle;
-    padding: var(--figcaption-padding)
+    padding: var(--figcaption-padding);
+    align-items: center;
 }
 
 .block--image::marker,
@@ -305,13 +306,14 @@ h1 {
 .block--text::marker,
 .block--uploadedaudio::marker,
 .block--pdf::marker {
+    content: '•';
     font-size: var(--block-marker-size);
 }
 
-.block::marker {
+/* .block::marker {
     content: '•';
-    font-size: 25px;
-}
+    font-size: var(--block-marker-size);
+} */
 
 /* Image Styling */
 .block--image::marker {
@@ -336,8 +338,6 @@ h1 {
 /* Audio Styling */
 .block--uploadedaudio::marker {
     color: var(--colour-audio);
-    content: '•';
-    font-size: 25px;
 }
 
 /* PDF Styling */
@@ -551,7 +551,7 @@ footer {
         --figcaption-padding: 17px;
 
         /* Bullet Point Size */
-        --block-marker-size: 100px;
+        --block-marker-size: 75px;
 
         /* Class in Description */
         --class-onclick-p: 50px;
