@@ -651,7 +651,7 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 				const isLinkBlock = block.classList.contains('block--link');
 
 				// If the block is a PDF block, display it; otherwise, hide it
-				block.style.display = imageFilterActive ? 'list-item' : (isLinkBlock ? 'list-item' : 'none');
+				block.style.display = linkFilterActive ? 'list-item' : (isLinkBlock ? 'list-item' : 'none');
 			});
 
 			// Toggle the filter state
