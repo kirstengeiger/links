@@ -19,9 +19,10 @@
     --colour-video: #606F08; 
 
     --colour-link: #B45982;
+    --colour-link-dark: #6d344e;
 
     --colour-pdf: #FF77B7;
-    --colour-pdf-dark: #cf6395;
+    --colour-pdf-dark: #cc4483;
 
     --colour-text: #2A53EC;
 }
@@ -152,14 +153,21 @@ h1 {
 
 /* Link Button */
 #link-button {
-    color: black;
-    border-color: var(--colour-link);
-    /* background-color: var(--colour-link); */
+    color: white;
+    border-color: var(--colour-link-dark);
+    background-color: var(--colour-link-dark);
 }
 
 #link-button:hover {
     color: white;
     background-color: var(--colour-link);
+    border-color: var(--colour-link);
+}
+
+#link-button.active {
+    color: white;
+    background-color: var(--colour-link);
+    border-color: white;
 }
 
 /* Video Button */
