@@ -516,7 +516,7 @@ h1 {
         /* Title Styles*/
         --column-title-h1: 100px;
         --column-title-lineheight: 100%;
-        --column-title-p: 30px;
+        --column-title-p: 38px;
         --column-padding: 4rem;
         --intro-padding: 4rem;
 
@@ -574,6 +574,10 @@ h1 {
         position: sticky;
         top: 0;
         padding-bottom: 4rem;
+    }
+
+    .column-title p {
+        line-height: 110%;
     }
 
     .nav-bar {
@@ -721,7 +725,7 @@ h1 {
 
         /* Title Styles*/
         --column-title-h1: 50px;
-        --column-title-lineheight: 10%;
+        --column-title-lineheight: 140%;
         --column-title-p: 18px;
         --column-padding: 4rem;
         --intro-padding: 2rem;
@@ -768,7 +772,6 @@ h1 {
         height: 100vh;
         top: 0;
         z-index: 100; 
-        /* padding-bottom: 50vh; */
     }
 
     h1 {
@@ -777,7 +780,7 @@ h1 {
 
     .column-title p {
         width: 100%;
-        line-height: 120%;
+        line-height: 140%;
     }
 
     /* ------------------ CONTENT COLUMN STYLE ------------------ */
