@@ -121,7 +121,8 @@ h1 {
 }
 
 /* PDF Button */
-#pdf-button {
+#pdf-button,
+#pdf-button-small {
     color: var(--colour-background);
     background-color: var(--colour-pdf-dark);
     border-color: var(--colour-pdf-dark);
@@ -582,8 +583,10 @@ footer {
 
     .nav-bar-small {
         display: flex;
-        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
         margin-top: 4rem;
+        width: 100%;
     }
 
     .nav-bar-small button {

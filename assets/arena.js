@@ -573,6 +573,7 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 		// ------------------ PDF FILTER ------------------
 		// Select the "PDF" button by the button ID defined in HTML
 		const pdfButton = document.getElementById('pdf-button');
+		const pdfButtonSmall = document.getElementById('pdf-button-small');
 
 		// Track the state of the PDF filter
 		let pdfFilterActive = false;
@@ -581,8 +582,10 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 		function togglePdfButtonStyle(active) {
 			if (active) {
 				pdfButton.classList.add('active'); // Add the 'active' class
+				pdfButtonSmall.classList.add('active'); // Add the 'active' class
 			} else {
 				pdfButton.classList.remove('active'); // Remove the 'active' class
+				pdfButtonSmall.classList.remove('active'); // Add the 'active' class
 			}
 		}
 
@@ -608,6 +611,30 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 			// Update the style of the PDF button
 			togglePdfButtonStyle(pdfFilterActive);
 		});
+
+		// Click event listener for the small audio button
+		pdfButtonSmall.addEventListener('click', () => {
+			// Toggle display of audio blocks and track filter state
+			const blocks = document.querySelectorAll('.block');
+
+			blocks.forEach(block => {
+				// Toggle the hidden class of the block
+				block.classList.toggle('hidden');
+
+				// Check if the block contains an audio attachment
+				const isAudioBlock = block.classList.contains('block--pdf');
+
+				// If the block is an audio block, display it; otherwise, hide it
+				block.style.display = pdfFilterActive ? 'list-item' : (isAudioBlock ? 'list-item' : 'none');
+			});
+
+			// Toggle the active state of the small audio button
+			pdfFilterActive = !pdfFilterActive;
+
+			// Update the style of the small audio button
+			togglePdfButtonStyle(pdfFilterActive);
+		});
+
 
 		// ------------------ IMAGE FILTER ------------------
 		// Select the  Image button by the ID defined in HTML
