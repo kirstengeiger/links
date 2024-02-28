@@ -790,7 +790,7 @@ h1 {
 
         /* Nav Bar Buttons Styling */
         --nav-bar-button-p: 15px;
-        --nav-bar-button-width: 90%;
+        --nav-bar-button-width: 100%;
         --nav-bar-button-radius: 20px;
         --nav-bar-button-padding: 5px;
         --nav-bar-button-margin: 10px;
