@@ -163,19 +163,22 @@ h1 {
 }
 
 /* Link Button */
-#link-button {
+#link-button,
+#link-button-small {
     color: white;
     border-color: var(--colour-link-dark);
     background-color: var(--colour-link-dark);
 }
 
-#link-button:hover {
+#link-button:hover,
+#link-button-small:hover {
     color: white;
     background-color: var(--colour-link);
     border-color: var(--colour-link);
 }
 
-#link-button.active {
+#link-button.active,
+#link-button-small.active {
     color: white;
     background-color: var(--colour-link);
     border-color: white;
@@ -598,7 +601,7 @@ footer {
         align-items: center;
         width: 120px;
         height: 120px;
-        border-radius: 20px;
+        border-radius: 30px;
     }
 
     .nav-bar-small img {

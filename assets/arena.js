@@ -705,6 +705,7 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 		// ------------------ LINKS FILTER ------------------
 		// Select the "Link" button by the button ID defined in HTML
 		const linkButton = document.getElementById('link-button');
+		const linkButtonSmall = document.getElementById('link-button-small');
 
 		// Track the state of the Link filter
 		let linkFilterActive = false;
@@ -713,8 +714,10 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 		function toggleLinkButtonStyle(active) {
 			if (active) {
 				linkButton.classList.add('active'); // Add the 'active' class
+				linkButtonSmall.classList.add('active'); // Add the 'active' class
 			} else {
 				linkButton.classList.remove('active'); // Remove the 'active' class
+				linkButtonSmall.classList.remove('active'); // Remove the 'active' class
 			}
 		}
 
@@ -740,6 +743,29 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 			// Update the style of the PDF button
 			toggleLinkButtonStyle(linkFilterActive);
 		});
+
+		// Click event listener for the Link button
+		linkButtonSmall.addEventListener('click', () => {
+			// Toggle display of PDF blocks and track filter state
+			const blocks = document.querySelectorAll('.block');
+
+			blocks.forEach(block => {
+				// Toggle the hidden class of the block
+				block.classList.toggle('hidden');
+
+				// Check if the block contains a PDF attachment
+				const isLinkBlock = block.classList.contains('block--link');
+
+				// If the block is a Link block, display it; otherwise, hide it
+				block.style.display = linkFilterActive ? 'list-item' : (isLinkBlock ? 'list-item' : 'none');
+			});
+
+			// Toggle the filter state
+			linkFilterActive = !linkFilterActive;
+
+			// Update the style of the PDF button
+			toggleLinkButtonStyle(linkFilterActive);
+		});		
 
 		// ------------------ VIDEO FILTER ------------------
 		// Select the "Video" button by the button ID defined in HTML
