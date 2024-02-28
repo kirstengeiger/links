@@ -529,7 +529,7 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
     // If the audio filter is active, display all blocks and reset the state
     if (audioFilterActive) {
         blocks.forEach(block => {
-            block.style.display = 'block';
+            block.style.display = 'list-item';
         });
         audioFilterActive = false;
     } else {
