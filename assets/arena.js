@@ -622,10 +622,10 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 				block.classList.toggle('hidden');
 
 				// Check if the block contains an audio attachment
-				const isAudioBlock = block.classList.contains('block--pdf');
+				const isPdfBlock = block.classList.contains('block--pdf');
 
 				// If the block is an audio block, display it; otherwise, hide it
-				block.style.display = pdfFilterActive ? 'list-item' : (isAudioBlock ? 'list-item' : 'none');
+				block.style.display = pdfFilterActive ? 'list-item' : (isPdfBlock ? 'list-item' : 'none');
 			});
 
 			// Toggle the active state of the small audio button
@@ -639,6 +639,7 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 		// ------------------ IMAGE FILTER ------------------
 		// Select the  Image button by the ID defined in HTML
 		const imageButton = document.getElementById('image-button');
+		const imageButtonSmall = document.getElementById('image-button-small');
 
 		// Track the state of the Image filter
 		let imageFilterActive = false;
@@ -647,8 +648,10 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 		function toggleImageButtonStyle(active) {
 			if (active) {
 				imageButton.classList.add('active'); // Add the 'active' class
+				imageButtonSmall.classList.add('active'); // Add the 'active' class
 			} else {
 				imageButton.classList.remove('active'); // Remove the 'active' class
+				imageButtonSmall.classList.remove('active'); // Add the 'active' class
 			}
 		}
 
@@ -674,6 +677,30 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 			// Update the style of the Image button
 			toggleImageButtonStyle(imageFilterActive);
 		});
+
+		// Click event listener for the small image button
+		imageButtonSmall.addEventListener('click', () => {
+			// Toggle display of Image blocks and track filter state
+			const blocks = document.querySelectorAll('.block');
+
+			blocks.forEach(block => {
+				// Toggle the hidden class of the block
+				block.classList.toggle('hidden');
+
+				// Check if the block contains an Image attachment
+				const isImageBlock = block.classList.contains('block--image');
+
+				// If the block is an Image block, display it; otherwise, hide it
+				block.style.display = imageFilterActive ? 'list-item' : (isImageBlock ? 'list-item' : 'none');
+			});
+
+			// Toggle the active state of the small audio button
+			imageFilterActive = !imageFilterActive;
+
+			// Update the style of the small audio button
+			toggleImageButtonStyle(imageFilterActive);
+		});
+
 
 		// ------------------ LINKS FILTER ------------------
 		// Select the "Link" button by the button ID defined in HTML

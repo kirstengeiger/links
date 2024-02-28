@@ -141,19 +141,22 @@ h1 {
 }
 
 /* Image Button */
-#image-button {
+#image-button,
+#image-button-small {
     color: white;
     background-color: var(--colour-image-dark);
     border-color: var(--colour-image-dark);
 }
 
-#image-button:hover {
+#image-button:hover,
+#image-button-small:hover {
     color: var(--colour-background);
     background-color: var(--colour-image);
     border-color: var(--colour-image);
 }
 
-#image-button.active {
+#image-button.active,
+#image-button-small.active {
     color: white;
     background-color: var(--colour-image);
     border-color: white;
@@ -518,7 +521,7 @@ footer {
         /* Title Styles*/
         --column-title-h1: 100px;
         --column-title-lineheight: 100%;
-        --column-title-p: 18px;
+        --column-title-p: 30px;
         --column-padding: 4rem;
         --intro-padding: 4rem;
 
@@ -539,7 +542,7 @@ footer {
         --figcaption-padding: 17px;
 
         /* Bullet Point Size */
-        --block-marker-size: 50px;
+        --block-marker-size: 100px;
 
         /* Class in Description */
         --class-onclick-p: 50px;
@@ -594,6 +597,7 @@ footer {
         justify-content: center;
         align-items: center;
         width: 120px;
+        height: 120px;
         border-radius: 20px;
     }
 
