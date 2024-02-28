@@ -753,7 +753,7 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 				// Toggle the hidden class of the block
 				block.classList.toggle('hidden');
 
-				// Check if the block contains a PDF attachment
+				// Check if the block contains a Link attachment
 				const isLinkBlock = block.classList.contains('block--link');
 
 				// If the block is a Link block, display it; otherwise, hide it
@@ -770,6 +770,7 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 		// ------------------ VIDEO FILTER ------------------
 		// Select the "Video" button by the button ID defined in HTML
 		const videoButton = document.getElementById('video-button');
+		const videoButtonSmall = document.getElementById('video-button-small');
 
 		// Track the state of the Video filter
 		let videoFilterActive = false;
@@ -778,8 +779,10 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 		function toggleVideoButtonStyle(active) {
 			if (active) {
 				videoButton.classList.add('active'); // Add the 'active' class
+				videoButtonSmall.classList.add('active'); // Add the 'active' class
 			} else {
 				videoButton.classList.remove('active'); // Remove the 'active' class
+				videoButtonSmall.classList.remove('active'); // Add the 'active' class
 			}
 		}
 
@@ -806,9 +809,35 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 			toggleVideoButtonStyle(videoFilterActive);
 		});
 
+		// Click event listener for the small video button
+		videoButtonSmall.addEventListener('click', () => {
+			// Toggle display of video blocks and track filter state
+			const blocks = document.querySelectorAll('.block');
+
+			blocks.forEach(block => {
+				// Toggle the hidden class of the block
+				block.classList.toggle('hidden');
+
+				// Check if the block contains an audio attachment
+				const isVideoBlock = block.classList.contains('block--linkedvideo');
+
+				// If the block is an audio block, display it; otherwise, hide it
+				block.style.display = videoFilterActive ? 'list-item' : (isVideoBlock ? 'list-item' : 'none');
+			});
+
+			// Toggle the active state of the small audio button
+			videoFilterActive = !videoFilterActive;
+
+			// Update the style of the small audio button
+			toggleVideoButtonSmallStyle(videoFilterActive);
+		});		
+
+
+
 		// ------------------ TEXT FILTER ------------------
 		// Select the "Text" button by the button ID defined in HTML
 		const textButton = document.getElementById('text-button');
+		const textButtonSmall = document.getElementById('text-button-small');
 
 		// Track the state of the Text filter
 		let textFilterActive = false;

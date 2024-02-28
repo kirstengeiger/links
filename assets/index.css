@@ -185,19 +185,22 @@ h1 {
 }
 
 /* Video Button */
-#video-button {
+#video-button,
+#video-button-small {
     color: white;
     background-color: var(--colour-video-dark);
     border-color: var(--colour-video-dark);
 }
 
-#video-button:hover {
+#video-button:hover,
+#video-button-small:hover {
     color: white;
     background-color: var(--colour-video);
     border-color: var(--colour-video);
 }
 
-#video-button.active {
+#video-button.active,
+#video-button.active:hover {
     color: white;
     background-color: var(--colour-video);
     border-color: white;
