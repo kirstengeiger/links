@@ -503,47 +503,86 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 			}
 		})
 
-		// AUDIO FILTER 
-		// Select the "Audio" button by the button ID defined in HTML
-		const audioButton = document.getElementById('audio-button');
+// 		// AUDIO FILTER 
+// 		// Select the "Audio" button by the button ID defined in HTML
+// 		const audioButton = document.getElementById('audio-button');
 
-		// Click event listener (checks to see if the button is clicked) to the "Audio" button
-		audioButton.addEventListener('click', () => {
-			// Toggle display of audio blocks
-			const blocks = document.querySelectorAll('block');
+// 		// Click event listener (checks to see if the button is clicked) to the "Audio" button
+// 		audioButton.addEventListener('click', () => {
+// 			// Toggle display of audio blocks
+// 			const blocks = document.querySelectorAll('block');
 
-			blocks.forEach(block => {
-				// Toggle the display of the block
-				block.classList.toggle('hidden');
-			});
-		});
+// 			blocks.forEach(block => {
+// 				// Toggle the display of the block
+// 				block.classList.toggle('hidden');
+// 			});
+// 		});
 
-		// Track the state of the audio filter
-		let audioFilterActive = false;
+// 		// Track the state of the audio filter
+// 		let audioFilterActive = false;
 
-		// Add click event listener to the "Audio" button
-		audioButton.addEventListener('click', () => {
-			// Select all blocks
-			const blocks = document.querySelectorAll('.block');
+// 		// Add click event listener to the "Audio" button
+// 		audioButton.addEventListener('click', () => {
+// 			// Select all blocks
+// 			const blocks = document.querySelectorAll('.block');
 
-    // If the audio filter is active, display all blocks and reset the state
-    if (audioFilterActive) {
-        blocks.forEach(block => {
-            block.style.display = 'list-item';
-        });
-        audioFilterActive = false;
+//     // If the audio filter is active, display all blocks and reset the state
+//     if (audioFilterActive) {
+//         blocks.forEach(block => {
+//             block.style.display = 'list-item';
+//         });
+//         audioFilterActive = false;
+//     } else {
+//         // Loop through each block
+//         blocks.forEach(block => {
+//             // Check if the block contains an audio attachment
+//             const isAudioBlock = block.classList.contains('block--uploadedaudio');
+
+//             // If the block is an audio block, display it; otherwise, hide it
+//             block.style.display = isAudioBlock ? '.block--uploadedaudio::marker' : 'none';
+//         });
+//         audioFilterActive = true;
+//     }
+// });
+
+// Select the "Audio" button by the button ID defined in HTML
+const audioButton = document.getElementById('audio-button');
+
+// Track the state of the audio filter
+let audioFilterActive = false;
+
+// Function to toggle the style of the audio button
+function toggleAudioButtonStyle(active) {
+    if (active) {
+        audioButton.classList.add('active'); // Add the 'active' class
     } else {
-        // Loop through each block
-        blocks.forEach(block => {
-            // Check if the block contains an audio attachment
-            const isAudioBlock = block.classList.contains('block--uploadedaudio');
-
-            // If the block is an audio block, display it; otherwise, hide it
-            block.style.display = isAudioBlock ? '.block--uploadedaudio::marker' : 'none';
-        });
-        audioFilterActive = true;
+        audioButton.classList.remove('active'); // Remove the 'active' class
     }
+}
+
+// Click event listener for the audio button
+audioButton.addEventListener('click', () => {
+    // Toggle display of audio blocks and track filter state
+    const blocks = document.querySelectorAll('.block');
+
+    blocks.forEach(block => {
+        // Toggle the hidden class of the block
+        block.classList.toggle('hidden');
+
+        // Check if the block contains an audio attachment
+        const isAudioBlock = block.classList.contains('block--uploadedaudio');
+
+        // If the block is an audio block, display it; otherwise, hide it
+        block.style.display = audioFilterActive ? 'list-item' : (isAudioBlock ? 'list-item' : 'none');
+    });
+
+    // Toggle the filter state
+    audioFilterActive = !audioFilterActive;
+
+    // Update the style of the audio button
+    toggleAudioButtonStyle(audioFilterActive);
 });
+
 
 		// // Also display the owner and collaborators:
 		// let channelUsers = document.getElementById('channel-users') // Show them together
