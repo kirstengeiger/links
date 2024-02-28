@@ -15,6 +15,7 @@
     --colour-video: #606F08; 
     --colour-link: #B45982;
     --colour-pdf: #FF77B7;
+    --colour-pdf-dark: #cf6395;
     --colour-text: #2A53EC;
 }
 
@@ -73,42 +74,54 @@ h1 {
     align-content: center;
     border-style: solid;
     border-width: var(--nav-bar-button-border);
-    box-shadow: var(--nav-bar-button-boxshadow);
 }
 
 .nav-bar button:hover {
     border-radius: var(--nav-bar-button-radius);
+    box-shadow: var(--nav-bar-button-boxshadow);
+}
+
+.nav-bar button.active {
+    box-shadow: var(--nav-bar-button-boxshadow);
 }
 
 /* Audio Button */
 #audio-button {
-    color: black;
-    border-color: black;
+    color: var(--colour-background);
+    border-color: #ac7b00;
+    background-color: #ac7b00;
 }
 
 #audio-button:hover { 
     /*Use '#'' to select elements by their ID, while '.' is for their class*/
-    color: var(--colour-background);
+    color: white;
     background-color: var(--colour-audio);
     border-color: var(--colour-audio);
 }
 
 #audio-button.active {
-    color: var(--colour-background);
+    color: white;
     background-color: var(--colour-audio);
-    border-color: var(--colour-background);
+    border-color: white;
 }
 
 /* PDF Button */
 #pdf-button {
-    color: black;
-    /* background-color: var(--colour-pdf); */
-    border-color: var(--colour-pdf);
+    color: var(--colour-background);
+    background-color: var(--colour-pdf-dark);
+    border-color: var(--colour-pdf-dark);
 }
 
 #pdf-button:hover {
     color: white;
     background-color: var(--colour-pdf);
+    border-color: var(--colour-pdf);
+}
+
+#pdf-button.active {
+    color: white;
+    background-color: var(--colour-pdf);
+    border-color: white;
 }
 
 /* Image Button */
@@ -650,9 +663,10 @@ footer {
         display: flex;
     }
 
-    .audio-button {
-        background-color: #D69A00;
-    }
+/* 
+    .nav-bar img {
+        width: 20px;
+    } */
 
     /* onClick Background Styling */
     .block--image__description, 

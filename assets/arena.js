@@ -503,86 +503,85 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 			}
 		})
 
-// 		// AUDIO FILTER 
-// 		// Select the "Audio" button by the button ID defined in HTML
-// 		const audioButton = document.getElementById('audio-button');
+		// ------------------ AUDIO FILTER ------------------
 
-// 		// Click event listener (checks to see if the button is clicked) to the "Audio" button
-// 		audioButton.addEventListener('click', () => {
-// 			// Toggle display of audio blocks
-// 			const blocks = document.querySelectorAll('block');
+		// Select the "Audio" button by the button ID defined in HTML
+		const audioButton = document.getElementById('audio-button');
 
-// 			blocks.forEach(block => {
-// 				// Toggle the display of the block
-// 				block.classList.toggle('hidden');
-// 			});
-// 		});
+		// Track the state of the audio filter
+		let audioFilterActive = false;
 
-// 		// Track the state of the audio filter
-// 		let audioFilterActive = false;
+		// Function to toggle the style of the audio button
+		function toggleAudioButtonStyle(active) {
+			if (active) {
+				audioButton.classList.add('active'); // Add the 'active' class
+			} else {
+				audioButton.classList.remove('active'); // Remove the 'active' class
+			}
+		}
 
-// 		// Add click event listener to the "Audio" button
-// 		audioButton.addEventListener('click', () => {
-// 			// Select all blocks
-// 			const blocks = document.querySelectorAll('.block');
+		// Click event listener for the audio button
+		audioButton.addEventListener('click', () => {
+			// Toggle display of audio blocks and track filter state
+			const blocks = document.querySelectorAll('.block');
 
-//     // If the audio filter is active, display all blocks and reset the state
-//     if (audioFilterActive) {
-//         blocks.forEach(block => {
-//             block.style.display = 'list-item';
-//         });
-//         audioFilterActive = false;
-//     } else {
-//         // Loop through each block
-//         blocks.forEach(block => {
-//             // Check if the block contains an audio attachment
-//             const isAudioBlock = block.classList.contains('block--uploadedaudio');
+			blocks.forEach(block => {
+				// Toggle the hidden class of the block
+				block.classList.toggle('hidden');
 
-//             // If the block is an audio block, display it; otherwise, hide it
-//             block.style.display = isAudioBlock ? '.block--uploadedaudio::marker' : 'none';
-//         });
-//         audioFilterActive = true;
-//     }
-// });
+				// Check if the block contains an audio attachment
+				const isAudioBlock = block.classList.contains('block--uploadedaudio');
 
-// Select the "Audio" button by the button ID defined in HTML
-const audioButton = document.getElementById('audio-button');
+				// If the block is an audio block, display it; otherwise, hide it
+				block.style.display = audioFilterActive ? 'list-item' : (isAudioBlock ? 'list-item' : 'none');
+			});
 
-// Track the state of the audio filter
-let audioFilterActive = false;
+			// Toggle the filter state
+			audioFilterActive = !audioFilterActive;
 
-// Function to toggle the style of the audio button
-function toggleAudioButtonStyle(active) {
-    if (active) {
-        audioButton.classList.add('active'); // Add the 'active' class
-    } else {
-        audioButton.classList.remove('active'); // Remove the 'active' class
-    }
-}
+			// Update the style of the audio button
+			toggleAudioButtonStyle(audioFilterActive);
+		});
 
-// Click event listener for the audio button
-audioButton.addEventListener('click', () => {
-    // Toggle display of audio blocks and track filter state
-    const blocks = document.querySelectorAll('.block');
 
-    blocks.forEach(block => {
-        // Toggle the hidden class of the block
-        block.classList.toggle('hidden');
+		// ------------------ PDF FILTER ------------------
+		// Select the "PDF" button by the button ID defined in HTML
+		const pdfButton = document.getElementById('pdf-button');
 
-        // Check if the block contains an audio attachment
-        const isAudioBlock = block.classList.contains('block--uploadedaudio');
+		// Track the state of the PDF filter
+		let pdfFilterActive = false;
 
-        // If the block is an audio block, display it; otherwise, hide it
-        block.style.display = audioFilterActive ? 'list-item' : (isAudioBlock ? 'list-item' : 'none');
-    });
+		// Function to toggle the style of the PDF button
+		function togglePdfButtonStyle(active) {
+			if (active) {
+				pdfButton.classList.add('active'); // Add the 'active' class
+			} else {
+				pdfButton.classList.remove('active'); // Remove the 'active' class
+			}
+		}
 
-    // Toggle the filter state
-    audioFilterActive = !audioFilterActive;
+		// Click event listener for the PDF button
+		pdfButton.addEventListener('click', () => {
+			// Toggle display of PDF blocks and track filter state
+			const blocks = document.querySelectorAll('.block');
 
-    // Update the style of the audio button
-    toggleAudioButtonStyle(audioFilterActive);
-});
+			blocks.forEach(block => {
+				// Toggle the hidden class of the block
+				block.classList.toggle('hidden');
 
+				// Check if the block contains a PDF attachment
+				const isPdfBlock = block.classList.contains('block--pdf');
+
+				// If the block is a PDF block, display it; otherwise, hide it
+				block.style.display = pdfFilterActive ? 'list-item' : (isPdfBlock ? 'list-item' : 'none');
+			});
+
+			// Toggle the filter state
+			pdfFilterActive = !pdfFilterActive;
+
+			// Update the style of the PDF button
+			togglePdfButtonStyle(pdfFilterActive);
+		});
 
 		// // Also display the owner and collaborators:
 		// let channelUsers = document.getElementById('channel-users') // Show them together
