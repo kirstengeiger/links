@@ -689,7 +689,7 @@ h1 {
     /* Video Itself */
     .linkedvideo-onclick iframe {
         width: 400%;
-        height: 200%;
+        height: 100%;
     }
 
     /* ------------------ AUDIO STYLE ------------------ */
