@@ -213,7 +213,6 @@ h1 {
 }
 
 /* ------------------ CONTENT COLUMN STYLE ------------------ */
-
 /* Background Space Column Content is Taking Up */
 .column-content {
     padding-left: var(--column-padding);
@@ -223,7 +222,6 @@ h1 {
 }
 
 /* ------------------ CONTENT TITLES BULLET POINT STYLE ------------------ */
-
 /* Bullet Point List*/
 .block {
     margin-top: var(--block-margin);
@@ -337,13 +335,12 @@ h1 {
 }
 
 /* ------------------ POP-UP CONTENT STYLE: BACKGROUND SPACE ------------------ */
-
 /* Link */
 .block--link__description {
     background-color: var(--colour-link);
 }
 
-/* Links */
+/* Video */
 .block--linkedvideo__description {
     background-color: var(--colour-video);
 }
@@ -364,7 +361,6 @@ h1 {
 }
 
 /* ------------------ POP-UP CONTENT STYLE: HEADER ------------------ */
-
 /* Header Sits On Top of Everything */
 .description-header {
     display: flex;
@@ -406,7 +402,6 @@ h1 {
 }
 
 /* ------------------ POP-UP CONTENT STYLE: TITLE & BLURB ------------------ */
-
 .title-onclick,
 .linkedvideo-title-onclick, 
 .text-title-onclick {
@@ -428,7 +423,6 @@ h1 {
 }
 
 /* ------------------ POP-UP CONTENT STYLE: ORIGINAL SOURCE ------------------ */
-
 /* Link to Original Source */
 .link-source-onclick,
 .text-source-onclick,
@@ -464,7 +458,6 @@ h1 {
 }
 
 /* ------------------ MEDIA CLASS: TEXT/QUOTE ------------------ */
-
 /* Text Description Styles */
 .block--text__description {
     background-color: var(--colour-text);
@@ -578,6 +571,15 @@ footer {
         position: sticky;
         top: 0;
         padding-bottom: 4rem;
+    }
+
+    .nav-bar {
+        display: none;
+    }
+
+    .nav-bar-small {
+        display: flex;
+        flex-direction: column;
     }
 
     /* ------------------ COLUMN CONTENT STYLE ------------------ */
@@ -694,7 +696,7 @@ footer {
 
         /* Nav Bar Buttons Styling */
         --nav-bar-button-p: 15px;
-        --nav-bar-button-width: 50%;
+        --nav-bar-button-width: 90%;
         --nav-bar-button-radius: 20px;
         --nav-bar-button-padding: 5px;
         --nav-bar-button-margin: 10px;
@@ -772,6 +774,11 @@ footer {
 
     .nav-bar-small {
         display: none;
+    }
+
+    .nav-bar {
+        display: flex;
+        flex-direction: column;
     }
 
     /* ------------------ POP-UP CONTENT STYLE: BACKGROUND SPACE ------------------ */
