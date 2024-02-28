@@ -231,7 +231,7 @@ h1 {
 /* ------------------ CONTENT COLUMN STYLE ------------------ */
 /* Background Space Column Content is Taking Up */
 .column-content {
-    padding-left: var(--column-padding);
+    /* padding-left: var(--column-padding); */
     padding-right: var(--column-padding);
     padding-top: calc(1* var(--column-padding));
     background-color: white;
@@ -619,7 +619,8 @@ footer {
     .column-content {
         flex: 1; /* Allow column to grow and shrink */
         overflow-y: auto; /* Enable vertical scrolling */
-        padding-bottom: 4rem;
+        /* padding-bottom: 2rem; */
+        padding-left: 7rem;
     }
 
     /* onClick Background Styling */
@@ -798,6 +799,7 @@ footer {
     .column-content {
         position: relative;
         width: 70%;
+        padding-left: 4rem;
     }
 
     .nav-bar-small {
