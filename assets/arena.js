@@ -833,7 +833,6 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 		});		
 
 
-
 		// ------------------ TEXT FILTER ------------------
 		// Select the "Text" button by the button ID defined in HTML
 		const textButton = document.getElementById('text-button');
@@ -846,8 +845,10 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 		function toggleTextButtonStyle(active) {
 			if (active) {
 				textButton.classList.add('active'); // Add the 'active' class
+				textButtonSmall.classList.add('active'); // Add the 'active' class
 			} else {
 				textButton.classList.remove('active'); // Remove the 'active' class
+				textButtonSmall.classList.remove('active'); // Remove the 'active' class
 			}
 		}
 
@@ -872,6 +873,29 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 
 			// Update the style of the Text button
 			toggleTextButtonStyle(textFilterActive);
+		});
+
+		// Click event listener for the Text button
+		textButtonSmall.addEventListener('click', () => {
+			// Toggle display of Text blocks and track filter state
+			const blocks = document.querySelectorAll('.block');
+
+			blocks.forEach(block => {
+				// Toggle the hidden class of the block
+				block.classList.toggle('hidden');
+
+				// Check if the block contains a Text attachment
+				const isTextBlock = block.classList.contains('block--text');
+
+				// If the block is a Text block, display it; otherwise, hide it
+				block.style.display = textFilterActive ? 'list-item' : (isTextBlock ? 'list-item' : 'none');
+			});
+
+			// Toggle the filter state
+			textFilterActive = !textFilterActive;
+
+			// Update the style of the Text button
+			toggleTextButtonSmallStyle(textFilterActive);
 		});
 
 		// // Also display the owner and collaborators:

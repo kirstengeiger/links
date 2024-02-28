@@ -207,19 +207,22 @@ h1 {
 }
 
 /* Text Button */
-#text-button {
+#text-button,
+#text-button-small {
     color: white;
     background-color: var(--colour-text-dark);
     border-color: var(--colour-text-dark);
 }
 
-#text-button:hover {
+#text-button:hover,
+#text-button-small:hover {
     color: white;
     background-color: var(--colour-text); 
     border-color: var(--colour-text); 
 }
 
-#text-button.active {
+#text-button.active,
+#text-button-small.active {
     color: white;
     background-color: var(--colour-text);
     border-color: white;
@@ -787,7 +790,7 @@ footer {
         line-height: 100%;
     }
 
-    .column-title p {
+    .column-title > p {
         max-width: 80%
     }
 
