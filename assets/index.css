@@ -34,6 +34,7 @@ html {
     scroll-behavior: smooth;
 }
 
+ /* ------------------ COLUMN TITLE STYLE ------------------ */
 /* Intro Column */ 
 .column-title {
     background-color: var(--colour-background);
@@ -102,8 +103,8 @@ h1 {
     background-color: #ac7b00;
 }
 
+/*Use '#'' to select elements by their ID, while '.' is for their class*/
 #audio-button:hover { 
-    /*Use '#'' to select elements by their ID, while '.' is for their class*/
     color: white;
     background-color: var(--colour-audio);
     border-color: var(--colour-audio);
@@ -210,7 +211,9 @@ h1 {
     border-color: white;
 }
 
-/* Content Column */
+/* ------------------ CONTENT COLUMN STYLE ------------------ */
+
+/* Background Space Column Content is Taking Up */
 .column-content {
     padding-left: var(--column-padding);
     padding-right: var(--column-padding);
@@ -218,10 +221,9 @@ h1 {
     background-color: white;
 }
 
-.block {
-    margin-top: var(--block-margin);
-}
+/* ------------------ CONTENT TITLES BULLET POINT STYLE ------------------ */
 
+/* Bullet Point List*/
 .block {
     margin-top: var(--block-margin);
 }
@@ -282,6 +284,15 @@ h1 {
     padding: var(--figcaption-padding)
 }
 
+.block--image::marker,
+.block--link::marker,
+.block--linkedvideo::marker,
+.block--text::marker,
+.block--uploadedaudio::marker,
+.block--pdf::marker {
+    font-size: var(--block-marker-size);
+}
+
 .block::marker {
     content: '•';
     font-size: 25px;
@@ -309,16 +320,51 @@ h1 {
 
 /* Audio Styling */
 .block--uploadedaudio::marker {
-    color: #D69A00;
+    color: var(--colour-audio);
     content: '•';
     font-size: 25px;
 }
 
 /* PDF Styling */
 .block--pdf::marker {
-    color: #FF77B7;
+    color: var(--colour-pdf);
 }
 
+/* Hiding the style on toggle */
+.hidden {
+    display: none;
+}
+
+/* ------------------ POP-UP CONTENT STYLE: BACKGROUND SPACE ------------------ */
+
+/* Link */
+.block--link__description {
+    background-color: var(--colour-link);
+}
+
+/* Links */
+.block--linkedvideo__description {
+    background-color: var(--colour-video);
+}
+
+/* Audio */
+.block--uploadedaudio__description {
+    background-color: var(--colour-audio);
+}
+
+/* PDF */
+.block--pdf__description {
+    background-color: var(--colour-pdf);
+}
+
+/* Image */
+.block--image__description {
+    background-color: var(--colour-image);
+}
+
+/* ------------------ POP-UP CONTENT STYLE: HEADER ------------------ */
+
+/* Header Sits On Top of Everything */
 .description-header {
     display: flex;
     align-items: center; /* Align items vertically in the center */
@@ -329,14 +375,7 @@ h1 {
     position: relative;
 }
 
-.hidden {
-    display: none;
-}
-
-.block--image__description {
-    background-color: #EB5500;
-}
-
+/* Media Class */
 .class-onclick, 
 .text-class-onclick {
     font-family: 'Worksans', sans-serif;
@@ -346,6 +385,7 @@ h1 {
     font-weight: 100;
 }
 
+/* Close Button */
 .close-button {
     font-family: 'Worksans', sans-serif;
     font-size: calc(0.8 * var(--class-onclick-p));
@@ -363,6 +403,8 @@ h1 {
     border: 2px white;
     border-style: solid;
 }
+
+/* ------------------ POP-UP CONTENT STYLE: TITLE & BLURB ------------------ */
 
 .title-onclick,
 .linkedvideo-title-onclick, 
@@ -383,6 +425,8 @@ h1 {
 .description-onclick {
     padding-top: var(--description-onclick-margin);
 }
+
+/* ------------------ POP-UP CONTENT STYLE: ORIGINAL SOURCE ------------------ */
 
 /* Link to Original Source */
 .link-source-onclick,
@@ -418,6 +462,8 @@ h1 {
     transition: 0.3s; /* Add transition for smooth effect */
 }
 
+/* ------------------ MEDIA CLASS: TEXT/QUOTE ------------------ */
+
 /* Text Description Styles */
 .block--text__description {
     background-color: var(--colour-text);
@@ -449,24 +495,7 @@ h1 {
     font-style: normal;
 }
 
-/* Link Description Styles */
-.block--link__description {
-    background-color: var(--colour-link);
-}
-
-/* Linked Video Description Styles */
-.block--linkedvideo__description {
-    background-color: var(--colour-video);
-}
-
-.block--uploadedaudio__description {
-    background-color: var(--colour-audio);
-}
-
-.block--pdf__description {
-    background-color: var(--colour-pdf);
-}
-
+/* ------------------ FOOTER ------------------ */
 /* Footer  */
 footer p {
     font-family: 'Work Sans', sans-serif;
@@ -481,7 +510,9 @@ footer {
     padding-left: var(--padding-footer);
 }
 
-/* Mobile  */
+
+/* ------------------ MOBILE ------------------ */
+
 @media (min-width: 350px) {
     :root {
         --block-margin: 0.5em;
@@ -508,6 +539,9 @@ footer {
         /* Block Titles in Column Content */
         --figcaption-p: 35px;
         --figcaption-padding: 17px;
+
+        /* Bullet Point Size */
+        --block-marker-size: 50px;
 
         /* Class in Description */
         --class-onclick-p: 50px;
@@ -625,6 +659,7 @@ footer {
     }
 
     /* ------------------ VIDEO STYLE ------------------ */
+
     /* Video Itself */
     .linkedvideo-onclick iframe {
         width: 400%;
@@ -636,6 +671,7 @@ footer {
     }
 
     /* ------------------ AUDIO STYLE ------------------ */
+
     /* Actual Audio Visual */
     .uploadedaudio-onclick audio {
         width: 100%; /* Adjust the width as needed */
@@ -643,7 +679,7 @@ footer {
     }
 }
 
-/* Desktop */
+/* ------------------ DESKTOP ------------------ */
 @media (min-width:1200px) {
     :root {
         --block-margin: 0.3em;
@@ -669,8 +705,13 @@ footer {
 
         --description-onclick-margin: 2rem;
 
+        /* Content Title List Style */
         --figcaption-p: 20px;
 
+        /* Bullet Point Size */
+        --block-marker-size: 25px;
+
+        /* Header: Media Class */
         --class-onclick-p: 18px;
 
         /* Text Styles */
@@ -702,6 +743,32 @@ footer {
         width: 20px;
     } */
 
+    /* ------------------ COLUMN TITLE: STYLE ------------------ */
+
+    .column-title {
+        position: sticky;
+        width: 30%;
+        height: 100vh;
+        top: 0;
+        z-index: 100; 
+        /* padding-bottom: 50vh; */
+    }
+
+    h1 {
+        line-height: 100%;
+    }
+
+    .column-title p {
+        max-width: 80%
+    }
+
+    /* ------------------ CONTENT COLUMN STYLE ------------------ */
+    .column-content {
+        position: relative;
+        width: 70%;
+    }
+
+    /* ------------------ POP-UP CONTENT STYLE: BACKGROUND SPACE ------------------ */
     /* onClick Background Styling */
     .block--image__description, 
     .block--link__description, 
@@ -725,38 +792,6 @@ footer {
     .block--pdf.active .block--pdf__description {
         display: flex;
         flex-direction: column;
-    }
-
-    h1 {
-        line-height: 100%;
-    }
-
-    .column-title {
-        position: sticky;
-        width: 30%;
-        height: 100vh;
-        top: 0;
-        z-index: 100; 
-        /* padding-bottom: 50vh; */
-    }
-
-    .column-title p {
-        max-width: 80%
-    }
-
-    .column-content {
-        position: relative;
-        width: 70%;
-    }
-
-    /* Bullet point size */
-    .block--image::marker,
-    .block--link::marker,
-    .block--linkedvideo::marker,
-    .block--text::marker,
-    .block--uploadedaudio::marker,
-    .block--pdf::marker {
-        font-size: 25px;
     }
 
     .text-onclick {
@@ -787,6 +822,7 @@ footer {
         display: contents;
     }
 
+    /* ------------------ SIDE BY SIDE STYLE ------------------ */
     /* Image and Description: Side by side */
     .images-onclick,
     .images-description-body,
@@ -848,16 +884,6 @@ footer {
         align-self: flex-start;
     }
 
-    /* Video Title */
-    .linkedvideo-title-onclick {
-        width: 30vw;
-    }
-
-    /* Video Link to Original Source */
-    .linkedvideo-source-onclick {
-        margin-left: 4.5rem;
-    }
-
     .description-text {
         flex: 1;
     }
@@ -866,6 +892,11 @@ footer {
         margin-left: 20px;
     }
 
+    /* Video Title */
+     .linkedvideo-title-onclick {
+        width: 30vw;
+    }
+    
     .linkedvideo-source-onclick {
         margin-left: 5rem;
         top: 0;
@@ -875,6 +906,7 @@ footer {
         max-width: 50vw;
     }
 
+    /* Video Size */
     .linkedvideo-onclick iframe {
         width: 100vw;
         height: 420;
