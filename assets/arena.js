@@ -188,7 +188,6 @@ let renderBlock = (block) => {
 						<section class="text-description-onclick">
 							<div class="title-onclick">${block.title}</div>
 							<div class="blurb-onclick">${block.description_html}</div>
-							<a class="text-source-onclick" href="${block.source}">See the original</a>
 						</section>
 					</section>
 				</div>
@@ -212,7 +211,6 @@ let renderBlock = (block) => {
 						</section>
 						<section class="text-description-onclick">
 							<div class="title-onclick">${block.title}</div>
-							<a class="text-source-onclick" href="${block.source}">See the original</a>
 						</section>
 					</section>
 				</div>

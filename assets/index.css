@@ -483,6 +483,7 @@ h1 {
     background-color: white;
     padding: var(--text-onclick-padding);
     align-items: start;
+    overflow: auto;
     /* Need to figure out how to make it relative */
 }
 
@@ -505,21 +506,6 @@ h1 {
     font-style: normal;
 }
 
-/* ------------------ FOOTER ------------------ */
-/* Footer  */
-footer p {
-    font-family: 'Work Sans', sans-serif;
-    font-size: var(--footer-p);
-    color: #F8F3F0;
-}
-
-footer {
-    background-color: black;
-    padding-top: var(--padding-footer);
-    padding-bottom: var(--padding-footer);
-    padding-left: var(--padding-footer);
-}
-
 
 /* ------------------ MOBILE ------------------ */
 @media (min-width: 300px) {
@@ -529,7 +515,7 @@ footer {
         /* Title Styles*/
         --column-title-h1: 100px;
         --column-title-lineheight: 100%;
-        --column-title-p: 30px;
+        --column-title-p: 35px;
         --column-padding: 4rem;
         --intro-padding: 4rem;
 
@@ -715,23 +701,23 @@ footer {
 }
 
 /* ------------------ TABLET ------------------ */
-@media (min-width:650px) {
+/* @media (min-width:650px) {
     :root {
         --block-margin: 0.3em;
 
         --figcaption-padding: 10px;
 
-        /* Whole Nav Bar */
+        /* Whole Nav Bar 
         --nav-bar-margin-top: 2rem;
 
-        /* Nav Bar Buttons Styling */
+        /* Nav Bar Buttons Styling 
         --nav-bar-button-p: 20px;
         --nav-bar-button-width: 15%;
-        /* --nav-bar-button-radius: 20px; */
+        /* --nav-bar-button-radius: 20px; 
         --nav-bar-button-padding: 10px;
         --nav-bar-button-margin: 10px;
 
-        /* Title Styles*/
+        /* Title Styles
         --column-title-h1: 70px;
         --column-title-lineheight: 110%;
         --column-title-p: 25px;
@@ -740,26 +726,26 @@ footer {
 
         --description-onclick-margin: 2rem;
 
-        /* Content Title List Style */
+        /* Content Title List Style 
         --figcaption-p: 20px;
 
-        /* Bullet Point Size */
+        /* Bullet Point Size 
         --block-marker-size: 25px;
 
-        /* Header: Media Class */
+        /* Header: Media Class 
         --class-onclick-p: 18px;
 
-        /* Text Styles */
+        /* Text Styles 
         --text-onclick-h1: 45px;
 
-        /* Description: On Click Styles */
+        /* Description: On Click Styles 
         --description-title-p: 40px;
         --description-blurb-p: 20px;
         --description-onlick-padding: 2rem;
         --blurb-onclick-padding: 1.5rem;
         --blurb-onclick-padding-bottom: 1.5rem;
 
-        /* Source Button Styling */
+        /* Source Button Styling 
         --source-onclick-p: 18px;
         --source-onclick-width: 200px;
         --source-onclick-padding: 10px;
@@ -780,154 +766,7 @@ footer {
         margin-top: 4rem;
     } */
 
-    .column-content {
-        padding-left: 4rem;
-    }
 
-    .column-title p {
-        width: 75vw;
-        line-height: 35px;
-    }
-
-     /* Image Sizes */
-     .image-thumbnail {
-        display: none;
-    }
-
-    .image-large {
-        display: contents;
-    }   
-
-    .block--image.active .block--image__description, 
-    .block--text.active .block--text__description, 
-    .block--uploadedaudio.active .block--uploadedaudio__description, 
-    .block--link.active .block--link__description, 
-    .block--linkedvideo.active .block--linkedvideo__description,
-    .block--pdf.active .block--pdf__description {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .text-onclick {
-        width: 50%;
-    }
-
-    .close-button {
-        font-weight: 100;
-        border: 1px white;
-        border-style: solid;
-        width: 25px;
-        height: 25px;
-    }
-
-    .title-onclick,
-    .linkedvideo-title-onclick, 
-    .text-title-onclick {
-        margin-top: 0;
-    }
-
-    /* ------------------ SIDE BY SIDE STYLE ------------------ */
-    /* Image and Description: Side by side */
-    .images-onclick,
-    .images-description-body,
-    .link-onclick,
-    .link-description-body,
-    .text-description-body,
-    .pdf-onclick,
-    .pdf-description-body {
-        display: flex;
-        align-items: flex-start; /* Align items at the top */
-        flex-direction: row;
-    }
-
-    .images-description-onclick,
-    .link-description-onclick,
-    .text-description-onclick {
-        flex-direction: column; /* Change direction to column for mobile responsiveness */
-        width: 50vw;
-        margin-left: 3rem;
-    }
-
-    .pdf-description-onclick {
-        flex-direction: column; /* Change direction to column for mobile responsiveness */
-        width: 30vw;
-        margin-left: 3rem;
-    }
-
-    .images-source-onclick,
-    .link-source-onclick,
-    .text-source-onclick,
-    .pdf-source-onclick {
-        margin-top: var(--source-onclick-margin);
-        position: relative;
-        margin-left: 0;
-        margin-right: 0;
-    }
-
-    /* ------------------ LINKED VIDEO STYLE ------------------ */
-    /* Linked Video: Video, Title, Description, and OG Source */
-    .linkedvideo-description-body {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    
-    /* Video Description */
-    .linkedvideo-description-onclick {
-        width: 100%;
-        order: 2;
-        display: flex;
-        flex-direction: row;
-        align-items: flex-start;
-        padding-top: var(--description-onlick-padding);
-    }
-
-    /* Video Title and Source Aligned at Top */
-    .linkedvideo-title-onclick,
-    .linkedvideo-source-onclick {
-        align-self: flex-start;
-    }
-
-    .description-text {
-        flex: 1;
-    }
-
-    .description-source {
-        margin-left: 20px;
-    }
-
-    /* Video Title */
-     .linkedvideo-title-onclick {
-        width: 30vw;
-    }
-    
-    .linkedvideo-source-onclick {
-        margin-left: 3rem;
-        align-content: center;
-    }
-
-    .block--linkedvideo__description > .title-onclick {
-        max-width: 50vw;
-    }
-
-    /* Video Size */
-    .linkedvideo-onclick iframe {
-        width: 100vw;
-        height: 420;
-    }
-
-    /* ------------------ AUDIO STYLE ------------------ */
-    /* Actual Audio Visual */
-    .uploadedaudio-onclick audio {
-        width: 100%; /* Adjust the width as needed */
-        height: 50px; /* Adjust the height as needed */
-    }
-
-    .audio-description-onclick {
-        margin-top: 3rem;
-        width: 30vw;
-    }
-}
 
 /* ------------------ DESKTOP ------------------ */
 @media (min-width:1200px) {
